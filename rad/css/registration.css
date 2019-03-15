@@ -1,0 +1,25 @@
+body{
+	background-color: #a2a2a2;
+}
+
+#header{
+	padding-top:20px;
+}
+
+#slideLeft{
+	/*//background-color: red;*/
+	padding-top: 40px;
+}
+
+#logedPrifile{
+	background-color: #f2f2f2;
+}
+
+#registersub{
+	display: none;
+}
+
+#booksub{
+	display: none;
+}
+
