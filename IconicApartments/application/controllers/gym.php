@@ -22,7 +22,8 @@ class gym extends CI_Controller {
 	{
 		//echo "Hello from index";
 		$this->load->helper('url');
-		$this->load->view('gymHome');
+		$this->load->view('gym/header');
+		$this->load->view('gym/gymHome');
 	}
 
 	public function book()
@@ -30,7 +31,8 @@ class gym extends CI_Controller {
 		//echo "Hello from book";
 		$this->load->library('form_validation');
 		$this->load->helper('url');
-		$this->load->view('book');
+		$this->load->view('gym/header');
+		$this->load->view('gym/book');
 	}
 
 	public function attendance()
@@ -44,11 +46,12 @@ class gym extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-				$this->load->view('attendance');
+			$this->load->view('gym/header');	
+			$this->load->view('gym/attendance');
 		}
 		else
 		{
-				$this->load->view('formsuccess');
+			$this->load->view('gym/formsuccess');
 		}
 	}
 
@@ -57,6 +60,7 @@ class gym extends CI_Controller {
 		//echo "Hello from view";
 		$this->load->library('form_validation');
 		$this->load->helper('url');
-		$this->load->view('view');
+		$this->load->view('gym/header');
+		$this->load->view('gym/view');
 	}
 }
