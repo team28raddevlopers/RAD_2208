@@ -12,7 +12,7 @@
   <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-center sticky-top">
                 <!-- Brand -->
-                <?php echo anchor('gym/index', 'Gym','class="navbar-brand"') ?>                    </li>
+                <?php echo anchor('Gym/index', 'Gym','class="navbar-brand"') ?>                    </li>
               
                 <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -23,14 +23,14 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item <?=($this->uri->segment(2)==='attendance')?'active':''?>">
-                        <?php echo anchor('gym/attendance', 'Mark Attendance','class="nav-link"') ?>                    
+                        <?php echo anchor('Gym/attendance', 'Mark Attendance','class="nav-link"') ?>                    
                     </li>
                     </li>
                     <li class="nav-item <?=($this->uri->segment(2)==='book')?'active':''?>">
-                        <?php echo anchor('gym/book', 'Book Instructor','class="nav-link"') ?>                    
+                        <?php echo anchor('Gym/book', 'Book Instructor','class="nav-link"') ?>                    
                     </li>
                     <li class="nav-item <?=($this->uri->segment(2)==='view')?'active':''?>">
-                        <?php echo anchor('gym/view', 'View Bookings','class="nav-link"') ?>                    
+                        <?php echo anchor('Gym/view', 'View Bookings','class="nav-link"') ?>                    
                     </li>
                     </li> 
                 </ul>
