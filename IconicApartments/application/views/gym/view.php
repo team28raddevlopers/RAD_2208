@@ -19,15 +19,17 @@
         <br><br>
         <h3>Cancel Bookings</h3>
         <hr>
-        <form action="/action_page.php" class="form-inline">
-            <div class="form-group">
-                <label for="bid">Booking ID:</label>
-                <input type="text" class="form-control ml-sm-2 mr-sm-2" id="bid" placeholder="Enter booking ID" name="bid" required>
-                <!-- <div class="valid-feedback">Valid.</div> -->
-                <!-- <div class="invalid-feedback">Please fill out this field.</div> -->
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="jumbotron">
+          <form action="/action_page.php" class="form-inline">
+              <div class="form-group">
+                  <label for="bid">Booking ID:</label>
+                  <input type="text" class="form-control ml-sm-2 mr-sm-2" id="bid" placeholder="Enter booking ID" name="bid" required>
+                  <!-- <div class="valid-feedback">Valid.</div> -->
+                  <!-- <div class="invalid-feedback">Please fill out this field.</div> -->
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
           </form>
+        </div>
     </div>
    
 

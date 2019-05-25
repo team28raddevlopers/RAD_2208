@@ -13,9 +13,9 @@
         <br><br>
         <h1 class="text-center">Mark Your Attendance At The Gym</h1>
         <br><hr><br>
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
+        <div class="row justify-content-center">
+            <!-- <div class="col-sm-3"></div> -->
+            <div class="jumbotron col-sm-6">
                 <form action="/action_page.php">
                     <div class="form-group">
                         <label for="uname">Username:</label>
@@ -29,22 +29,24 @@
                         <!-- <div class="valid-feedback">Valid.</div> -->
                         <!-- <div class="invalid-feedback">Please fill out this field.</div> -->
                     </div>
-                    <div class="form-group">
-                        <label for="entime">Entrance Time:</label>
-                        <input type="time" class="form-control" id="entime" placeholder="Enter entrance time" name="entime" required>
-                        <!-- <div class="valid-feedback">Valid.</div> -->
-                        <!-- <div class="invalid-feedback">Please fill out this field.</div> -->
-                    </div>
-                    <div class="form-group">
-                        <label for="extime">Exit Time:</label>
-                        <input type="time" class="form-control" id="extime" placeholder="Enter exit time" name="extime" required>
-                        <!-- <div class="valid-feedback">Valid.</div> -->
-                        <!-- <div class="invalid-feedback">Please fill out this field.</div> -->
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label for="entime">Entrance Time:</label>
+                            <input type="time" class="form-control" id="entime" placeholder="Enter entrance time" name="entime" required>
+                            <!-- <div class="valid-feedback">Valid.</div> -->
+                            <!-- <div class="invalid-feedback">Please fill out this field.</div> -->
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="extime">Exit Time:</label>
+                            <input type="time" class="form-control" id="extime" placeholder="Enter exit time" name="extime" required>
+                            <!-- <div class="valid-feedback">Valid.</div> -->
+                            <!-- <div class="invalid-feedback">Please fill out this field.</div> -->
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
-            <div class="col-sm-3"></div>
+            <!-- <div class="col-sm-3"></div> -->
         </div>
     </div>
    
