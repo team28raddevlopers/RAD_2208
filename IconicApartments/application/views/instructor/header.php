@@ -10,9 +10,10 @@
     <title>Iconic Gym</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-center sticky-top">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-center sticky-top">
                 <!-- Brand -->
-                <a class="navbar-brand" href="<?php echo site_url('Gym')?>">Gym</a>              
+            <a class="navbar-brand" href="<?php echo site_url('Instructor')?>">Gym</a>
+              
                 <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -21,26 +22,20 @@
                 <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item <?=($this->uri->segment(2)==='attendance')?'active':''?>">
-                        <a class="nav-link" href="<?php echo site_url('Gym/attendance')?>">Mark Attendance</a>
+                    <li class="nav-item">
+                        <a class="nav-link <?=($this->uri->segment(2)==='currentBookings')?'active':''?>" href="<?php echo site_url('Instructor/currentBookings')?>">Current Bookings</a>
                     </li>
-                    </li>
-                    <li class="nav-item <?=($this->uri->segment(2)==='book')?'active':''?>">
-                        <a class="nav-link" href="<?php echo site_url('Gym/book')?>">Book Instructor</a>                    
-                    </li>
-                    <li class="nav-item <?=($this->uri->segment(2)==='view')?'active':''?>">
-                        <a class="nav-link" href="<?php echo site_url('Gym/view')?>">View Bookings</a>                   
-                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?=($this->uri->segment(2)==='pendingBookings')?'active':''?>" href="<?php echo site_url('Instructor/pendingBookings')?>">Pending Bookings</a>
                     </li> 
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mr-3 ml-3">
+                    <!-- <li class="nav-item mr-3 ml-3">
                         <a class="nav-link btn btn-dark" href="<?php echo site_url('Main/index') ?>">Home</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link btn btn-dark" href="<?php echo site_url('Main/logout') ?>">Logout</a>
                     </li>
                 </ul>
             </div> 
-    </nav>
-  </body>
+        </nav>
