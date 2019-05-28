@@ -1,0 +1,51 @@
+
+If importing the .sql file fail, create database 'iconic_apartments' and run following queries to create the full database
+
+
+CREATE TABLE `iconic_apartments`.`pending_user` ( `p_user_id` INT NOT NULL AUTO_INCREMENT , `email` VARCHAR(255) NOT NULL , `username` VARCHAR(255) NOT NULL , `password` VARCHAR(255) NOT NULL , `user_type` VARCHAR(255) NOT NULL , PRIMARY KEY (`p_user_id`)) ENGINE = InnoDB;
+
+CREATE TABLE `iconic_apartments`.`user` ( `user_id` INT NOT NULL AUTO_INCREMENT , `email` VARCHAR(255) NOT NULL , `username` VARCHAR(255) NOT NULL , `password` VARCHAR(255) NOT NULL , `user_type` VARCHAR(255) NOT NULL , PRIMARY KEY (`user_id`)) ENGINE = InnoDB;
+
+CREATE TABLE `iconic_apartments`.`resident` ( `resident_id` INT NOT NULL AUTO_INCREMENT , `resident_name` VARCHAR(255) NOT NULL , `appartment_no` VARCHAR(255) NOT NULL , `user_id` INT NOT NULL , `registered` BOOLEAN NOT NULL , PRIMARY KEY (`resident_id`)) ENGINE = InnoDB;
+
+CREATE TABLE `iconic_apartments`.`instructor` ( `instructor_id` INT NOT NULL AUTO_INCREMENT , `instructor_name` VARCHAR(255) NOT NULL , `dob` DATE NOT NULL , `user_id` INT NOT NULL , `registered` BOOLEAN NOT NULL , PRIMARY KEY (`instructor_id`)) ENGINE = InnoDB;
+
+CREATE TABLE `iconic_apartments`.`coach` ( `coach_id` INT NOT NULL AUTO_INCREMENT , `coach_name` VARCHAR(255) NOT NULL , `dob` DATE NOT NULL , `user_id` INT NOT NULL , `registered` BOOLEAN NOT NULL , PRIMARY KEY (`coach_id`)) ENGINE = InnoDB;
+
+CREATE TABLE `iconic_apartments`.`masseur` ( `masseur_id` INT NOT NULL AUTO_INCREMENT , `masseur_name` VARCHAR(255) NOT NULL , `dob` DATE NOT NULL , `user_id` INT NOT NULL , `registered` BOOLEAN NOT NULL , PRIMARY KEY (`masseur_id`)) ENGINE = InnoDB;
+
+CREATE TABLE `iconic_apartments`.`gym_attendance` ( `id` INT NOT NULL AUTO_INCREMENT , `user_id` INT NOT NULL , `date` DATE NOT NULL , `time_from` TIME NOT NULL , `time_to` TIME NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE `iconic_apartments`.`instructor_booking` ( `booking_id` INT NOT NULL AUTO_INCREMENT , `instructor_id` INT NOT NULL , `user_id` INT NOT NULL , `date` DATE NOT NULL , `time_from` TIME NOT NULL , `time_to` TIME NOT NULL , `booking_status` VARCHAR(225) NOT NULL , PRIMARY KEY (`booking_id`)) ENGINE = InnoDB;
+
+CREATE TABLE `iconic_apartments`.`tennis_court_booking` ( `booking_id` INT NOT NULL AUTO_INCREMENT , `user_id` INT NOT NULL , `date` DATE NOT NULL , `time_from` TIME NOT NULL , `time_to` TIMESTAMP NOT NULL , PRIMARY KEY (`booking_id`)) ENGINE = InnoDB;
+
+CREATE TABLE `iconic_apartments`.`coach_booking` ( `booking_id` INT NOT NULL AUTO_INCREMENT , `coach_id` INT NOT NULL , `user_id` INT NOT NULL , `date` DATE NOT NULL , `time_from` TIME NOT NULL , `time_to` TIME NOT NULL , `booking_status` VARCHAR(225) NOT NULL , PRIMARY KEY (`booking_id`)) ENGINE = InnoDB;
+
+CREATE TABLE `iconic_apartments`.`spa_room_booking` ( `booking_id` INT NOT NULL AUTO_INCREMENT , `user_id` INT NOT NULL , `date` DATE NOT NULL , `time_from` TIME NOT NULL , `time_to` TIME NOT NULL , PRIMARY KEY (`booking_id`)) ENGINE = InnoDB;
+
+CREATE TABLE `iconic_apartments`.`masseur_booking` ( `booking_id` INT NOT NULL AUTO_INCREMENT , `masseur_id` INT NOT NULL , `user_id` INT NOT NULL , `date` DATE NOT NULL , `time_from` TIME NOT NULL , `time_to` TIME NOT NULL , `booking_status` VARCHAR(225) NOT NULL , PRIMARY KEY (`booking_id`)) ENGINE = InnoDB;
+
+CREATE TABLE `iconic_apartments`.`pool_attendance` ( `id` INT NOT NULL AUTO_INCREMENT , `user_id` INT NOT NULL , `date` DATE NOT NULL , `time_from` TIME NOT NULL , `time_to` TIME NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `coach` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `coach_booking` ADD FOREIGN KEY (`coach_id`) REFERENCES `coach`(`coach_id`) ON DELETE RESTRICT ON UPDATE RESTRICT; ALTER TABLE `coach_booking` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `gym_attendance` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `instructor` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `instructor_booking` ADD FOREIGN KEY (`instructor_id`) REFERENCES `instructor`(`instructor_id`) ON DELETE RESTRICT ON UPDATE RESTRICT; ALTER TABLE `instructor_booking` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `masseur` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `masseur_booking` ADD FOREIGN KEY (`masseur_id`) REFERENCES `masseur`(`masseur_id`) ON DELETE RESTRICT ON UPDATE RESTRICT; ALTER TABLE `masseur_booking` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `pool_attendance` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `resident` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `spa_room_booking` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `tennis_court_booking` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;

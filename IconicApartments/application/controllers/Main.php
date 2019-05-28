@@ -21,8 +21,9 @@
 
         public function register(){
 
-            $this->form_validation->set_rules('email', 'Email', 'valid_email');
-            $this->form_validation->set_rules('username', 'Username', 'is_unique[users.username]');
+            $this->form_validation->set_rules('email', 'Email', 'valid_email|is_unique[user.email]');
+            // $this->form_validation->set_rules('email', 'Email', '');
+            $this->form_validation->set_rules('username', 'Username', 'is_unique[user.username]');
             $this->form_validation->set_rules('password', 'Password', 'required');
             $this->form_validation->set_rules('password2', 'Confirm password', 'matches[password]');
 
