@@ -39,26 +39,18 @@
                     <div class="form-group">
                         <label for="iid">Instructor ID:</label>
                         <input type="text" class="form-control" id="iid" placeholder="Enter username" name="iid" required>
-                        <!-- <div class="valid-feedback">Valid.</div> -->
-                        <!-- <div class="invalid-feedback">Please fill out this field.</div> -->
                     </div>
                     <div class="form-group">
                         <label for="date">Date:</label>
                         <input type="date" class="form-control" id="date" placeholder="Enter date" name="date" required>
-                        <!-- <div class="valid-feedback">Valid.</div> -->
-                        <!-- <div class="invalid-feedback">Please fill out this field.</div> -->
                     </div>
                     <div class="form-group">
                         <label for="entime">Time From:</label>
                         <input type="time" class="form-control" id="timefrom" placeholder="Enter entrance time" name="timefrom" required>
-                        <!-- <div class="valid-feedback">Valid.</div> -->
-                        <!-- <div class="invalid-feedback">Please fill out this field.</div> -->
                     </div>
                     <div class="form-group">
                         <label for="extime">Time To:</label>
                         <input type="time" class="form-control" id="timeto" placeholder="Enter exit time" name="timeto" required>
-                        <!-- <div class="valid-feedback">Valid.</div> -->
-                        <!-- <div class="invalid-feedback">Please fill out this field.</div> -->
                     </div>
                     <input type="hidden" id ="status" name="status" value="pending">
                     <button type="submit" class="btn btn-primary">Submit</button>

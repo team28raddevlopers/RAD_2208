@@ -72,6 +72,7 @@
                 else{
                     //echo "success";
                     $userdata = array(
+                        'username' => $result['username'],
                         'user_id' => $result['user_id'],
                         'user_type' => $result['user_type']
                     );

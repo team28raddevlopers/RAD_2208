@@ -28,10 +28,11 @@ class Gym extends CI_Controller {
 				$this->load->view('gym/book',$data);
 			}
 			else{
+				//store data from form fields in associative array
 				$data = array(
 					'user_id' => $this->input->post('uid'),
 					'instructor_id' => $this->input->post('iid'),
-					'book_date' => $this->input->post('date'),
+					'date' => $this->input->post('date'),
 					'time_from' => $this->input->post('timefrom'),
 					'time_to' => $this->input->post('timeto'),
 					'booking_status' => $this->input->post('status')
@@ -39,9 +40,12 @@ class Gym extends CI_Controller {
 		
 				//echo $this->input->post('date');
 				//$this->load->model('Gym_model');
-				$this->Gym_model->book_instructor($data);
+
+				$this->Gym_model->book_instructor($data); //send data to Gym_model
+
 				//$this->load->view('gym/formsuccess');
-				redirect('Gym/index');
+
+				redirect('Gym/view'); //redirect to Gym home page
 			}
 		}
 		else{
@@ -56,11 +60,25 @@ class Gym extends CI_Controller {
 			$this->form_validation->set_rules('uname', 'Username', 'required');
 
 			if ($this->form_validation->run() == FALSE){
+				$data['username'] = $this->session->userdata('username');
+				$data['user_id'] = $this->session->userdata('user_id');
+				//$data['username'] = 'new user';
 				$this->load->view('gym/header');	
-				$this->load->view('gym/attendance');
+				$this->load->view('gym/attendance',$data);
 			}
 			else{
-				//$this->load->view('gym/formsuccess');
+			
+				//store data from form fields in associative array
+				$data = array(
+					'user_id' => $this->input->post('uid'),
+					'instructor_id' => $this->input->post('iid'),
+					'date' => $this->input->post('date'),
+					'time_from' => $this->input->post('timefrom'),
+					'time_to' => $this->input->post('timeto'),
+				);
+
+				$this->Gym_model->mark_attendance($data); //send data to Gym_model
+				redirect('Gym/index'); //redirect to Gym home page
 			}
 		}
 		else{
@@ -71,12 +89,27 @@ class Gym extends CI_Controller {
 	public function view(){
 		//echo "Hello from view";
 		if($this->session->userdata('user_type') == 'resident'){
-			$this->load->view('gym/header');
-			$this->load->view('gym/view');
+			$uid = $this->session->userdata('user_id');
+			$result = $this->Gym_model->get_bookings($uid);
+			//$result = false;
+			$data['result'] = $result;
+	
+			$this->form_validation->set_rules('bid', 'Booking ID', 'required');
+	
+			if($this->form_validation->run() == FALSE){
+				$this->load->view('gym/header');
+				$this->load->view('gym/view',$data);
+			}
 		}
 		else{
 			redirect('Main/login');
 		}
+	}
+
+	public function cancel_booking(){
+		$bid = $this->input->post('bid');
+		$this->Gym_model->delete_booking($bid);
+		redirect('Gym/view');
 	}
 		
 
@@ -85,7 +118,7 @@ class Gym extends CI_Controller {
 	// 	$data = array(
 	// 		'user_id' => $this->input->post('uid'),
 	// 		'instructor_id' => $this->input->post('iid'),
-	// 		'book_date' => $this->input->post('date'),
+	// 		'date' => $this->input->post('date'),
 	// 		'time_from' => $this->input->post('timefrom'),
 	// 		'time_to' => $this->input->post('timeto'),
 	// 		'booking_status' => $this->input->post('status')
