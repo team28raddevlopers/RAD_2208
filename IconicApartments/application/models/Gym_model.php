@@ -6,13 +6,13 @@
             parent::__construct();
         }
 
-        public function getInstructors(){
+        public function get_instructors(){
             $query = $this->db->get('instructor');
             //print_r($query->result_array());
             return $query->result_array();
         }
 
-        public function bookInstructor($data){
+        public function book_instructor($data){
             $this->db->insert('instructor_booking',$data);
         }
     }

@@ -9,15 +9,15 @@
                 $this->load->view('instructor/home');
             }
             else{
-                $this->load->view('main/headerMain');
+                $this->load->view('main/header_main');
                 $this->load->view('main/main');
             }   
        } 
 
-       public function loginForm(){
-            $this->load->view('main/headerMain');
-            $this->load->view('main/login');
-        }
+    //    public function loginForm(){
+    //         $this->load->view('main/header_main');
+    //         $this->load->view('main/login');
+    //     }
 
         public function register(){
 
@@ -28,7 +28,7 @@
             $this->form_validation->set_rules('password2', 'Confirm password', 'matches[password]');
 
             if ($this->form_validation->run() == FALSE){
-                $this->load->view('main/headerMain');
+                $this->load->view('main/header_main');
                 $this->load->view('main/register');
             }
             else{
@@ -40,7 +40,7 @@
                     'user_type' => $this->input->post('type')
                 );
 
-                $this->User_model->registerUser($data);
+                $this->User_model->register_user($data);
 
                 redirect('Main/index');
             }
@@ -52,7 +52,7 @@
             $this->form_validation->set_rules('password', 'Password', 'required');
 
             if ($this->form_validation->run() == FALSE){
-                $this->load->view('main/headerMain');
+                $this->load->view('main/header_main');
                 $this->load->view('main/login');
             }
             else{
@@ -62,11 +62,11 @@
                     'password' => $password
                 );
 
-                $result = $this->User_model->loginUser($data);
+                $result = $this->User_model->login_user($data);
 
                 if($result === false){
                     //echo "fail";
-                    $this->load->view('main/headerMain');
+                    $this->load->view('main/header_main');
                     $this->load->view('main/login');
                 }
                 else{

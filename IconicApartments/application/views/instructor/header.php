@@ -12,7 +12,7 @@
   <body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-center sticky-top">
                 <!-- Brand -->
-            <a class="navbar-brand" href="<?php echo site_url('Instructor')?>">Gym</a>
+            <a class="navbar-brand" href="<?php echo site_url('instructor')?>">Gym</a>
               
                 <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -23,10 +23,10 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link <?=($this->uri->segment(2)==='currentBookings')?'active':''?>" href="<?php echo site_url('Instructor/currentBookings')?>">Current Bookings</a>
+                        <a class="nav-link <?=($this->uri->segment(2)==='current_bookings')?'active':''?>" href="<?php echo site_url('instructor/current_bookings')?>">Current Bookings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?=($this->uri->segment(2)==='pendingBookings')?'active':''?>" href="<?php echo site_url('Instructor/pendingBookings')?>">Pending Bookings</a>
+                        <a class="nav-link <?=($this->uri->segment(2)==='pending_bookings')?'active':''?>" href="<?php echo site_url('instructor/pending_bookings')?>">Pending Bookings</a>
                     </li> 
                 </ul>
                 <ul class="navbar-nav ml-auto">

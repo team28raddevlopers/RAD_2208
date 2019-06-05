@@ -6,11 +6,11 @@
             parent::__construct();
         }
 
-        public function registerUser($data){
+        public function register_user($data){
             $this->db->insert('user',$data);
         }
 
-        public function loginUser($data){
+        public function login_user($data){
             $this->db->where('username',$data['username']);
             $this->db->where('password',$data['password']);
 

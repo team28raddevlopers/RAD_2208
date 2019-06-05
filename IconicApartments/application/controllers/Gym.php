@@ -17,7 +17,7 @@ class Gym extends CI_Controller {
 	public function book(){
 		//echo "Hello from book";
 		if($this->session->userdata('user_type') == 'resident'){
-			$result = $this->Gym_model->getInstructors();
+			$result = $this->Gym_model->get_instructors();
 			//echo $result[0]['instructor_name'];
 			$data['result'] = $result;
 
@@ -39,7 +39,7 @@ class Gym extends CI_Controller {
 		
 				//echo $this->input->post('date');
 				//$this->load->model('Gym_model');
-				$this->Gym_model->bookInstructor($data);
+				$this->Gym_model->book_instructor($data);
 				//$this->load->view('gym/formsuccess');
 				redirect('Gym/index');
 			}
@@ -80,20 +80,20 @@ class Gym extends CI_Controller {
 	}
 		
 
-	public function bookInstructor(){
+	// public function bookInstructor(){
 
-		$data = array(
-			'user_id' => $this->input->post('uid'),
-			'instructor_id' => $this->input->post('iid'),
-			'book_date' => $this->input->post('date'),
-			'time_from' => $this->input->post('timefrom'),
-			'time_to' => $this->input->post('timeto'),
-			'booking_status' => $this->input->post('status')
-		);
+	// 	$data = array(
+	// 		'user_id' => $this->input->post('uid'),
+	// 		'instructor_id' => $this->input->post('iid'),
+	// 		'book_date' => $this->input->post('date'),
+	// 		'time_from' => $this->input->post('timefrom'),
+	// 		'time_to' => $this->input->post('timeto'),
+	// 		'booking_status' => $this->input->post('status')
+	// 	);
 
-		//echo $this->input->post('date');
-		//$this->load->model('Gym_model');
-		$this->Gym_model->bookInstructor($data);
-	}
+	// 	//echo $this->input->post('date');
+	// 	//$this->load->model('Gym_model');
+	// 	$this->Gym_model->bookInstructor($data);
+	// }
 }
 ?>
