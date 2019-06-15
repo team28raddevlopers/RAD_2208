@@ -26,7 +26,10 @@
                         <input type="time" class="form-control" id="timeto" placeholder="Enter exit time" name="timeto" required>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <br>
+                <div class="row justify-content-center">
+                    <button type="submit" class="btn btn-primary ">SUBMIT</button>
+                </div>
             </form>
         </div>
         <!-- <div class="col-sm-3"></div> -->

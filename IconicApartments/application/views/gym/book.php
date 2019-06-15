@@ -5,7 +5,6 @@
     <div class="row">
         <div class="col-sm-6">
             <h2 class="text-center">Instructors</h2>
-            <p>view Instructors</p>
             <table class="table table-hover text-center">
                 <tr>
                     <th>ID</th>
@@ -40,7 +39,10 @@
                     <input type="time" class="form-control" id="timeto" placeholder="Enter exit time" name="timeto" required>
                 </div>
                 <input type="hidden" id ="status" name="status" value="pending">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <br>
+                <div class="row justify-content-center">
+                    <button type="submit" class="btn btn-primary ">BOOK</button>
+                </div>           
             </form>
         </div>
     </div>

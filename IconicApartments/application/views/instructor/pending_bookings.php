@@ -1,7 +1,6 @@
 <div class="container">
     <br><br>
     <h1 class="text-center">Your Pending Bookings</h1>
-    <p>view pending Bookings table</p>
     <br><br>
     <?php if($result): ?>
         <table class="table table-hover text-center">
@@ -11,6 +10,8 @@
                 <th>DATE</th>
                 <th>TIME FROM</th>
                 <th>TIME TO</th>
+                <th>ACCEPT</th>
+                <th>REJECT</th>
             </tr>
             <?php foreach($result as $row): ?>
                 <tr>
@@ -19,12 +20,58 @@
                     <td><?php echo $row['date']; ?></td>
                     <td><?php echo $row['time_from']; ?></td>
                     <td><?php echo $row['time_to']; ?></td>
+                    <td><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#confirmAccept">Accept</button></td>
+                    <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmReject">Reject</button></td>
                 </tr>
             <?php endforeach; ?>
         </table>
-        <hr>
+
+        <div class="modal" id="confirmAccept">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                    <h5 class="modal-title">Accept Booking</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                    Are you sure you want to accept booking <?php echo $row['booking_id']?> ?
+                    </div>
+
+                    <div class="modal-footer">
+                    <a href="<?php echo site_url('Instructor/accept_booking/'.$row['booking_id'])?>" class="btn btn-success btn-sm">Accept Booking</a>
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="confirmReject">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                    <h5 class="modal-title">Reject Booking</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                    Are you sure you want to reject booking <?php echo $row['booking_id']?> ?
+                    </div>
+
+                    <div class="modal-footer">
+                    <a href="<?php echo site_url('Instructor/cancel_booking/'.$row['booking_id'])?>" class="btn btn-danger btn-sm">Cancel Booking</a>
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         <br><br>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-sm-6">
                 <h3>Accept Bookings</h3>
                 <hr>
@@ -47,7 +94,7 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
-        </div>
+        </div> -->
     <?php else :?>
         <h5 class="text-center">You Currently Have No Pending Bookings</h5>
     <?php endif; ?>

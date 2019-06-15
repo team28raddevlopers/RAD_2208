@@ -99,8 +99,8 @@ class Gym extends CI_Controller {
 		}
 	}
 
-	public function cancel_booking(){
-		$bid = $this->input->post('bid');
+	public function cancel_booking($bid){
+		//$bid = $this->input->post('bid');
 		$this->Gym_model->delete_booking($bid);
 		redirect('Gym/view');
 	}

@@ -49,15 +49,15 @@
             }
         }
 
-        public function accept_booking(){
+        public function accept_booking($bid){
             
-            $bid = $this->input->post('bidaccept');
+            //$bid = $this->input->post('bidaccept');
             $this->Gym_model->accept_booking($bid);
             redirect('Instructor/current_bookings');
         }
 
-        public function cancel_booking(){
-            $bid = $this->input->post('bid');
+        public function cancel_booking($bid){
+            //$bid = $this->input->post('bid');
             $this->Gym_model->delete_booking($bid);
             redirect('Instructor/current_bookings'); //find way to load same page
         }

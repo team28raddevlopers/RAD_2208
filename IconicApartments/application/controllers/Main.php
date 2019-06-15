@@ -3,6 +3,7 @@
        public function index(){
             if($this->session->userdata('user_type') == 'resident'){
                 $this->load->view('main/home');
+                $this->load->view('main/footer');
             }
             elseif($this->session->userdata('user_type') == 'instructor'){
                 $this->load->view('instructor/header');
@@ -63,6 +64,7 @@
                 $result = $this->User_model->login_user($data);
 
                 if($result === false){
+                    $this->session->set_flashdata('login_error', 'Invalid Login Credentials');
                     $this->load->view('main/header_main');
                     $this->load->view('main/login');
                     $this->load->view('main/footer');

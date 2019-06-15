@@ -46,8 +46,6 @@
         
         <h1 class="text-center">Welcome to Iconic Apartments</h1>
         <br><hr><br>
-        <p>description</p>
-        <a href="instructorHome.html">Instructor</a>
     </div>
    
 
