@@ -1,0 +1,111 @@
+input[type=text], input[type=password], input[type=email],input[type=date] {
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgb(216, 214, 214);
+  }
+
+  input[type=text]:hover, input[type=password]:hover, input[type=email]:hover,input[type=date]:hover {
+    background: none;
+    border: none;
+    border-bottom: 2px solid rgb(158, 157, 157);
+  }
+
+  select{
+      background: none;
+      color: rgb(118, 118, 119);
+  }
+  form {
+      color: rgb(223, 223, 226);
+      background-color: none;
+    
+  }
+
+  #registerform {
+    background: none;
+  }
+
+  body{
+    background-image: url("../img/bk.jpg");
+    background-repeat: no-repeat;   
+  }
+  h2,h3{
+      color: bisque;
+  }
+
+  .formbutton {
+    background:none;
+    border: none;
+    color: rgb(243, 244, 245);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+
+  .formbutton:hover{
+    background:none;
+    border:rgb(158, 157, 157);
+    color: rgb(129, 130, 131);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+  }
+
+
+  .button1 {
+    background:none;
+    border: none;
+    color: rgb(243, 244, 245);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border: 1px solid rgb(143, 145, 143);
+  }
+
+  .button1:hover{
+    background:none;
+    border:rgb(158, 157, 157);
+   
+    color: rgb(129, 130, 131);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border: 2px solid rgb(143, 145, 143);
+  }
+
+  table{
+      color: beige;
+  }
+  #user_id{
+      background: none;
+      border-bottom: none;
+      color: aliceblue;
+  }
+
+  .register {
+    background:none;
+    border: none;
+    color: rgb(243, 244, 245);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+
+  tbody #tble th, td {
+    border-bottom: 1px solid rgb(129, 128, 128);
+  }

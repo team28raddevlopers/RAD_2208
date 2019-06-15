@@ -4,12 +4,21 @@
             if($this->session->userdata('user_type') == 'instructor'){
                 $this->load->view('instructor/header');
                 $this->load->view('instructor/home');
-                $this->load->view('main/footer');
             }
             else{
                 redirect('Main/login');
             }
         }
+
+        // public function current_bookings(){
+        //     if($this->session->userdata('user_type') == 'instructor'){
+        //         $this->load->view('instructor/header');
+        //         $this->load->view('instructor/current_bookings');
+        //     }
+        //     else{
+        //         redirect('Main/login');
+        //     }
+        // }
 
         public function pending_bookings(){
             if($this->session->userdata('user_type') == 'instructor'){
@@ -19,11 +28,13 @@
                 $iid = $instructor['instructor_id'];
 
                 $result = $this->Gym_model->get_bookings_instructor($iid, 'pending');
+               // $result = false;
                 $data['result'] = $result;
         
+                //$this->form_validation->set_rules('bid', 'Booking ID', 'required');
+
                 $this->load->view('instructor/header');
                 $this->load->view('instructor/pending_bookings',$data);
-                $this->load->view('main/footer');
             }
             else{
                 redirect('Main/login');
@@ -38,26 +49,28 @@
                 $iid = $instructor['instructor_id'];
 
                 $result = $this->Gym_model->get_bookings_instructor($iid, 'accepted');
+               // $result = false;
                 $data['result'] = $result;
         
+                //$this->form_validation->set_rules('bid', 'Booking ID', 'required');
                 $this->load->view('instructor/header');
                 $this->load->view('instructor/current_bookings',$data);
-                $this->load->view('main/footer');
             }
             else{
                 redirect('Main/login');
             }
         }
 
-        public function accept_booking($bid){
+        public function accept_booking(){
             
-            //$bid = $this->input->post('bidaccept');
+            $bid = $this->input->post('bidaccept');
             $this->Gym_model->accept_booking($bid);
+            // echo 'hello';
             redirect('Instructor/current_bookings');
         }
 
-        public function cancel_booking($bid){
-            //$bid = $this->input->post('bid');
+        public function cancel_booking(){
+            $bid = $this->input->post('bid');
             $this->Gym_model->delete_booking($bid);
             redirect('Instructor/current_bookings'); //find way to load same page
         }
