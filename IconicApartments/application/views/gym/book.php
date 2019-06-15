@@ -24,7 +24,7 @@
                 <input type="hidden" id ="uid" name="uid" value="<?php echo $this->session->userdata('user_id'); ?>">
                 <div class="form-group">
                     <label for="iid">Instructor ID:</label>
-                    <input type="text" class="form-control" id="iid" placeholder="Enter username" name="iid" required>
+                    <input type="text" class="form-control" id="iid" placeholder="Enter Instructor ID" name="iid" required>
                 </div>
                 <div class="form-group">
                     <label for="date">Date:</label>

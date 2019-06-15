@@ -8,10 +8,10 @@
             <form action="attendance" method="post">
                 <input type="hidden" id ="uid" name="uid" value="<?php echo $user_id; ?>">
                 <!-- <input type="hidden" id ="iid" name="iid" value="I004"> remove this field for new db -->
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="uname">Username:</label>
                     <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" value="<?php echo $username; ?>" required>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label for="date">Date:</label>
                     <input type="date" class="form-control" id="date" placeholder="Enter date" name="date" required>

@@ -65,7 +65,7 @@ class Gym extends CI_Controller {
 				//store data from form fields in associative array
 				$data = array(
 					'user_id' => $this->input->post('uid'),
-					'instructor_id' => $this->input->post('iid'),
+					// 'instructor_id' => $this->input->post('iid'),
 					'date' => $this->input->post('date'),
 					'time_from' => $this->input->post('timefrom'),
 					'time_to' => $this->input->post('timeto'),
