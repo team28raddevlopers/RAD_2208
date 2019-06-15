@@ -6,7 +6,7 @@ class Gym extends CI_Controller {
 	public function index(){
 		if($this->session->userdata('user_type') == 'resident'){
 			$this->load->view('gym/header');
-			$this->load->view('gym/gymHome');
+			$this->load->view('gym/gym_home');
 			$this->load->view('main/footer');
 		}
 		else{
