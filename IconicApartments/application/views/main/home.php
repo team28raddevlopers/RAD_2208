@@ -53,4 +53,4 @@
     </div>
    
 
-<?php include 'fotter.php' ?>
+<!-- <?php include 'fotter.php' ?> -->

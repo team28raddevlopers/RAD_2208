@@ -3,11 +3,15 @@
        public function index(){
             if($this->session->userdata('user_type') == 'resident'){
                 $this->load->view('main/home');
+                $this->load->view('main/footer');
             }
             elseif($this->session->userdata('user_type') == 'instructor'){
                 $this->load->view('instructor/header');
                 $this->load->view('instructor/home');
-            }else if($this->session->userdata('user_type') == 'admin'){
+                $this->load->view('main/footer');
+
+            }
+            else if($this->session->userdata('user_type') == 'admin'){
                
                 $this->load->view('admin/dashboard');
                 // $data["fetch_data"]= $this->AdminRegistrations->fetch_data_resident();
@@ -22,9 +26,11 @@
                 // $this->load->view('admin/coach',$data4);
 
                
-            }else{
+            }
+            else{
+                $this->load->view('main/header_main');
                 $this->load->view('main/main');
-            }   
+                $this->load->view('main/footer');            }   
        } 
 
        public function test(){
@@ -49,6 +55,7 @@
             if ($this->form_validation->run() == FALSE){
                 $this->load->view('main/header_main');
                 $this->load->view('main/login');
+                $this->load->view('main/footer');
             }
             else{
                 $password = md5($this->input->post('password'));
@@ -60,12 +67,12 @@
                 $result = $this->User_model->login_user($data);
 
                 if($result === false){
-                    //echo "fail";
+                    $this->session->set_flashdata('login_error', 'Invalid Login Credentials');
                     $this->load->view('main/header_main');
                     $this->load->view('main/login');
+                    $this->load->view('main/footer');
                 }
                 else{
-                    //echo "success";
                     $userdata = array(
                         'username' => $result['username'],
                         'user_id' => $result['user_id'],
@@ -73,9 +80,6 @@
                     );
                     $this->session->set_userdata($userdata);
 
-                    // if($this->session->userdata('user_type') == 'resident'){
-                    //     $this->load->view('main/home');
-                    // }
                     redirect('Main/index');
                 }
             }

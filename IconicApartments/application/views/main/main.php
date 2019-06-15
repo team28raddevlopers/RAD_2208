@@ -1,15 +1,12 @@
-<?php include 'header_main.php'?>
+<!-- <?php include 'header_main.php'?> -->
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-xs-12">
                 <br><br>
                 
                 <h1 class="text-center">Welcome to Iconic Apartments</h1>
                 <br><hr><br>
-                <p>description</p>
-                <a href="instructorHome.html">Instructor</a>
             </div>
-        
         </div>    
     </div>
     <div class="container">
@@ -23,4 +20,4 @@
         </div>
     </div>
    
-   <?php include 'fotter.php'?>
+   <!-- <?php include 'fotter.php'?> -->

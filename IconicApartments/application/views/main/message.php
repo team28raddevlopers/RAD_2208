@@ -17,4 +17,4 @@
     </div>
 </div>
 
-<?php include 'fotter.php'?>
+<?php include 'footer.php'?>
