@@ -16,7 +16,7 @@
             <th>CANCEL</th>
         </tr>
         <?php foreach($result as $row): ?>
-            <tr class="<?=($row['booking_status']==='accepted')?'table-success':'table-light'?>">
+            <tr class="<?=($row['booking_status']==='accepted')?'table-success':''?>">
                 <td><?php echo $row['booking_id']; ?></td>
                 <td><?php echo $row['instructor_name']; ?></td>
                 <td><?php echo $row['date']; ?></td>

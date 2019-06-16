@@ -42,6 +42,7 @@
         
                 $this->load->view('instructor/header');
                 $this->load->view('instructor/current_bookings',$data);
+                $this->load->view('main/footer');
             }
             else{
                 redirect('Main/login');

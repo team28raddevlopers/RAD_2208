@@ -62,7 +62,7 @@
                     </div>
 
                     <div class="modal-footer">
-                    <a href="<?php echo site_url('Instructor/cancel_booking/'.$row['booking_id'])?>" class="btn btn-danger btn-sm">Cancel Booking</a>
+                    <a href="<?php echo site_url('Instructor/cancel_booking/'.$row['booking_id'])?>" class="btn btn-danger btn-sm">Reject Booking</a>
                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
                     </div>
 

@@ -19,7 +19,7 @@
             </table>
         </div>
         <div class="jumbotron col-sm-6">
-            <h2 class="text-center">Book</h2>
+            <!-- <h2 class="text-center">Book</h2> -->
             <form action="book" method="post">
                 <input type="hidden" id ="uid" name="uid" value="<?php echo $this->session->userdata('user_id'); ?>">
                 <div class="form-group">
@@ -41,7 +41,7 @@
                 <input type="hidden" id ="status" name="status" value="pending">
                 <br>
                 <div class="row justify-content-center">
-                    <button type="submit" class="btn btn-primary ">BOOK</button>
+                    <button type="submit" class="btn btn-dark ">BOOK</button>
                 </div>           
             </form>
         </div>

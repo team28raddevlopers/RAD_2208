@@ -66,8 +66,13 @@
 
                 $result = $this->User_model->login_user($data);
 
-                if($result === false){
-                    $this->session->set_flashdata('login_error', 'Invalid Login Credentials');
+                if($result === false || $result['register'] == 0){
+                    if($result === false){
+                        $this->session->set_flashdata('login_error', 'Invalid Login Credentials');
+                    }
+                    else{
+                        $this->session->set_flashdata('login_error', 'Your Regstration Request Is Not Accepted Yet');
+                    }
                     $this->load->view('main/header_main');
                     $this->load->view('main/login');
                     $this->load->view('main/footer');

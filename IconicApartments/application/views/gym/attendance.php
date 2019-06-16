@@ -28,7 +28,7 @@
                 </div>
                 <br>
                 <div class="row justify-content-center">
-                    <button type="submit" class="btn btn-primary ">SUBMIT</button>
+                    <button type="submit" class="btn btn-dark ">SUBMIT</button>
                 </div>
             </form>
         </div>

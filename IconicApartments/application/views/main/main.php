@@ -10,13 +10,25 @@
         </div>    
     </div>
     <div class="container">
-        <div class="row">
-        <div class="col-lg-12">
-            <h3><a href="<?php echo site_url('main/registerRecident')?>">Register as Recident</a></h3>
+        <div class="jumbotron">
+            <h2 class="text-center">Be A Part Of ICONIC Family!</h2>
+            <br>
+            <p class="lead text-center">Are you a skilled Gym Instructor, Tennis Coach or Masseur?</p>
+            <p class="text-center">Register now as an Iconic Aprtments Employee</p>
+            <hr><br>
+            <div class="row justify-content-center">
+                <h3><a class ="btn btn-dark btn-lg" href="<?php echo site_url('main/registerEmployee')?>">Register as Employee</a></h3>
+            </div>
         </div>
-        <div class="col-lg-12">
-        <h3><a href="<?php echo site_url('main/registerEmployee')?>">Register as Employee</a></h3>
-        </div>
+        <div class="jumbotron">
+            <h2 class="text-center">Register As A Resident!</h2>
+            <br>
+            <p class="lead text-center">Are you a resident at Iconic Aprtments?</p>
+            <p class="text-center">Register now as an Iconic Aprtments Resident</p>
+            <hr><br>
+            <div class="row justify-content-center">
+                <h3><a class ="btn btn-dark btn-lg" href="<?php echo site_url('main/registerRecident')?>">Register as Resident</a></h3>
+            </div>
         </div>
     </div>
    
