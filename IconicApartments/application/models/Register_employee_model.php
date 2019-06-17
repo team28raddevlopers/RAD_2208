@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 class Register_employee_model extends CI_Model{
 

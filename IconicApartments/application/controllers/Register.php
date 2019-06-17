@@ -68,7 +68,7 @@ class Register extends CI_Controller{
                         $response=$this->Register_employee_model->InsertEmployee();
                         $response2=$this->Register_employee_model->InsertEmployee2($response);
                         
-                        if($response2){
+                        if($response2 || $response){
                             $this->session->set_flashdata('msg',"Your informations are send to the Administrator..! please login after a few seconds!"); 
                             $this->load->view('main/message');
                         }else{
@@ -91,7 +91,7 @@ class Register extends CI_Controller{
         }
 
         public function AdminUnregisterUsers(){
-            
+
             $response=$this->AdminRegistrations->AdminUnregisterUser();
             if($response){
                 redirect('AdminDashboard/Registered');
