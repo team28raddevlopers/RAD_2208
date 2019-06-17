@@ -84,11 +84,14 @@ class Register extends CI_Controller{
             $response=$this->AdminRegistrations->AdminUpdateUser();
             if($response){
                 redirect('AdminDashboard/RegisterRequests');
+            }else{
+                echo "Not register";
             }
 
         }
 
         public function AdminUnregisterUsers(){
+            
             $response=$this->AdminRegistrations->AdminUnregisterUser();
             if($response){
                 redirect('AdminDashboard/Registered');
@@ -97,4 +100,5 @@ class Register extends CI_Controller{
        
 
 }
+
 

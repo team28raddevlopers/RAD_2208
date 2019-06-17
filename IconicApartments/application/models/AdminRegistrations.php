@@ -59,10 +59,18 @@ class AdminRegistrations extends CI_Model{
     public function AdminUpdateUser(){
 
         $id=$this->input->post('user_id',TRUE);
+        $remove=$this->input->post('remove',TRUE);
+        $register=$this->input->post('register',TRUE);
+        $id2=0;
+        if($remove=='remove'){
+            $id2=5;
+        }elseif($register='register'){
+            $id2=1;
+        }
 
         $data = array(
             'user_id' => $this->input->post('user_id',TRUE),
-            'register' => 1
+            'register' => $id2
          );
 
         $this->db->where('user_id', $id);
@@ -72,14 +80,21 @@ class AdminRegistrations extends CI_Model{
     public function AdminUnregisterUser(){
         $id=$this->input->post('user_id',TRUE);
 
+        $remove=$this->input->post('remove',TRUE);
+        $register=$this->input->post('register',TRUE);
+        $id2=0;
+        if($remove=='remove'){
+            $id2=5;
+        }elseif($register='unregister'){
+            $id2=0;
+        }
+
         $data = array(
             'user_id' => $this->input->post('user_id',TRUE),
-            'register' => 0
+            'register' => $id2
          );
-
         $this->db->where('user_id', $id);
         return $this->db->update('user', $data); 
-
     }
 }  
     ?>

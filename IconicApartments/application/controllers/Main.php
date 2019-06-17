@@ -4,6 +4,7 @@
             if($this->session->userdata('user_type') == 'resident'){
                 $this->load->view('main/home');
                 $this->load->view('main/footer');
+                $this->load->view('resident/residentdashboard');
             }
             elseif($this->session->userdata('user_type') == 'instructor'){
                 $this->load->view('instructor/header');

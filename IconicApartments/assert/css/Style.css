@@ -1,4 +1,4 @@
-input[type=text], input[type=password], input[type=email],input[type=date] {
+/* input[type=text], input[type=password], input[type=email],input[type=date] {
     background: none;
     border: none;
     border-bottom: 1px solid rgb(216, 214, 214);
@@ -41,7 +41,7 @@ input[type=text], input[type=password], input[type=email],input[type=date] {
     text-decoration: none;
     display: inline-block;
     font-size: 22px;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
   }
 
@@ -66,7 +66,7 @@ input[type=text], input[type=password], input[type=email],input[type=date] {
     text-decoration: none;
     display: inline-block;
     font-size: 22px;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
     border: 1px solid rgb(143, 145, 143);
   }
@@ -102,10 +102,10 @@ input[type=text], input[type=password], input[type=email],input[type=date] {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
   }
 
   tbody #tble th, td {
     border-bottom: 1px solid rgb(129, 128, 128);
-  }
+  } */
