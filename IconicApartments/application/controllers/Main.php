@@ -2,9 +2,11 @@
     class Main extends CI_Controller{
        public function index(){
             if($this->session->userdata('user_type') == 'resident'){
-                $this->load->view('main/home');
+
+                $data['username']=$this->session->userdata('username');
+                $this->load->view('resident/resident_header',$data);
+                $this->load->view('resident/resident_home');
                 $this->load->view('main/footer');
-                $this->load->view('resident/residentdashboard');
             }
             elseif($this->session->userdata('user_type') == 'instructor'){
                 $this->load->view('instructor/header');
@@ -97,5 +99,6 @@
 
             redirect('Main/index');
         }
+
     }
 ?>

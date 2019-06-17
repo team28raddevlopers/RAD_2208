@@ -39,7 +39,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-dark" href="<?php echo site_url('Main/updateDetails') ?>"><?php echo $username;?></a>
+                        <a class="nav-link btn btn-dark" href="<?php echo site_url('Profile') ?>"><?php echo $username;?></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-dark" href="<?php echo site_url('Main/logout') ?>">Logout</a>
@@ -48,5 +48,3 @@
             </div>
         </nav>
         <br><br>
-
-
