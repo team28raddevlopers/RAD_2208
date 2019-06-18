@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2019 at 09:37 PM
+-- Generation Time: Jun 18, 2019 at 03:03 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -36,13 +36,6 @@ CREATE TABLE `coach` (
   `dob` date NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `coach`
---
-
-INSERT INTO `coach` (`coach_id`, `coach_name`, `last_name`, `tele_num`, `dob`, `user_id`) VALUES
-(1, 'udula', 'ss', 455566998, '2019-06-06', 66);
 
 -- --------------------------------------------------------
 
@@ -89,15 +82,6 @@ CREATE TABLE `instructor` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `instructor`
---
-
-INSERT INTO `instructor` (`instructor_id`, `instructor_name`, `last_name`, `tele_num`, `dob`, `user_id`) VALUES
-(1, 'asdasd', 'asdasd', 778956369, '2019-06-12', 63),
-(2, 'udula', 'sensly', 778956369, '2019-06-22', 64),
-(3, 'udula', 'asdsdsaa', 455566998, '2019-06-14', 68);
-
 -- --------------------------------------------------------
 
 --
@@ -128,14 +112,6 @@ CREATE TABLE `masseur` (
   `dob` date NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `masseur`
---
-
-INSERT INTO `masseur` (`masseur_id`, `masseur_name`, `last_name`, `tele_num`, `dob`, `user_id`) VALUES
-(1, 'udula', 'sensly', 778956369, '2019-06-22', 65),
-(2, 'udula', 'ss', 455566998, '2019-06-05', 67);
 
 -- --------------------------------------------------------
 
@@ -177,19 +153,10 @@ CREATE TABLE `resident` (
   `resident_id` int(11) NOT NULL,
   `resident_name` varchar(255) NOT NULL,
   `last_name` varchar(40) NOT NULL,
-  `tele_num` int(10) NOT NULL,
+  `tele_num` varchar(10) NOT NULL,
   `appartment_no` varchar(255) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `resident`
---
-
-INSERT INTO `resident` (`resident_id`, `resident_name`, `last_name`, `tele_num`, `appartment_no`, `user_id`) VALUES
-(30, 'udula', 'sensly', 778956369, 'asd', 60),
-(31, 'udula', 'sensly', 455566998, 'Malwaththa mawatha,Kohuwala', 61),
-(32, 'udula', 'asdsdsaa', 775869123, 'Malwaththa mawatha,Kohuwala', 69);
 
 -- --------------------------------------------------------
 
@@ -239,16 +206,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `email`, `username`, `password`, `user_type`, `register`) VALUES
-(58, 'udulaindunil@gmail.com', 'udula', '202cb962ac59075b964b07152d234b70', 'admin', 0),
-(60, 'rdesilva@gamil.com', 'udulaindunil', '81dc9bdb52d04dc20036dbd8313ed055', 'resident', 1),
-(61, 'rdesilva@gamil.com', 'dsdsds', '4ab47e54c2f73ad4c0eb3974709721cd', 'resident', 1),
-(63, 'rdesilva@gamil.com', 'dsdsds', '4ab47e54c2f73ad4c0eb3974709721cd', 'instructor', 1),
-(64, 'rdesilva@gamil.com', 'jvfivqvn-ca', 'b52c96bea30646abf8170f333bbd42b9', 'instructor', 1),
-(65, 'rdesilva@gamil.com', 'jvfivqvn-cax', 'ea416ed0759d46a8de58f63a59077499', 'masseur', 1),
-(66, 'rdesilva@gamil.com', 'udulaindunilss', '2d02e669731cbade6a64b58d602cf2a4', 'coach', 1),
-(67, 'rdesilva@gamil.com', 'dtepbfba-ca', '202cb962ac59075b964b07152d234b70', 'masseur', 1),
-(68, 'rdesilva@gamil.com', 'qwer', '962012d09b8170d912f0669f6d7d9d07', 'instructor', 1),
-(69, 'rdesilva@gamil.com', 'Superuserssss', '8f60c8102d29fcd525162d02eed4566b', 'resident', 0);
+(74, 'udulaindunil@gmail.com', 'udula', '202cb962ac59075b964b07152d234b70', 'admin', 1);
 
 --
 -- Indexes for dumped tables
@@ -348,7 +306,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `coach`
 --
 ALTER TABLE `coach`
-  MODIFY `coach_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `coach_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `coach_booking`
@@ -366,7 +324,7 @@ ALTER TABLE `gym_attendance`
 -- AUTO_INCREMENT for table `instructor`
 --
 ALTER TABLE `instructor`
-  MODIFY `instructor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `instructor_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `instructor_booking`
@@ -378,7 +336,7 @@ ALTER TABLE `instructor_booking`
 -- AUTO_INCREMENT for table `masseur`
 --
 ALTER TABLE `masseur`
-  MODIFY `masseur_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `masseur_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `masseur_booking`
@@ -396,7 +354,7 @@ ALTER TABLE `pool_attendance`
 -- AUTO_INCREMENT for table `resident`
 --
 ALTER TABLE `resident`
-  MODIFY `resident_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `resident_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `spa_room_booking`
@@ -414,7 +372,7 @@ ALTER TABLE `tennis_court_booking`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- Constraints for dumped tables
