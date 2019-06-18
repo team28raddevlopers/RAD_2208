@@ -3,6 +3,19 @@
     <div class="row">
         <div class="" id="registerform">
             <h2 class="text-center">Register</h2>
+
+            <?php if($this->session->flashdata()): ?>
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <?php echo $this->session->flashdata('updatefail'); ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endif;?>
+
+
             <table class="table table-striped">
                 <?php
                 if($fetch_data->num_rows()>0){

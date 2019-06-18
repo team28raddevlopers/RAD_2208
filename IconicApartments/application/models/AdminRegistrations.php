@@ -29,6 +29,14 @@ class AdminRegistrations extends CI_Model{
     }
 
 
+
+    public function fetch_data_Register_resident_update($username){
+
+        $query = $this->db->query("SELECT resident.user_id,resident.resident_name,resident.last_name,resident.tele_num,resident.appartment_no FROM resident,user where resident.user_id=user.user_id AND user.username='$username'");
+        return $query;
+    }
+    
+
     public function fetch_data_Register_resident(){
 
         $query = $this->db->query("SELECT resident.user_id,resident.resident_name,resident.last_name,resident.tele_num,resident.appartment_no FROM resident,user where resident.user_id=user.user_id AND user.register='1'");

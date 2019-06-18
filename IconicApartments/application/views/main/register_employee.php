@@ -10,6 +10,19 @@
                 
                 <?php echo form_open('Register/RegisterEmployee')?>
 
+                    <?php
+                        if(validation_errors()==true){
+                            ?><div class="form-group" style="color: red;">
+                            <div class="alert alert-danger alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <?php echo validation_errors(); ?>    
+                            </div>
+                        </div>
+                       <?php }?>
+                    
+
+                    
+
                     <div class="form-group">
                         <label for="fname">First Name:</label>
                         <input type="text" class="form-control" id="fname" placeholder="Enter your first name" name="fname" required>
@@ -66,13 +79,9 @@
 
                     <input type="hidden" id ="register" name="register" value="0">
                     <input type="hidden" id ="uid" name="uid" value="0">
-
-                    <div class="form-group" style="color: red;">
-
-                        <?php echo validation_errors(); ?>
-                    </div>
+  
                     <div class="from-group">
-                        <button type="submit" class="formbutton">Submit</button>
+                        <button type="submit" class="formbutton">Register</button>
                         <button type="reset" class="formbutton">Reset</button>
                     </div>
                     

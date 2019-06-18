@@ -5,8 +5,9 @@ class Profile extends CI_Controller{
     public function index(){
 
         $data['username']=$this->session->userdata('username');
+        $username=$data['username'];
 
-        $userData["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_resident();
+        $userData["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_resident_update($username);
 
         $this->load->view('resident/resident_header',$data);
         $this->load->view('resident/profile',$userData);
@@ -23,17 +24,20 @@ class Profile extends CI_Controller{
 
         if ($this->form_validation->run() == FALSE)
         {
-                redirect('Profile');
+            $this->session->set_flashdata('updatefail', 'Not Updated');    
+            redirect('Profile');
+                
         }
         else
         {
             $response=$this->Profile_update->updatefname();
             
+            
             if($response){
-               redirect('Profile');
-               echo "Success";
+               redirect('main');
             }else{
-                redirect('main');
+                $this->session->set_flashdata('updatefail', 'Not Updated');
+                redirect('Profile');
             }
 
         }

@@ -10,7 +10,7 @@
         </div>    
     </div>
     <div class="container">
-        <div class="jumbotron">
+        <div class="jumbotron banner" >
             <h2 class="text-center">Be A Part Of ICONIC Family!</h2>
             <br>
             <p class="lead text-center">Are you a skilled Gym Instructor, Tennis Coach or Masseur?</p>

@@ -56,7 +56,7 @@
             $this->form_validation->set_rules('password', 'Password', 'required');
 
             if ($this->form_validation->run() == FALSE){
-                $this->load->view('main/header_main');
+                $this->load->view('main/register_header');
                 $this->load->view('main/login');
                 $this->load->view('main/footer');
             }
