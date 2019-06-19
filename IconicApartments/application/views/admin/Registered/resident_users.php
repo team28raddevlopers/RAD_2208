@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
     <div class="col-lg-12">
-        <h3>Register Users</h3>
+        <h3>Residents</h3>
 
     </div>
 
@@ -51,4 +51,6 @@
         </table>
     </div>
     </div>
+    <p id="demo">fvdfvdfv</p>
+    <button onclick="displayDate()">Date</button>
 </div>

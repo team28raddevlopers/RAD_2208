@@ -53,7 +53,7 @@ class Register extends CI_Controller{
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
             $this->form_validation->set_rules('username', 'Last Name', 'required|is_unique[user.username]');
             $this->form_validation->set_rules('password', 'Password', 'required|min_length[3]|is_unique[user.password]');
-            $this->form_validation->set_rules('password2', 'Password Confirmation', 'required|matches[password]|is_unique[user.password]');
+            $this->form_validation->set_rules('password2', 'Password Confirmation', 'required|matches[password]');
             $this->form_validation->set_rules('register', '0', 'required');
             
             

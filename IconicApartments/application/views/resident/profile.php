@@ -39,15 +39,7 @@
                                                         
                                                     </th>
                                                     
-                                                </tr>
-                                                <tr>
-                                                    <th>
-                                                        <label for="fname">Appartment number</label>
-                                                    </th>                                                    
-                                                    <th>
-                                                        <input type="text" class="form-control-plaintext" id="aptnum" name="aptnum" value="<?php echo $row->appartment_no; ?>">
-                                                    </th>
-                                                </tr>  
+                                                </tr> 
 
                                                 <tr>
                                                     <th>

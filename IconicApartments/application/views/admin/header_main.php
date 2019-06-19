@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/Style.css" >
+    <script type="text/javascript" src="<?php echo base_url()?>assets/js/print.js"></script>
     <title>User Registrations</title>
   </head>
   <body>
@@ -21,6 +22,10 @@
 
                 <li class="nav-item">
                     <a class="nav-link btn btn-dark" href="<?php echo site_url('AdminDashboard/Registered') ?>">Registered</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link btn btn-dark" href="<?php echo site_url('AdminDashboard/Reports') ?>">Reports</a>
                 </li>
                 
                 <li class="nav-item">

@@ -19,7 +19,7 @@ class Profile extends CI_Controller{
         $this->form_validation->set_rules('fname', 'First Name', 'required');
         $this->form_validation->set_rules('user_id', '45', 'required');
         $this->form_validation->set_rules('lname', '45', 'required');
-        $this->form_validation->set_rules('aptnum', '45', 'required');
+        // $this->form_validation->set_rules('aptnum', '45', 'required');
         $this->form_validation->set_rules('tpnum', '45','min_length[10]|max_length[10]');
 
         if ($this->form_validation->run() == FALSE)
@@ -30,7 +30,7 @@ class Profile extends CI_Controller{
         }
         else
         {
-            $response=$this->Profile_update->updatefname();
+            $response=$this->Profile_update->updateDetails();
             
             
             if($response){
