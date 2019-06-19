@@ -16,17 +16,19 @@
             <?php foreach($result as $row): ?>
                 <tr>
                     <td><?php echo $row['booking_id']; ?></td>
-                    <td><?php echo $row['resident_name']; ?></td>
+                    <td><?php echo $row['resident_name']." ".$row['last_name']; ?></td>
                     <td><?php echo $row['date']; ?></td>
                     <td><?php echo $row['time_from']; ?></td>
                     <td><?php echo $row['time_to']; ?></td>
-                    <td><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#confirmAccept">Accept</button></td>
-                    <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmReject">Reject</button></td>
+                    <td><a href="<?php echo site_url('Instructor/accept_booking/'.$row['booking_id'])?>" class="btn btn-success btn-sm">Accept </a></td>
+                    <td><a href="<?php echo site_url('Instructor/cancel_booking/'.$row['booking_id'])?>" class="btn btn-danger btn-sm">Reject </a></td>
+                    <!-- <td><button class="btn btn-success btn-sm" data-toggle="modal" data-target="#confirmAccept">Accept</button></td> -->
+                    <!-- <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmReject">Reject</button></td> -->
                 </tr>
             <?php endforeach; ?>
         </table>
 
-        <div class="modal" id="confirmAccept">
+        <!-- <div class="modal" id="confirmAccept">
             <div class="modal-dialog">
                 <div class="modal-content">
 
@@ -46,9 +48,9 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="modal" id="confirmReject">
+        <!-- <div class="modal" id="confirmReject">
             <div class="modal-dialog">
                 <div class="modal-content">
 
@@ -68,7 +70,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <br><br>
         <!-- <div class="row">

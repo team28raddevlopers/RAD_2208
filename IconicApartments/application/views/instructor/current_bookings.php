@@ -15,15 +15,16 @@
             <?php foreach($result as $row): ?>
                     <tr>
                         <td><?php echo $row['booking_id']; ?></td>
-                        <td><?php echo $row['resident_name']; ?></td>
+                        <td><?php echo $row['resident_name']." ".$row['last_name']; ?></td>
                         <td><?php echo $row['date']; ?></td>
                         <td><?php echo $row['time_from']; ?></td>
                         <td><?php echo $row['time_to']; ?></td>
-                        <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmCancel">Cancel</button></td>
+                        <!-- <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmCancel">Cancel</button></td> -->
+                        <td><a href="<?php echo site_url('Instructor/cancel_booking/'.$row['booking_id'])?>" class="btn btn-danger btn-sm">Cancel Booking</a></td>
                     </tr>
             <?php endforeach; ?>
         </table>
-        <div class="modal" id="confirmCancel">
+        <!-- <div class="modal" id="confirmCancel">
             <div class="modal-dialog">
                 <div class="modal-content">
 
@@ -43,7 +44,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
         <br><br>
         <!-- <h3>Cancel Bookings</h3>
         <hr>

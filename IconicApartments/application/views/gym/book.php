@@ -13,7 +13,7 @@
                 <?php foreach($result as $row): ?>
                     <tr>
                         <td><?php echo $row['instructor_id']; ?></td>
-                        <td><?php echo $row['instructor_name']; ?></td>
+                        <td><?php echo $row['instructor_name']." ".$row['last_name']; ?></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

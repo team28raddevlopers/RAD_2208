@@ -18,17 +18,18 @@
         <?php foreach($result as $row): ?>
             <tr class="<?=($row['booking_status']==='accepted')?'table-success':''?>">
                 <td><?php echo $row['booking_id']; ?></td>
-                <td><?php echo $row['instructor_name']; ?></td>
+                <td><?php echo $row['instructor_name']." ".$row['last_name']; ?></td>
                 <td><?php echo $row['date']; ?></td>
                 <td><?php echo $row['time_from']; ?></td>
                 <td><?php echo $row['time_to']; ?></td>
                 <td><?php echo $row['booking_status']; ?></td>
-                <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmCancel">Cancel</button></td>
+                <td><a href="<?php echo site_url('Gym/cancel_booking/'.$row['booking_id'])?>" class="btn btn-danger btn-sm">Cancel</a></td>
+                <!-- <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmCancel" data-id="<?php echo $row['booking_id']; ?>">Cancel</button></td> -->
             </tr>
         <?php endforeach; ?>
       </table>
     </div>
-    <div class="modal" id="confirmCancel">
+    <!-- <div class="modal" id="confirmCancel">
       <div class="modal-dialog">
         <div class="modal-content">
 
@@ -48,7 +49,7 @@
 
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- <hr>
     <br><br>
     <h3>Cancel Bookings</h3>
@@ -66,3 +67,14 @@
     <h5 class="text-center">You Currently Have No Instructor Bookings</h5>
   <?php endif; ?>
 </div>
+
+<!-- <script language="JavaScript" type="text/javascript">
+  $('#confirmCancel').on('show.bs.modal', function(e) {
+
+  //get data-id attribute of the clicked element
+  var bookId = $(e.relatedTarget).data('id');
+  console.log(bookId);
+  //populate the textbox
+  $(e.currentTarget).find('input[name="bid"]').val(bookId);
+  });
+</script> -->
