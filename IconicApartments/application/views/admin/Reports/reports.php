@@ -63,30 +63,29 @@
                 <div class="col-lg-4" style="padding-left: 10px;">
                     <h3>Removed Users</h3>
                         <div class="col-lg-12">
-                            <a class="nav-link btn-dark" href="<?php echo site_url('AdminDashboard/') ?>" >
+                            <a class="nav-link btn-dark" href="<?php echo site_url('AdminDashboard/removedResident') ?>" >
                                 Removed Residents
                             </a>        
                         </div>
 
                         <div class="col-lg-12">
-                            <a class="nav-link btn-dark" style="text:allign-center;" href="<?php echo site_url('AdminDashboard/') ?>">
+
+                            <a class="nav-link btn-dark" style="text:allign-center;" href="<?php echo site_url('AdminDashboard/removedInstructors') ?>">
                                 Removed Instructors
                             </a>        
                         </div>
 
                         <div class="col-lg-12">
-                            <a class="nav-link btn-dark" style="text:allign-center;" href="<?php echo site_url('AdminDashboard/') ?>">
+                            <a class="nav-link btn-dark" style="text:allign-center;" href="<?php echo site_url('AdminDashboard/removedCoach') ?>">
                                 Removed Coaches
                             </a>        
                         </div>
 
                         <div class="col-lg-12">
-                            <a class="nav-link btn-dark" style="text:allign-center;" href="<?php echo site_url('AdminDashboard/') ?>">
+                            <a class="nav-link btn-dark" style="text:allign-center;" href="<?php echo site_url('AdminDashboard/removedMasseur') ?>">
                                 Removed Masseurs
                             </a>        
                         </div>
-
-
                 </div>
                 </div>
                 

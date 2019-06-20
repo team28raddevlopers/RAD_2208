@@ -100,8 +100,33 @@ class AdminDashboard extends CI_Controller{
         $this->load->view('admin/Reports/Requests/instructor',$data3);
     }
 
+    public function removedInstructors(){
+        $this->load->view('admin/header_main');
+        $this->load->view('admin/fotter');
+        $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_Removed_instructor();
+        $this->load->view('admin/Reports/Removed/instructor',$data3);
+    }
+
     
+    public function removedResident(){
+        $this->load->view('admin/header_main');
+        $this->load->view('admin/fotter');
+        $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_Removed_resident();
+        $this->load->view('admin/Reports/Removed/resident',$data3);
+    }
 
+    public function removedMasseur(){
+        $this->load->view('admin/header_main');
+        $this->load->view('admin/fotter');
+        $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_Removed_masseur();
+        $this->load->view('admin/Reports/Removed/masseur',$data3);
+    }
 
+    public function removedCoach(){
+        $this->load->view('admin/header_main');
+        $this->load->view('admin/fotter');
+        $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_Removed_coach();
+        $this->load->view('admin/Reports/Removed/coach',$data3);
+    }
 
 }

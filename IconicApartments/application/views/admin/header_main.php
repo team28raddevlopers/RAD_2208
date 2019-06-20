@@ -32,7 +32,6 @@
                     <a class="nav-link btn btn-dark" href="<?php echo site_url('Logout/loggingout') ?>">Logout</a>
                 </li>
 
-
             </ul>
         </nav>
         <br><br>

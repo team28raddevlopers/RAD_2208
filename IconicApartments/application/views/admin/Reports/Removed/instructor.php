@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row" id="regInstructor">
+    <div class="row" id="remInstructors">
     <div class="col-lg-12">
         <h3>Instructor</h3>
     </div>
@@ -12,6 +12,7 @@
                 <th>Last Name</th>
                 <th>Contact number</th>
                 <th>Email</th>
+               
             </thead>
             <tbody id="table">
             <?php
@@ -31,7 +32,7 @@
                 }else{
                     ?>
                 <tr>
-                    <td colspan="3">No Instrutors to register</td>
+                    <td colspan="3">No Instrutors Removed</td>
                 </tr>
                     <?php
                 }
@@ -42,6 +43,6 @@
     </div>
     <div class="row" >
             
-            <button class="btn btn-primary" onclick="printContent('regInstructor')">Print</button>
+            <button class="btn btn-primary" onclick="printContent('remInstructors')">Print</button>
     </div>
 </div>
