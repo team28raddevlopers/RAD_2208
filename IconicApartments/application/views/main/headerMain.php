@@ -7,8 +7,6 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/Style.css" >
-
     <title>Iconic Gym</title>
   </head>
   <body>
@@ -22,7 +20,7 @@
             </button>
               
                 <!-- Navbar links -->
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <!-- <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo site_url('Gym')?>">Gym</a>
@@ -31,27 +29,21 @@
                         <a class="nav-link" href="#">Tennis Court</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url('Spa')?>">Spa Room</a>
+                        <a class="nav-link" href="#">Spa Room</a>
                     </li> 
                     <li class="nav-item">
                         <a class="nav-link" href="#">Pool</a>
                     </li> 
                 </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-dark" href="<?php echo site_url('Main/logout') ?>">Logout</a>
-                    </li>
-                </ul>
-            </div>
+            </div> -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-3 ml-3">
+                    <a class="nav-link btn btn-dark" href="<?php echo site_url('Main/register') ?>">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-dark" href="<?php echo site_url('Main/login') ?>">Login</a>
+                </li>
+            </ul>
         </nav>
         <br><br>
-    <div class="container">
-        <br><br>
-        
-        <h1 class="text-center">Welcome to Iconic Apartments</h1>
-        <br><hr><br>
-        
-    </div>
-   
-
-<!-- <?php include 'fotter.php' ?> -->
+    
