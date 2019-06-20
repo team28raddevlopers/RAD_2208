@@ -31,7 +31,7 @@
                         <a class="nav-link" href="#">Tennis Court</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Spa Room</a>
+                        <a class="nav-link" href="<?php echo site_url('Spa')?>">Spa Room</a>
                     </li> 
                     <li class="nav-item">
                         <a class="nav-link" href="#">Pool</a>

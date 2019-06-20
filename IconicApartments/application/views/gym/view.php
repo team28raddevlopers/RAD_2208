@@ -23,13 +23,12 @@
                 <td><?php echo $row['time_from']; ?></td>
                 <td><?php echo $row['time_to']; ?></td>
                 <td><?php echo $row['booking_status']; ?></td>
-                <td><a href="<?php echo site_url('Gym/cancel_booking/'.$row['booking_id'])?>" class="btn btn-danger btn-sm">Cancel</a></td>
-                <!-- <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmCancel" data-id="<?php echo $row['booking_id']; ?>">Cancel</button></td> -->
+                <td><button type="button" class="btn btn-danger btn-sm" id="cancel" data-toggle="modal" data-target="#confirmCancel" data-id="<?php echo $row['booking_id'];?>">Cancel</button></td>
             </tr>
         <?php endforeach; ?>
       </table>
     </div>
-    <!-- <div class="modal" id="confirmCancel">
+    <div class="modal" id="confirmCancel">
       <div class="modal-dialog">
         <div class="modal-content">
 
@@ -39,17 +38,21 @@
           </div>
 
           <div class="modal-body">
-            Are you sure you want to cancel booking <?php echo $row['booking_id']?> ?
-          </div>
-
-          <div class="modal-footer">
-            <a href="<?php echo site_url('Gym/cancel_booking/'.$row['booking_id'])?>" class="btn btn-danger btn-sm">Cancel Booking</a>
-            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+            Are you sure you want to cancel booking <p style="display:inline" id="bid"></p> ?
+            <form action="<?php echo site_url('Gym/cancel_booking/')?>" id="cancel-form" method="post" accept-charset="utf-8">
+              <input type="hidden" id="form-action" value="<?php echo site_url('Gym/cancel_booking/')?>">
+              <input type="hidden" name="id" value="<?php echo $row['booking_id']; ?>">
+              <br>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-danger btn-sm">Cancel Booking</button>
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+              </div>
+            </form>
           </div>
 
         </div>
       </div>
-    </div> -->
+    </div>
     <!-- <hr>
     <br><br>
     <h3>Cancel Bookings</h3>
@@ -68,13 +71,16 @@
   <?php endif; ?>
 </div>
 
-<!-- <script language="JavaScript" type="text/javascript">
-  $('#confirmCancel').on('show.bs.modal', function(e) {
+<script language="JavaScript" type="text/javascript">
+    var cancel = document.querySelectorAll('#cancel')
 
-  //get data-id attribute of the clicked element
-  var bookId = $(e.relatedTarget).data('id');
-  console.log(bookId);
-  //populate the textbox
-  $(e.currentTarget).find('input[name="bid"]').val(bookId);
-  });
-</script> -->
+    cancel.forEach(element => {
+      element.addEventListener('click', function(event) {
+        // document.querySelector('.modal-body #name').value = event.target.attributes['data-name'].value;
+        document.querySelector('#cancel-form').action = (document.querySelector('.modal-body #form-action').value + event.target.attributes['data-id'].value);
+        document.querySelector('#bid').innerHTML =  event.target.attributes['data-id'].value;     
+        console.log(document.querySelector('#cancel-form').action);
+          
+      })
+    })
+</script>
