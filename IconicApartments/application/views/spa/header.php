@@ -22,8 +22,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item <?=($this->uri->segment(2)==='attendance')?'active':''?>">
-                        <a class="nav-link" href="<?php echo site_url('Spa/attendance')?>">Mark Attendance</a>
-                    </li>
+                        <a class="nav-link" href="<?php echo site_url('Spa/spaRoom')?>">Book SpaRoom</a>
                     </li>
                     <li class="nav-item <?=($this->uri->segment(2)==='book')?'active':''?>">
                         <a class="nav-link" href="<?php echo site_url('Spa/book')?>">Book Masseur</a>                    
@@ -31,6 +30,8 @@
                     <li class="nav-item <?=($this->uri->segment(2)==='view')?'active':''?>">
                         <a class="nav-link" href="<?php echo site_url('Spa/view')?>">View Bookings</a>                   
                     </li>
+                    <li class="nav-item <?=($this->uri->segment(2)==='viewRoom')?'active':''?>">
+                        <a class="nav-link" href="<?php echo site_url('Spa/viewRoom')?>">View SpaRoom Bookings</a>                   
                     </li> 
                 </ul>
                 <ul class="navbar-nav ml-auto">

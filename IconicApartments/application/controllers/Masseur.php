@@ -14,6 +14,7 @@
             if($this->session->userdata('user_type') == 'masseur'){
 
                 $uid = $this->session->userdata('user_id');
+                $this->load->model('Spa_model');
                 $masseur = $this->Spa_model->get_masseurid($uid); //find id of masseur from user id . better way??? 
                 $mid = $masseur['masseur_id'];
 
@@ -36,6 +37,7 @@
             if($this->session->userdata('user_type') == 'masseur'){
 
                 $uid = $this->session->userdata('user_id');
+                $this->load->model('Spa_model');
                 $masseur = $this->Spa_model->get_masseurid($uid); //find id of masseur from user id
                 $mid = $masseur['masseur_id'];
 
@@ -56,6 +58,7 @@
         public function accept_booking($bid){
             
             // $bid = $this->input->post('bidaccept');
+            $this->load->model('Spa_model');
             $this->Spa_model->accept_booking($bid);
             // echo 'hello';
             redirect('Masseur/current_bookings');
@@ -63,6 +66,7 @@
 
         public function cancel_booking($bid){
             // $bid = $this->input->post('bid');
+            $this->load->model('Spa_model');
             $this->Spa_model->delete_booking($bid);
             redirect('Masseur/current_bookings'); //find way to load same page
         }

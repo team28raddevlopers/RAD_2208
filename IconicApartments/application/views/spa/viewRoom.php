@@ -1,6 +1,6 @@
 <div class="container">
       <br><br>
-      <h1 class="text-center">Your Current Masseur Bookings</h1>
+      <h1 class="text-center">Your Current Spa Room Bookings</h1>
       <!-- <p>view Bookings table</p> -->
       <br><br>
       <?php if($result): ?>
@@ -8,7 +8,7 @@
         <table class="table table-hover text-center">
           <tr>
               <th>ID</th>
-              <th>MASSEUR</th>
+              <!-- <th>MASSEUR</th> -->
               <th>DATE</th>
               <th>TIME FROM</th>
               <th>TIME TO</th>
@@ -18,7 +18,7 @@
           <?php foreach($result as $row): ?>
               <tr class="<?=($row['booking_status']==='accepted')?'table-success':''?>">
                   <td><?php echo $row['booking_id']; ?></td>
-                  <td><?php echo $row['masseur_name']." ".$row['last_name']; ?></td>
+                  <!-- <td><?php echo $row['masseur_name']." ".$row['last_name']; ?></td> -->
                   <td><?php echo $row['date']; ?></td>
                   <td><?php echo $row['time_from']; ?></td>
                   <td><?php echo $row['time_to']; ?></td>
@@ -28,6 +28,15 @@
           <?php endforeach; ?>
         </table>
         </div>
+        <div>
+          <form method="" action="<?php echo site_url('spa/SpaRoom') ?>">
+              <button id="buttons" type="submit" class="nav-link btn btn-dark">Back</button>
+          </form>
+        </div>
+          <!-- <li class="nav-item mr-3 ml-3">
+                        <a class="nav-link btn btn-dark" href="<?php echo site_url('spa/SpaRoom') ?>">Back</a>
+                    </li>
+         -->
             <!-- <div class="modal" id="confirmCancel">
       <div class="modal-dialog">
         <div class="modal-content">

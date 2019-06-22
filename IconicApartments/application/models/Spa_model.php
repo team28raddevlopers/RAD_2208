@@ -20,6 +20,13 @@
             return $query->row_array();
         }
 
+
+        public function get_residents(){
+            $query = $this->db->get('resident');
+            //print_r($query->result_array());
+            return $query->result_array();
+        }
+
         public function get_resident($uid){
             $this->db->where('resident.user_id', $uid);
             $this->db->select('resident_name');
@@ -32,9 +39,14 @@
             $this->db->insert('masseur_booking',$data);
         }
 
-        public function mark_attendance($data){
-            $this->db->insert('spa_attendance',$data);
+        // public function mark_attendance($data){
+        //     $this->db->insert('spa_attendance',$data);
+        // }
+
+        public function book_spaRoom($data){
+            $this->db->insert('spa_room_booking',$data);
         }
+
 
         public function get_bookings($uid){
             $this->db->select('*');
@@ -45,6 +57,17 @@
 
             return $query->result_array();
         }
+
+        public function get_roombookings($uid){
+            $this->db->select('*');
+            $this->db->from('spa_room_booking');
+            $this->db->join('user','spa_room_booking.user_id=user.user_id');
+            $this->db->where('spa_room_booking.user_id',$uid);
+            $query = $this->db->get();
+
+            return $query->result_array();
+        }
+
 
         public function get_masseurid($uid){ //spa model or user model ??? is there a better way???
             $this->db->where('masseur.user_id', $uid);

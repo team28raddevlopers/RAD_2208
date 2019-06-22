@@ -14,6 +14,12 @@
                 $this->load->view('main/footer');
 
             }
+            elseif($this->session->userdata('user_type') == 'masseur'){
+                $this->load->view('masseur/header');
+                $this->load->view('masseur/home');
+                $this->load->view('main/footer');
+
+            }
             else if($this->session->userdata('user_type') == 'admin'){
                
                 $this->load->view('admin/dashboard');
