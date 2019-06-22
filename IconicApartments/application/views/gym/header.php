@@ -25,8 +25,8 @@
                         <a class="nav-link" href="<?php echo site_url('Gym/attendance')?>">Mark Attendance</a>
                     </li>
                     </li>
-                    <li class="nav-item <?=($this->uri->segment(2)==='book')?'active':''?>">
-                        <a class="nav-link" href="<?php echo site_url('Gym/book')?>">Book Instructor</a>                    
+                    <li class="nav-item <?=($this->uri->segment(2)==='booking')?'active':''?>">
+                        <a class="nav-link" href="<?php echo site_url('Gym/booking')?>">Book Instructor</a>                    
                     </li>
                     <li class="nav-item <?=($this->uri->segment(2)==='view')?'active':''?>">
                         <a class="nav-link" href="<?php echo site_url('Gym/view')?>">View Bookings</a>                   
