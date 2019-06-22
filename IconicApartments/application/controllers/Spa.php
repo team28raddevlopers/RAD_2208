@@ -7,7 +7,7 @@ class Spa extends CI_Controller {
 		//echo "Hello from index";
 		if($this->session->userdata('user_type') == 'resident'){
 			$this->load->view('spa/header');
-			$this->load->view('spa/spaHome');
+			$this->load->view('spa/spa_home');
 			$this->load->view('main/footer');
 		}
 		else{
