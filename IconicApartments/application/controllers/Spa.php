@@ -34,7 +34,7 @@ class Spa extends CI_Controller {
 				//store data from form fields in associative array
 				$data = array(
 					'user_id' => $this->input->post('uid'),
-					'instructor_id' => $this->input->post('mid'),
+					'masseur_id' => $this->input->post('mid'),
 					'date' => $this->input->post('date'),
 					'time_from' => $this->input->post('timefrom'),
 					'time_to' => $this->input->post('timeto'),
