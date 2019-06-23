@@ -1,13 +1,13 @@
 
   body{
     background-image: url("../img/background1.jpg");
-    background-repeat: repeat;   
+    background-repeat: repeat;  
   }
 
-  .my_button{
+  /* .my_button{
 
-    my_button
-  }
+    my_button;
+  } */
 
   .my_button {
     -webkit-transition-duration: 0.4s; 
@@ -18,3 +18,13 @@
     background-color: #4CAF50; 
     color: white;
   }
+
+.list-group-item{
+  background: none;
+}
+  /* .dropdown-menu {
+    min-width: 200px !important;
+    right:0;
+    width: 100px;
+} */
+

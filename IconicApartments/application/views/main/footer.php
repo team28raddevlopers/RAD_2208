@@ -1,7 +1,7 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <div class="fixed-bottom">
-            <footer class="bg-dark text-white mt-auto">
+        <div class="fixed-bottom" id="footer">
+            <footer  class="bg-dark text-white mt-auto">
                 <div class="container-fluid py-3">
                     <div class="text-center small">©2019 IconicApartments</div>
                 </div>

@@ -75,6 +75,17 @@ class Gym extends CI_Controller {
 				'booking_status' => $this->input->post('status')
 			);
 
+			$notification = array(
+                'title' => $this->input->post('title'),
+                'from_id' => $this->session->userdata('user_id'),
+                'to_id' => $this->input->post('iuid'),
+                'message' => $this->input->post('accept-message'),
+                'type' => $this->input->post('type'),
+				// 'booking_id' => $this->input->post('id')
+				'visibility' => 1
+			);
+			
+            $this->User_model->add_notification($notification);
 			$this->Gym_model->book_instructor($data); //send data to Gym_model
 			
 
@@ -140,6 +151,16 @@ class Gym extends CI_Controller {
 	public function cancel_booking($bid){
 		//$bid = $this->input->post('bid');
 		$this->Gym_model->delete_booking($bid);
+		$notification = array(
+			'title' => $this->input->post('title'),
+			'from_id' => $this->session->userdata('user_id'),
+			'to_id' => $this->input->post('uid'),
+			'message' => $this->input->post('accept-message'),
+			'type' => $this->input->post('type'),
+			'booking_id' => $this->input->post('id'),
+			'visibility' => 1
+		);
+		$this->User_model->add_notification($notification);
 		redirect('Gym/view');
 	}
 }

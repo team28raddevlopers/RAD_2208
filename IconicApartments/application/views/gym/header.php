@@ -38,6 +38,9 @@
                         <a class="nav-link btn btn-dark" href="<?php echo site_url('Main/index') ?>">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link btn btn-dark <?=($this->uri->segment(2)==='notifications')?'active':''?>" href="<?php echo site_url('Main/notifications') ?>">Notifications</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link btn btn-dark" href="<?php echo site_url('Main/logout') ?>">Logout</a>
                     </li>
                 </ul>

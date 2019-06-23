@@ -35,8 +35,14 @@
                     <div class="modal-body">
                         Are you sure you want to cancel booking <p style="display:inline" id="bid"></p> ?
                         <form action="<?php echo site_url('Instructor/cancel_booking/')?>" id="cancel-form" method="post" accept-charset="utf-8">
+                        <input type="text" class="form-control" id="accept-message" name="accept-message" placeholder="Enter a short message for the resident(optional)">
                         <input type="hidden" id="form-action" value="<?php echo site_url('Instructor/cancel_booking/')?>">
                         <input type="hidden" name="id" value="<?php echo $row['booking_id']; ?>">
+
+                        <!-- resident user_id -->
+                        <input type="hidden" id="uid" name="uid" value="<?php echo $row['user_id']; ?>">
+                        <input type="hidden" id="title" name="title" value="Instructor Booking Cancelled:">
+                        <input type="hidden" id="type" name="type" value="gym_booking">
                         <br>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-danger btn-sm">Cancel Booking</button>
@@ -70,6 +76,8 @@
       element.addEventListener('click', function(event) {
         // document.querySelector('.modal-body #name').value = event.target.attributes['data-name'].value;
         document.querySelector('#cancel-form').action = (document.querySelector('.modal-body #form-action').value + event.target.attributes['data-id'].value);
+        document.querySelector('.modal-body #id').value = event.target.attributes['data-id'].value;
+        document.querySelector('.modal-body #uid').value = event.target.attributes['data-user'].value;
         document.querySelector('#bid').innerHTML =  event.target.attributes['data-id'].value;     
         console.log(document.querySelector('#cancel-form').action);
           

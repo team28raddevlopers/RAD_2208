@@ -92,7 +92,7 @@
                                 <button type="submit" class="btn btn-primary btn-sm">Book</button>
                             </form>
                         </td> -->
-                        <td><button type="button" class="btn btn-dark btn-sm" id="bookbtn" data-toggle="modal" data-target="#confirmBooking" data-id="<?php echo $row['instructor_id'];?>">Book</button></td>
+                        <td><button type="button" class="btn btn-dark btn-sm" id="bookbtn" data-toggle="modal" data-target="#confirmBooking" data-id="<?php echo $row['instructor_id'];?>" data-uid="<?php echo $row['user_id'];?>">Book</button></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
@@ -120,6 +120,11 @@
                     <input type="hidden" id ="timefrom" name="timefrom" value="<?php echo $info['time_from'] ?>">
                     <input type="hidden" id ="timeto" name="timeto" value="<?php echo $info['time_to'] ?>">
                     <input type="hidden" id ="status" name="status" value="pending">
+
+                    <input type="hidden" id ="iuid" name="iuid" value="<?php echo $row['user_id']; ?>">
+                    <input type="text" class="form-control" id="accept-message" name="accept-message" placeholder="Enter a short message for the resident(optional)">
+                    <input type="hidden" id="title" name="title" value="New Booking">
+                    <input type="hidden" id="type" name="type" value="new_booking">
               <br>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-success btn-sm">Book</button>
@@ -141,6 +146,8 @@
         element.addEventListener('click', function(event) {
 
         document.querySelector('.modal-body #iid').value = event.target.attributes['data-id'].value;
+        document.querySelector('.modal-body #iuid').value = event.target.attributes['data-uid'].value;
+
 
         document.querySelector('.modal-body #id').innerHTML =  event.target.attributes['data-id'].value;     
         console.log(document.querySelector('#booking-form').action);

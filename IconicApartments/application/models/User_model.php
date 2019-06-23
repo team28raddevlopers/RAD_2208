@@ -23,5 +23,23 @@
                 return $query->row_array();
             }
         }
+
+        public function get_notifications($uid){
+            $this->db->where('notification.to_id', $uid);
+            $this->db->where('visibility', 1);
+            $query = $this->db->get('notification');
+
+            return $query->result_array();
+        }
+
+        public function delete_notification($id){
+            $update = array('visibility'=> '0');
+            $this->db->where('notification.notification_id', $id);
+            $this->db->update('notification', $update);
+        }
+
+        public function add_notification($data){
+            $this->db->insert('notification', $data);
+        }
     }
 ?>
