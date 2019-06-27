@@ -21,12 +21,12 @@
                         <?php echo form_open('FirstLogin/First_login')?>
                                 
                                     
-                                    <td><input style="border:none;"  class="form-control" type="hidden" id="user_id" name="user_id" value="<?php echo $row->user_id; ?>"
-                                    required></td>
+                                    <input style="border:none;"  class="form-control" type="hidden" id="user_id" name="user_id" value="<?php echo $row->user_id; ?>"
+                                    required>
                                 
                                 <td><?php echo $row->resident_name; ?></td>
                                 <td><?php echo $row->last_name; ?></td>
-                                <td><input  class="form-control btn-success" type='submit' value='Login'></td>
+                                <td><input class="form-control btn-success" type='submit' value='Login'></td>
                                 
                         <?php echo form_close();?>
                         </tr>

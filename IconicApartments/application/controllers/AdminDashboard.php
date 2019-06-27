@@ -10,6 +10,8 @@ class AdminDashboard extends CI_Controller{
     public function RegisterRequests(){
                 $this->load->view('admin/header_main');
                 $this->load->view('admin/fotter');
+                $this->load->view('admin/Buttons');
+
                 $data["fetch_data"]= $this->AdminRegistrations->fetch_data_resident();
                 $data2["fetch_data"]= $this->AdminRegistrations->fetch_data_masseur();
                 $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_instructor();
@@ -21,8 +23,9 @@ class AdminDashboard extends CI_Controller{
     }
 
     public function Registered(){
-        $this->load->view('admin/header_main');
-        $this->load->view('admin/fotter');
+                $this->load->view('admin/header_main');
+                $this->load->view('admin/fotter');
+                $this->load->view('admin/Buttons');
                 $data["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_resident();
                 $data2["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_masseur();
                 $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_instructor();

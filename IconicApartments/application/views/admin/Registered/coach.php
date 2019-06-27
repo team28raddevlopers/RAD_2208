@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container collapse" id="coachTable">
     <div class="row" id="coach">
     <div class="col-lg-12">
         <h3>Coach</h3>

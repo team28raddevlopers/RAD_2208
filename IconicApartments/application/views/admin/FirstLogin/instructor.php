@@ -22,8 +22,8 @@
                         <?php echo form_open('FirstLogin/First_login')?>
                                 
                                     
-                                    <td><input style="border:none;" class="form-control" type="hidden" id="user_id" name="user_id" value="<?php echo $row->user_id; ?>"
-                                    required></td>
+                                    <input style="border:none;" class="form-control" type="hidden" id="user_id" name="user_id" value="<?php echo $row->user_id; ?>"
+                                    required>
                                 
                           
                                 <td><?php echo $row->instructor_name; ?></td>
