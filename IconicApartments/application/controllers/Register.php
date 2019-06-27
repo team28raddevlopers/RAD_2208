@@ -30,6 +30,15 @@ class Register extends CI_Controller{
                         $this->load->model('Register_recident_model');
                         $response=$this->Register_recident_model->insertRecident();
                         $response2=$this->Register_recident_model->insertRecident2($response);
+
+                        $notification = array(
+                            'title' => $this->input->post('ntitle'),
+                            'from_id' => $response,
+                            'to_id' => $this->input->post('toid'),
+                            'type' => $this->input->post('ntype'),
+                            'visibility' => 1
+                        );
+                        $this->User_model->add_notification($notification);
                        
                        
                         if($response){

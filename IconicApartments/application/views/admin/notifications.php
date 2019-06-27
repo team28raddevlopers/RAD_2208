@@ -9,9 +9,9 @@
                         <p class="text-center"><?php echo $notification['message']; ?></p>
                         <p class="small text-right"><?php echo $notification['time']; ?></p>
                         <div class="row justify-content-center">
-                             <?php if($notification['type'] === 'gym_booking'): ?>
-                                <a href="<?php echo site_url('Gym/view')?>" class="btn btn-light btn-sm text-center">View</a>
-                            <?php elseif($notification['type'] === 'masseur_booking'): ?>
+                             <?php if($notification['type'] === 'resident_request' || $notification['type'] === 'employee_request'): ?>
+                                <a href="<?php echo site_url('AdminDashboard/RegisterRequests')?>" class="btn btn-light btn-sm text-center">View</a>
+                            <?php elseif($notification['type'] === 'employee_request'): ?>
                                 <a href="<?php echo site_url('Spa/view')?>" class="btn btn-light btn-sm text-center">View</a>
                             <?php endif;?>
                         </div>
@@ -21,4 +21,4 @@
         </ul>
     </div>
 </div>
-</div>
+</div> 

@@ -22,17 +22,17 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item <?=($this->uri->segment(2)==='attendance')?'active':''?>">
-                        <a class="nav-link" href="<?php echo site_url('Spa/spaRoom')?>">Book SpaRoom</a>
+                        <a class="nav-link" href="<?php echo site_url('Spa/spaRoom')?>">Book Spa Room</a>
                     </li>
-                    <li class="nav-item <?=($this->uri->segment(2)==='book')?'active':''?>">
-                        <a class="nav-link" href="<?php echo site_url('Spa/book')?>">Book Masseur</a>                    
-                    </li>
-                    <li class="nav-item <?=($this->uri->segment(2)==='view')?'active':''?>">
-                        <a class="nav-link" href="<?php echo site_url('Spa/view')?>">View Bookings</a>                   
+                    <li class="nav-item <?=($this->uri->segment(2)==='booking')?'active':''?>">
+                        <a class="nav-link" href="<?php echo site_url('Spa/booking')?>">Book Masseur</a>                    
                     </li>
                     <li class="nav-item <?=($this->uri->segment(2)==='viewRoom')?'active':''?>">
-                        <a class="nav-link" href="<?php echo site_url('Spa/viewRoom')?>">View SpaRoom Bookings</a>                   
+                        <a class="nav-link" href="<?php echo site_url('Spa/viewRoom')?>">View Spa Room Bookings</a>                   
                     </li> 
+                    <li class="nav-item <?=($this->uri->segment(2)==='view')?'active':''?>">
+                        <a class="nav-link" href="<?php echo site_url('Spa/view')?>">View Masseur Bookings</a>                   
+                    </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mr-3 ml-3">

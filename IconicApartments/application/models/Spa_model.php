@@ -20,6 +20,19 @@
             return $query->row_array();
         }
 
+        public function available_masseurs($data){
+            $date = $data['date'];
+            $timefrom = $data['time_from'];
+            $timeto = $data['time_to'];
+
+            $where =  "masseur_id NOT IN (SELECT masseur_booking.masseur_id FROM masseur_booking WHERE masseur_booking.booking_status <> 'rejected' AND masseur_booking.date = '$date' AND (masseur_booking.time_from >= '$timefrom' AND masseur_booking.time_to <= '$timeto'));";
+            $this->db->select('masseur.masseur_id, masseur.masseur_name, masseur.last_name, masseur.user_id');
+            $this->db->from('masseur');
+            $this->db->where($where);
+            $query = $this->db->get();
+
+            return $query->result_array();
+        }
 
         public function get_residents(){
             $query = $this->db->get('resident');
@@ -88,8 +101,14 @@
             return $query->result_array();
         }
 
-        public function accept_booking($bid){
+        public function update_accept($bid){
             $update = array('booking_status'=> 'accepted');
+            $this->db->where('masseur_booking.booking_id', $bid);
+            $this->db->update('masseur_booking', $update);
+        }
+
+        public function update_reject($bid){
+            $update = array('booking_status'=> 'rejected');
             $this->db->where('masseur_booking.booking_id', $bid);
             $this->db->update('masseur_booking', $update);
         }

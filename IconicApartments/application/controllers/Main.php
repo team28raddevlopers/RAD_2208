@@ -27,7 +27,7 @@
             }
             else if($this->session->userdata('user_type') == 'admin'){
                
-                $this->load->view('admin/dashboard');
+                $this->load->view('admin/dashboard',$data);
                 // $data["fetch_data"]= $this->AdminRegistrations->fetch_data_resident();
                 // $data2["fetch_data"]= $this->AdminRegistrations->fetch_data_masseur();
                 // $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_instructor();
@@ -128,6 +128,12 @@
             if($this->session->userdata('user_type') == 'instructor'){
                 $this->load->view('instructor/header', $data);
                 $this->load->view('instructor/notifications', $data);
+                $this->load->view('main/footer');
+            }
+
+            if($this->session->userdata('user_type') == 'admin'){
+                $this->load->view('admin/header_main', $data);
+                $this->load->view('admin/notifications', $data);
                 $this->load->view('main/footer');
             }
 

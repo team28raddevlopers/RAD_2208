@@ -57,18 +57,51 @@
 
         public function accept_booking($bid){
             
-            // $bid = $this->input->post('bidaccept');
-            $this->load->model('Spa_model');
-            $this->Spa_model->accept_booking($bid);
-            // echo 'hello';
+            $this->Spa_model->update_accept($bid);
+            $notification = array(
+                'title' => $this->input->post('title'),
+                'from_id' => $this->session->userdata('user_id'),
+                'to_id' => $this->input->post('uid'),
+                'message' => $this->input->post('accept-message'),
+                'type' => $this->input->post('type'),
+                'booking_id' => $this->input->post('id'),
+                'visibility' => 1
+            );
+            $this->User_model->add_notification($notification);
+
             redirect('Masseur/current_bookings');
         }
 
+        public function reject_booking($bid){
+            $this->Spa_model->update_reject($bid);
+            $notification = array(
+                'title' => $this->input->post('title'),
+                'from_id' => $this->session->userdata('user_id'),
+                'to_id' => $this->input->post('ruid'),
+                'message' => $this->input->post('accept-message'),
+                'type' => $this->input->post('type'),
+                'booking_id' => $this->input->post('rid'),
+                'visibility' => 1
+            );
+            $this->User_model->add_notification($notification);
+            
+            redirect('Masseur/pending_bookings');
+        }
+
         public function cancel_booking($bid){
-            // $bid = $this->input->post('bid');
-            $this->load->model('Spa_model');
+            $notification = array(
+                'title' => $this->input->post('title'),
+                'from_id' => $this->session->userdata('user_id'),
+                'to_id' => $this->input->post('uid'),
+                'message' => $this->input->post('accept-message'),
+                'type' => $this->input->post('type'),
+                'booking_id' => $this->input->post('id'),
+                'visibility' => 1
+            );
+
+            $this->User_model->add_notification($notification);
             $this->Spa_model->delete_booking($bid);
-            redirect('Masseur/current_bookings'); //find way to load same page
+            redirect('Masseur/current_bookings'); 
         }
     }
 ?>

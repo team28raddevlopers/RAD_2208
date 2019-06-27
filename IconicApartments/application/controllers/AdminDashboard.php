@@ -3,12 +3,22 @@
 class AdminDashboard extends CI_Controller{
 
     public function index(){
- 
-                $this->load->view('admin/dashboard');
+                $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
+                $data['username']=$this->session->userdata('username');
+                // $data['notifications']=$notifications;
+                $data['num'] = count($notifications);
+                
+                $this->load->view('admin/dashboard', $data);
     }
 
     public function RegisterRequests(){
-                $this->load->view('admin/header_main');
+
+                $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
+                $data['username']=$this->session->userdata('username');
+                // $data['notifications']=$notifications;
+                $data['num'] = count($notifications);
+
+                $this->load->view('admin/header_main',$data);
                 $this->load->view('admin/fotter');
                 $this->load->view('admin/Buttons');
 
