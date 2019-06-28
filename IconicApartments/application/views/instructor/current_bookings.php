@@ -37,7 +37,7 @@
                         <form action="<?php echo site_url('Instructor/cancel_booking/')?>" id="cancel-form" method="post" accept-charset="utf-8">
                         <input type="text" class="form-control" id="accept-message" name="accept-message" placeholder="Enter a short message for the resident(optional)">
                         <input type="hidden" id="form-action" value="<?php echo site_url('Instructor/cancel_booking/')?>">
-                        <input type="hidden" name="id" value="<?php echo $row['booking_id']; ?>">
+                        <input type="hidden" id="id" name="id" value="<?php echo $row['booking_id']; ?>">
 
                         <!-- resident user_id -->
                         <input type="hidden" id="uid" name="uid" value="<?php echo $row['user_id']; ?>">

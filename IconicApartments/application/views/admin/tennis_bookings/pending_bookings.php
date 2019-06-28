@@ -1,6 +1,6 @@
 <div class="container">
     <br><br>
-    <h1 class="text-center">Your Pending Bookings</h1>
+    <h1 class="text-center">Tennis Court Pending Bookings</h1>
     <br><br>
     <?php if($result): ?>
         <table class="table table-hover text-center">
@@ -36,16 +36,16 @@
                     </div>
                     <div class="modal-body">
                         Accepting booking <p style="display:inline" id="bid"></p>
-                        <form action="<?php echo site_url('Instructor/accept_booking/')?>" id="accept-form" method="post" accept-charset="utf-8">
+                        <form action="<?php echo site_url('AdminDashboard/accept_booking/')?>" id="accept-form" method="post" accept-charset="utf-8">
 
                             <input type="text" class="form-control" id="accept-message" name="accept-message" placeholder="Enter a short message for the resident(optional)">
-                            <input type="hidden" id="form-action"  name="form-action" value="<?php echo site_url('Instructor/accept_booking/')?>">
+                            <input type="hidden" id="form-action"  name="form-action" value="<?php echo site_url('AdminDashboard/accept_booking/')?>">
                             <input type="hidden" id="id" name="id" value="<?php echo $row['booking_id']; ?>">
 
                             <!-- resident user_id -->
                             <input type="hidden" id="uid" name="uid" value="<?php echo $row['user_id']; ?>"> 
-                            <input type="hidden" id="title" name="title" value="Instructor Booking Accepted:">
-                            <input type="hidden" id="type" name="type" value="gym_booking">
+                            <input type="hidden" id="title" name="title" value="Tennis Court Booking Accepted:">
+                            <input type="hidden" id="type" name="type" value="tennis_booking">
 
                             <br>
                             <div class="modal-footer">
@@ -70,13 +70,13 @@
 
                     <div class="modal-body">
                         Are you sure you want to cancel booking <p style="display:inline" id="rbid"></p> ?
-                        <form action="<?php echo site_url('Instructor/reject_booking/')?>" id="reject-form" method="post" accept-charset="utf-8">
+                        <form action="<?php echo site_url('AdminDashboard/reject_booking/')?>" id="reject-form" method="post" accept-charset="utf-8">
                             <input type="text" class="form-control" id="accept-message" name="accept-message" placeholder="Enter a short message for the resident(optional)">
-                            <input type="hidden" id="reject-form-action" value="<?php echo site_url('Instructor/reject_booking/')?>">
-                            <input type="hidden" id="rid"name="rid" value="<?php echo $row['booking_id']; ?>">
+                            <input type="hidden" id="reject-form-action" value="<?php echo site_url('AdminDashboard/reject_booking/')?>">
+                            <input type="hidden" id="rid" name="rid" value="<?php echo $row['booking_id']; ?>">
                             <input type="hidden" id="ruid" name="ruid" value="<?php echo $row['user_id']; ?>">
-                            <input type="hidden" id="title" name="title" value="Instructor Booking Rejected:">
-                            <input type="hidden" id="type" name="type" value="gym_booking">
+                            <input type="hidden" id="title" name="title" value="Tennis Court Booking Rejected:">
+                            <input type="hidden" id="type" name="type" value="tennis_booking">
 
                             <br>
                             <div class="modal-footer">
@@ -91,32 +91,9 @@
         </div>
 
         <br><br>
-        <!-- <div class="row">
-            <div class="col-sm-6">
-                <h3>Accept Bookings</h3>
-                <hr>
-                <form action="accept_booking" method="post">
-                    <div class="form-group">
-                        <label for="bid">Booking ID:</label>
-                        <input type="text" class="form-control ml-sm-2" id="bidaccept" placeholder="Enter booking ID" name="bidaccept" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-            <div class="col-sm-6">
-                <h3>Reject Bookings</h3>
-                <hr>
-                <form action="cancel_booking" method="post">
-                    <div class="form-group">
-                        <label for="bid">Booking ID:</label>
-                        <input type="text" class="form-control ml-sm-2" id="bid" placeholder="Enter booking ID" name="bid" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-        </div> -->
+  
     <?php else :?>
-        <h5 class="text-center">You Currently Have No Pending Bookings</h5>
+        <h5 class="text-center">There Are No Pending Bookings For The Tennis Court</h5>
     <?php endif; ?>
 
     <br><br><br>
@@ -129,7 +106,7 @@
     accept.forEach(element => {
       element.addEventListener('click', function(event) {
         // document.querySelector('.modal-body #name').value = event.target.attributes['data-name'].value;
-        document.querySelector('#accept-form').action = (document.querySelector('.modal-body #form-action').value + event.target.attributes['data-id'].value);
+        document.querySelector('#accept-form').action = (document.querySelector('.modal-body #form-action').value + event.target.attributes['data-id'].value + '/tennis');
         document.querySelector('.modal-body #id').value = event.target.attributes['data-id'].value;
         document.querySelector('.modal-body #uid').value = event.target.attributes['data-user'].value;
         document.querySelector('#bid').innerHTML =  event.target.attributes['data-id'].value;     
@@ -143,7 +120,7 @@
     reject.forEach(element => {
       element.addEventListener('click', function(event) {
         // document.querySelector('.modal-body #name').value = event.target.attributes['data-name'].value;
-        document.querySelector('#reject-form').action = (document.querySelector('.modal-body #reject-form-action').value + event.target.attributes['data-id'].value);
+        document.querySelector('#reject-form').action = (document.querySelector('.modal-body #reject-form-action').value + event.target.attributes['data-id'].value + '/tennis');
         document.querySelector('.modal-body #rid').value = event.target.attributes['data-id'].value;
         document.querySelector('.modal-body #ruid').value = event.target.attributes['data-user'].value;
         document.querySelector('#rbid').innerHTML =  event.target.attributes['data-id'].value;     

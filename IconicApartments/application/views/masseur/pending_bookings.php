@@ -73,8 +73,8 @@
                             <form action="<?php echo site_url('Masseur/reject_booking/')?>" id="reject-form" method="post" accept-charset="utf-8">
                                 <input type="text" class="form-control" id="accept-message" name="accept-message" placeholder="Enter a short message for the resident(optional)">
                                 <input type="hidden" id="reject-form-action" value="<?php echo site_url('Masseur/reject_booking/')?>">
-                                <input type="hidden" name="rid" value="<?php echo $row['booking_id']; ?>">
-                                <input type="hidden" id="ruid" name="uid" value="<?php echo $row['user_id']; ?>">
+                                <input type="hidden" id="rid" name="rid" value="<?php echo $row['booking_id']; ?>">
+                                <input type="hidden" id="ruid" name="ruid" value="<?php echo $row['user_id']; ?>">
                                 <input type="hidden" id="title" name="title" value="Masseur Booking Rejected:">
                                 <input type="hidden" id="type" name="type" value="masseur_booking">
 

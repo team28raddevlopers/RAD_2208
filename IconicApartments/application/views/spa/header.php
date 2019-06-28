@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/Style.css" >
      
-    <title>Iconic Spa</title>
+    <title>Iconic Apartments - Spa Room</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-center sticky-top">
@@ -35,6 +35,9 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-dark <?=($this->uri->segment(2)==='notifications')?'active':''?>" href="<?php echo site_url('Main/notifications') ?>">Notifications <span class="badge badge-light"><?php echo $num; ?></span></a>
+                    </li>
                     <li class="nav-item mr-3 ml-3">
                         <a class="nav-link btn btn-dark" href="<?php echo site_url('Main/index') ?>">Home</a>
                     </li>

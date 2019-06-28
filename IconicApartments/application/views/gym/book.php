@@ -113,7 +113,7 @@
           <div class="modal-body">
             Are you sure you want to book Instructor <p style="display:inline" id="id"></p> ?
             <form action="book" method="post" id="booking-form">
-                    <input type="hidden" id="form-action" value="<?php echo site_url('Gym/cancel_booking/')?>">
+                    <input type="hidden" id="form-action" value="<?php echo site_url('Gym/book/')?>">
                     <input type="hidden" id ="uid" name="uid" value="<?php echo $this->session->userdata('user_id'); ?>">
                     <input type="hidden" id ="iid" name="iid" value="<?php echo $row['instructor_id']; ?>">
                     <input type="hidden" id ="date" name="date" value="<?php echo $info['date']; ?>">
@@ -122,7 +122,7 @@
                     <input type="hidden" id ="status" name="status" value="pending">
 
                     <input type="hidden" id ="iuid" name="iuid" value="<?php echo $row['user_id']; ?>">
-                    <input type="text" class="form-control" id="accept-message" name="accept-message" placeholder="Enter a short message for the resident(optional)">
+                    <input type="text" class="form-control" id="message" name="message" placeholder="Enter a short message for the resident(optional)">
                     <input type="hidden" id="title" name="title" value="New Booking">
                     <input type="hidden" id="type" name="type" value="new_booking">
               <br>

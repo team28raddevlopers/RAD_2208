@@ -4,9 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Spa extends CI_Controller {
 
 	public function index(){
-		//echo "Hello from index";
+		$notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
+		$data['username']=$this->session->userdata('username');
+		// $data['notifications']=$notifications;
+		$data['num'] = count($notifications);
+
 		if($this->session->userdata('user_type') == 'resident'){
-			$this->load->view('spa/header');
+			$this->load->view('spa/header',$data);
 			$this->load->view('spa/spa_home');
 			$this->load->view('main/footer');
 		}
@@ -16,6 +20,11 @@ class Spa extends CI_Controller {
 	}
 
 	public function booking(){
+		$notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
+		$data1['username']=$this->session->userdata('username');
+		// $data['notifications']=$notifications;
+		$data1['num'] = count($notifications);
+
 		if($this->session->userdata('user_type') == 'resident'){
 
 			$data = array(
@@ -29,7 +38,7 @@ class Spa extends CI_Controller {
 			$this->form_validation->set_rules('date', 'Date', 'required');
 
 			if($this->form_validation->run() == FALSE){
-				$this->load->view('spa/header');
+				$this->load->view('spa/header',$data1);
 				$this->load->view('spa/book',$data);
 				$this->load->view('main/footer');
 			}
@@ -45,7 +54,7 @@ class Spa extends CI_Controller {
 				$data['info'] = $data;
 				$data['available'] = true;
 
-				$this->load->view('spa/header');
+				$this->load->view('spa/header',$data1);
 				$this->load->view('spa/book',$data);
 				$this->load->view('main/footer');
 
@@ -72,7 +81,7 @@ class Spa extends CI_Controller {
                 'title' => $this->input->post('title'),
                 'from_id' => $this->session->userdata('user_id'),
                 'to_id' => $this->input->post('iuid'),
-                'message' => $this->input->post('accept-message'),
+                'message' => $this->input->post('message'),
                 'type' => $this->input->post('type'),
 				// 'booking_id' => $this->input->post('id')
 				'visibility' => 1
@@ -90,20 +99,23 @@ class Spa extends CI_Controller {
 	}
 
 	public function spaRoom(){
-		//echo "Hello from book";
+		$notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
+		$data['username']=$this->session->userdata('username');
+		// $data['notifications']=$notifications;
+		$data['num'] = count($notifications);
+
 		if($this->session->userdata('user_type') == 'resident'){
-			$this->load->model('Spa_model');
-			$result = $this->Spa_model->get_residents();
-			$data['result'] = $result;
+			// $result = $this->Spa_model->get_residents();
+			// $data['result'] = $result;
 
 			$this->form_validation->set_rules('date', 'Date', 'required');
 
 			if ($this->form_validation->run() == FALSE){
-				$data['date'] = $this->session->userdata('date');
-				$data['user_id'] = $this->session->userdata('user_id');
+				// $data['date'] = $this->session->userdata('date');
+				// $data['user_id'] = $this->session->userdata('user_id');
 				//$data['username'] = 'new user';
-				$this->load->view('spa/header');	
-				$this->load->view('spa/spaRoom',$data);
+				$this->load->view('spa/header',$data);	
+				$this->load->view('spa/spaRoom');
 				$this->load->view('main/footer');
 
 			}
@@ -116,13 +128,19 @@ class Spa extends CI_Controller {
 					'time_to' => $this->input->post('timeto'),
 					'booking_status' => $this->input->post('status')
 				);
-		
-				//echo $this->input->post('date');
-				$this->load->model('Spa_model');
+
+				$notification = array(
+					'title' => $this->input->post('title'),
+					'from_id' => $this->session->userdata('user_id'),
+					'to_id' => $this->input->post('toid'),
+					'type' => $this->input->post('type'),
+					// 'booking_id' => $this->input->post('id')
+					'visibility' => 1
+				);
+				
+				$this->User_model->add_notification($notification);
 
 				$this->Spa_model->book_spaRoom($data); //send data to Spa_model
-
-				//$this->load->view('spa/formsuccess');
 
 				redirect('Spa/viewRoom'); //redirect to Spa home page
 			}
@@ -133,21 +151,19 @@ class Spa extends CI_Controller {
 	}
 
 	public function view(){
-		//echo "Hello from view";
+		$notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
+		$data['username']=$this->session->userdata('username');
+		// $data['notifications']=$notifications;
+		$data['num'] = count($notifications);
+
 		if($this->session->userdata('user_type') == 'resident'){
 			$uid = $this->session->userdata('user_id');
-			$this->load->model('Spa_model');
 			$result = $this->Spa_model->get_bookings($uid);
-			//$result = false;
 			$data['result'] = $result;
 	
-			$this->form_validation->set_rules('bid', 'Booking ID', 'required');
-	
-			if($this->form_validation->run() == FALSE){
-				$this->load->view('spa/header');
-				$this->load->view('spa/view',$data);
-				$this->load->view('main/footer');
-			}
+			$this->load->view('spa/header',$data);
+			$this->load->view('spa/view',$data);
+			$this->load->view('main/footer');
 		}
 		else{
 			redirect('Main/login');
@@ -155,7 +171,11 @@ class Spa extends CI_Controller {
 	}
 
 	public function viewRoom(){
-		//echo "Hello from view";
+		$notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
+		$data['username']=$this->session->userdata('username');
+		// $data['notifications']=$notifications;
+		$data['num'] = count($notifications);
+
 		if($this->session->userdata('user_type') == 'resident'){
 			$uid = $this->session->userdata('user_id');
 			$this->load->model('Spa_model');
@@ -163,13 +183,9 @@ class Spa extends CI_Controller {
 			//$result = false;
 			$data['result'] = $result;
 	
-			$this->form_validation->set_rules('uid', 'User ID', 'required');
-	
-			if($this->form_validation->run() == FALSE){
-				$this->load->view('spa/header');
-				$this->load->view('spa/viewRoom',$data);
-				$this->load->view('main/footer');
-			}
+			$this->load->view('spa/header',$data);
+			$this->load->view('spa/viewRoom',$data);
+			$this->load->view('main/footer');
 		}
 		else{
 			redirect('Main/login');
@@ -184,7 +200,7 @@ class Spa extends CI_Controller {
 			'title' => $this->input->post('title'),
 			'from_id' => $this->session->userdata('user_id'),
 			'to_id' => $this->input->post('uid'),
-			'message' => $this->input->post('accept-message'),
+			'message' => $this->input->post('message'),
 			'type' => $this->input->post('type'),
 			'booking_id' => $this->input->post('id'),
 			'visibility' => 1
