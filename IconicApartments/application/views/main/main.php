@@ -57,5 +57,6 @@
                 <h3><a class ="btn btn-dark btn-lg" href="<?php echo site_url('main/registerRecident')?>">Register as Resident</a></h3>
             </div>
         </div>
+        <br><br>
     </div>
    

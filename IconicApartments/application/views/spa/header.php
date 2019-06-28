@@ -21,7 +21,7 @@
                 <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
-                    <li class="nav-item <?=($this->uri->segment(2)==='attendance')?'active':''?>">
+                    <li class="nav-item <?=($this->uri->segment(2)==='spaRoom')?'active':''?>">
                         <a class="nav-link" href="<?php echo site_url('Spa/spaRoom')?>">Book Spa Room</a>
                     </li>
                     <li class="nav-item <?=($this->uri->segment(2)==='booking')?'active':''?>">

@@ -74,15 +74,8 @@
   <?php else :?>
     <h5 class="text-center">You Currently Have No Masseur Bookings</h5>
   <?php endif; ?>
+
+  <br><br><br>
+
 </div>
 
-<!-- <script language="JavaScript" type="text/javascript">
-  $('#confirmCancel').on('show.bs.modal', function(e) {
-
-  //get data-id attribute of the clicked element
-  var bookId = $(e.relatedTarget).data('id');
-  console.log(bookId);
-  //populate the textbox
-  $(e.currentTarget).find('input[name="bid"]').val(bookId);
-  });
-</script> -->

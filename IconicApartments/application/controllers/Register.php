@@ -76,6 +76,15 @@ class Register extends CI_Controller{
                     {
                         $response=$this->Register_employee_model->InsertEmployee();
                         $response2=$this->Register_employee_model->InsertEmployee2($response);
+
+                        $notification = array(
+                            'title' => $this->input->post('ntitle'),
+                            'from_id' => $response,
+                            'to_id' => $this->input->post('toid'),
+                            'type' => $this->input->post('ntype'),
+                            'visibility' => 1
+                        );
+                        $this->User_model->add_notification($notification);
                         
                         if($response2 || $response){
                             $this->session->set_flashdata('msg',"Your informations are send to the Administrator..! please login after a few seconds!"); 

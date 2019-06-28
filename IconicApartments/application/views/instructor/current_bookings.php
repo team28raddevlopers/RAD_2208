@@ -67,6 +67,8 @@
     <?php else :?>
         <h5 class="text-center">You Currently Have No Accepted Bookings</h5>
     <?php endif; ?>
+    <br><br><br>
+
 </div>
 
 <script language="JavaScript" type="text/javascript">

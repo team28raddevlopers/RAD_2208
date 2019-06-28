@@ -1,6 +1,7 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <div style="bootom:0;height:50px;position:relative" class="fixed-bottom" id="footer">
+    <!-- style="bootom:0;height:50px;position:relative" -->
+        <div class="fixed-bottom" id="footer">
             <footer  class="bg-dark text-white mt-auto">
                 <div class="container-fluid py-3">
                     <div class="text-center small">©2019 IconicApartments</div>
