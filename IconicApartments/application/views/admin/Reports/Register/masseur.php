@@ -17,19 +17,19 @@
             </thead>
             <tbody id="tble">
             <?php
-                if($fetch_data->num_rows()>0){
-                    foreach($fetch_data->result() as $row){
+                if($fetch_data){
+                    foreach($fetch_data as $row){
                         ?>
                         <tr>
                         <?php echo form_open('Register/AdminUnregisterUsers')?>
                                 
                              
                                 
-                                <td><?php echo $row->user_id; ?></td>
-                                <td><?php echo $row->masseur_name; ?></td>
-                                <td><?php echo $row->last_name; ?></td>
-                                <td><?php echo $row->tele_num; ?></td>
-                                <td><?php echo $row->email; ?></td>
+                                <td><?php echo $row['user_id']; ?></td>
+                                <td><?php echo $row['masseur_name']; ?></td>
+                                <td><?php echo $row['last_name']; ?></td>
+                                <td><?php echo $row['tele_num']; ?></td>
+                                <td><?php echo $row['email']; ?></td>
 
                         </tr>
                         <?php

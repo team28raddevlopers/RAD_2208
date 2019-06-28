@@ -12,11 +12,11 @@
     <?php endif;?>
     <br>
 
-    <div class="row justify-content-center">
+    <!-- <div class="row justify-content-center">
         <div class="jumbotron col-md-6">
             <a type="button" class="btn btn-success" href="<?php echo site_url('FirstLogin')?>">Registered List</a>
         </div>
-    </div>
+    </div> -->
 
     <div class="row justify-content-center">
         <div class="jumbotron col-md-6">

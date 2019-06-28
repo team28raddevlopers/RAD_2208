@@ -19,7 +19,7 @@ class Register extends CI_Controller{
             
             
 
-            if ($this->form_validation->run() == FALSE)
+            if (($this->form_validation->run() == FALSE) && ($this->input->post('submit') != NULL ))
                     {
 
                             $this->load->view('main/register_recident');
@@ -27,6 +27,7 @@ class Register extends CI_Controller{
                     
                     else
                     {
+                        
                         $this->load->model('Register_recident_model');
                         $response=$this->Register_recident_model->insertRecident();
                         $response2=$this->Register_recident_model->insertRecident2($response);
@@ -42,7 +43,7 @@ class Register extends CI_Controller{
                        
                        
                         if($response){
-                            $this->session->set_flashdata('msg',"Your informations are send to the Administrator..! please login after a few seconds!"); 
+                            $this->session->set_flashdata('msg',"You request send to the administrator and you will recive an email when your request is accepted"); 
                             $this->load->view('main/message');
                         }else{
                             $this->load->view('main/register_recident');
@@ -98,9 +99,34 @@ class Register extends CI_Controller{
 
 
         public function AdminRegisterUsers(){
+
+
             
             $response=$this->AdminRegistrations->AdminUpdateUser();
             if($response){
+                    // POST data
+                    $postData = $this->input->post();
+                    $reciverEmail= $response['email'];
+
+                    $config['protocol']    = 'smtp';
+                    $config['smtp_host']    = 'ssl://smtp.googlemail.com';
+                    $config['smtp_port']    = '465';
+                    $config['smtp_timeout'] = '7';
+                    $config['smtp_user']    = 'radteam28@gmail.com';
+                    $config['smtp_pass']    = 'team28rad2017cs';
+                    $config['charset']    = 'utf-8';
+                    $config['newline']    = "\r\n";
+                    $config['mailtype'] = 'html';
+                    $config['validation'] = FALSE;
+
+                    $this->load->library('email');
+                    $this->email->initialize($config);
+                    $this->email->from('radteam28@gmail.com', 'Iconic Apartments');
+                    $this->email->to($reciverEmail);
+                    $this->email->subject('Request accepted');
+                    $this->email->message('Your request has been accepted you can login through this url http://localhost/IconicApartments/index.php/main/login');
+                    $this->email->set_newline("\r\n");
+                    $result = $this->email->send();
                 redirect('AdminDashboard/RegisterRequests');
             }else{
                 echo "Not register";
