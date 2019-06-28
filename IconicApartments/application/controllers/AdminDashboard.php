@@ -5,9 +5,7 @@ class AdminDashboard extends CI_Controller{
     public function index(){
                 $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
                 $data['username']=$this->session->userdata('username');
-                // $data['notifications']=$notifications;
                 $data['num'] = count($notifications);
-                
                 $this->load->view('admin/dashboard', $data);
     }
 
@@ -15,7 +13,6 @@ class AdminDashboard extends CI_Controller{
 
                 $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
                 $data['username']=$this->session->userdata('username');
-                // $data['notifications']=$notifications;
                 $data['num'] = count($notifications);
 
                 $this->load->view('admin/header_main',$data);
@@ -98,7 +95,7 @@ class AdminDashboard extends CI_Controller{
         $this->load->view('admin/header_main');
         $this->load->view('admin/fotter');
         $data["fetch_data"]= $this->AdminRegistrations->fetch_data_resident();
-        $this->load->view('admin/Reports/Requests/resident_users',$data);
+        $this->load->view('admin/Reports/Requests/resident',$data);
     }
 
     public function registereRequestsCoaches(){
