@@ -43,8 +43,11 @@ class Register extends CI_Controller{
                        
                        
                         if($response){
-                            $this->session->set_flashdata('msg',"You request send to the administrator and you will recive an email when your request is accepted"); 
-                            $this->load->view('main/message');
+                            $this->session->set_flashdata('msg',"You request has been sent to the administrator. You will recive an email when your request is accepted"); 
+                            // $this->load->view('main/message');
+
+                            redirect('Main/index');
+
                         }else{
                             $this->load->view('main/register_recident');
                         }
@@ -88,8 +91,11 @@ class Register extends CI_Controller{
                         $this->User_model->add_notification($notification);
                         
                         if($response2 || $response){
-                            $this->session->set_flashdata('msg',"Your informations are send to the Administrator..! please login after a few seconds!"); 
-                            $this->load->view('main/message');
+                            $this->session->set_flashdata('msg',"Your request has been sent to the Administrator. You will recive an email when your request is accepted"); 
+                            // $this->load->view('main/message');
+
+                            redirect('Main/index');
+
                         }else{
                             $this->load->view('main/register_employee');
                         }

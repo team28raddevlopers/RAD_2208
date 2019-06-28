@@ -8,6 +8,16 @@
         </div>    
     </div>
     <div class="container">
+        <?php if($this->session->flashdata('msg')): ?>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="alert alert-info alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <?php echo $this->session->flashdata('msg'); ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif;?>
         <div id="demo" class="carousel slide" data-ride="carousel">
 
             <ul class="carousel-indicators">

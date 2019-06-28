@@ -1,6 +1,6 @@
 <div class="container">
     <br>
-    <?php if($this->session->flashdata()): ?>
+    <?php if($this->session->flashdata('login_error')): ?>
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="alert alert-danger alert-dismissible">
@@ -10,6 +10,7 @@
             </div>
         </div>
     <?php endif;?>
+
     <br>
 
     <!-- <div class="row justify-content-center">
