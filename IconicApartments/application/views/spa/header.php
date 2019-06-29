@@ -36,7 +36,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-dark <?=($this->uri->segment(2)==='notifications')?'active':''?>" href="<?php echo site_url('Main/notifications') ?>">Notifications <span class="badge badge-light"><?php echo $num; ?></span></a>
+                        <a class="nav-link btn btn-dark <?=($this->uri->segment(2)==='notifications')?'active':''?>" href="<?php echo site_url('Main/notifications') ?>">Notifications <span class="badge badge-light"><?php echo $this->session->userdata('notifications'); ?></span></a>
                     </li>
                     <li class="nav-item mr-3 ml-3">
                         <a class="nav-link btn btn-dark" href="<?php echo site_url('Main/index') ?>">Home</a>

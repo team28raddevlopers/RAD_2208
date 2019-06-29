@@ -4,13 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Gym extends CI_Controller {
 
 	public function index(){
-		$notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-		$data['username']=$this->session->userdata('username');
-		// $data['notifications']=$notifications;
-		$data['num'] = count($notifications);
+		// $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
+		// $data['username']=$this->session->userdata('username');
+		// // $data['notifications']=$notifications;
+		// $data['num'] = count($notifications);
 
 		if($this->session->userdata('user_type') == 'resident'){
-			$this->load->view('gym/header',$data);
+			$this->load->view('gym/header');
 			$this->load->view('gym/gym_home');
 			$this->load->view('main/footer');
 		}
@@ -20,10 +20,6 @@ class Gym extends CI_Controller {
 	}
 
 	public function booking(){
-		$notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-		$data1['username']=$this->session->userdata('username');
-		// $data['notifications']=$notifications;
-		$data1['num'] = count($notifications);
 
 		if($this->session->userdata('user_type') == 'resident'){
 			//$result = $this->Gym_model->get_instructors();
@@ -41,7 +37,7 @@ class Gym extends CI_Controller {
 			$this->form_validation->set_rules('date', 'Date', 'required');
 
 			if($this->form_validation->run() == FALSE){
-				$this->load->view('gym/header', $data1);
+				$this->load->view('gym/header');
 				$this->load->view('gym/book',$data);
 				$this->load->view('main/footer');
 			}
@@ -57,7 +53,7 @@ class Gym extends CI_Controller {
 				$data['info'] = $data;
 				$data['available'] = true;
 
-				$this->load->view('gym/header',$data1);
+				$this->load->view('gym/header');
 				$this->load->view('gym/book',$data);
 				$this->load->view('main/footer');
 
@@ -107,10 +103,6 @@ class Gym extends CI_Controller {
 
 	
 	public function attendance(){
-		$notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-		$data['username']=$this->session->userdata('username');
-		// $data['notifications']=$notifications;
-		$data['num'] = count($notifications);
 		
 		if($this->session->userdata('user_type') == 'resident'){
 			$this->form_validation->set_rules('date', 'Date', 'required');
@@ -118,7 +110,7 @@ class Gym extends CI_Controller {
 			if ($this->form_validation->run() == FALSE){
 				$data['username'] = $this->session->userdata('username');
 				$data['user_id'] = $this->session->userdata('user_id');
-				$this->load->view('gym/header',$data);	
+				$this->load->view('gym/header');	
 				$this->load->view('gym/attendance',$data);
 				$this->load->view('main/footer');
 			}
@@ -133,7 +125,7 @@ class Gym extends CI_Controller {
 					'time_to' => $this->input->post('timeto'),
 				);
 
-				$this->Gym_model->mark_attendance($data); //send data to Gym_model
+				$this->Gym_model->mark_attendance(); //send data to Gym_model
 				redirect('Gym/index'); //redirect to Gym home page
 			}
 		}
@@ -143,11 +135,7 @@ class Gym extends CI_Controller {
 	}
 
 	public function view(){
-		$notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-		$data['username']=$this->session->userdata('username');
-		// $data['notifications']=$notifications;
-		$data['num'] = count($notifications);
-
+		
 		if($this->session->userdata('user_type') == 'resident'){
 			$uid = $this->session->userdata('user_id');
 			$result = $this->Gym_model->get_bookings($uid);
@@ -156,7 +144,7 @@ class Gym extends CI_Controller {
 			$this->form_validation->set_rules('bid', 'Booking ID', 'required');
 	
 			if($this->form_validation->run() == FALSE){
-				$this->load->view('gym/header',$data);
+				$this->load->view('gym/header');
 				$this->load->view('gym/view',$data);
 				$this->load->view('main/footer');
 			}

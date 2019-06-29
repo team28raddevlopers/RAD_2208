@@ -3,12 +3,9 @@
 class AdminDashboard extends CI_Controller{
 
     public function index(){
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
         
         if($this->session->userdata('user_type') == 'admin'){
-            $this->load->view('admin/dashboard', $data);
+            $this->load->view('admin/dashboard');
         }
         else{
             redirect('Main/login');
@@ -17,12 +14,8 @@ class AdminDashboard extends CI_Controller{
 
     public function RegisterRequests(){
 
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
-
         if($this->session->userdata('user_type') == 'admin'){
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/Buttons');
             $this->load->view('main/footer');
 
@@ -41,12 +34,9 @@ class AdminDashboard extends CI_Controller{
     }
 
     public function Registered(){
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
-
+       
         if($this->session->userdata('user_type') == 'admin'){
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/Buttons');
             $this->load->view('main/footer');
 
@@ -67,12 +57,8 @@ class AdminDashboard extends CI_Controller{
 
     public function Reports(){
 
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
-
         if($this->session->userdata('user_type') == 'admin'){
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/reports/reports');
             $this->load->view('main/footer');    
         }
@@ -84,13 +70,9 @@ class AdminDashboard extends CI_Controller{
 
     public function registeredResidents(){
 
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
-
         if($this->session->userdata('user_type') == 'admin'){
             $data["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_resident();
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Register/resident',$data);
             $this->load->view('main/footer');
         }
@@ -101,14 +83,10 @@ class AdminDashboard extends CI_Controller{
 
     public function registeredCoaches(){
 
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
-
         if($this->session->userdata('user_type') == 'admin'){
             $data4["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_coach();
 
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Register/coach',$data4);
             $this->load->view('main/footer');
         }
@@ -119,14 +97,10 @@ class AdminDashboard extends CI_Controller{
 
     public function registeredInstructors(){
 
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
-
         if($this->session->userdata('user_type') == 'admin'){
             $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_instructor();
 
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Register/instructor',$data3);
             $this->load->view('main/footer');
         }
@@ -136,14 +110,11 @@ class AdminDashboard extends CI_Controller{
     }
 
     public function registeredMasseur(){
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
 
         if($this->session->userdata('user_type') == 'admin'){
             $data2["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_masseur();
 
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Register/masseur',$data2);
             $this->load->view('main/footer');
         }
@@ -153,14 +124,11 @@ class AdminDashboard extends CI_Controller{
     }
 
     public function registereRequestsResidents(){
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
-
+        
         if($this->session->userdata('user_type') == 'admin'){
             $data["fetch_data"]= $this->AdminRegistrations->fetch_data_resident();
 
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Requests/resident',$data);
             $this->load->view('main/footer');
         }
@@ -170,14 +138,11 @@ class AdminDashboard extends CI_Controller{
     }
 
     public function registereRequestsCoaches(){
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
 
         if($this->session->userdata('user_type') == 'admin'){
             $data4["fetch_data"]= $this->AdminRegistrations->fetch_data_coach();
 
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Requests/coach',$data4);
             $this->load->view('main/footer');
         }
@@ -191,14 +156,11 @@ class AdminDashboard extends CI_Controller{
                
 
     public function registereRequestsMasseur(){
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
 
         if($this->session->userdata('user_type') == 'admin'){
             $data2["fetch_data"]= $this->AdminRegistrations->fetch_data_masseur();
 
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Requests/masseur',$data2);
             $this->load->view('main/footer');
         }
@@ -208,14 +170,11 @@ class AdminDashboard extends CI_Controller{
     }
 
     public function registereRequestsInstructors(){
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
 
         if($this->session->userdata('user_type') == 'admin'){
             $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_instructor();
 
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Requests/instructor',$data3);
             $this->load->view('main/footer');
         }
@@ -225,14 +184,11 @@ class AdminDashboard extends CI_Controller{
     }
 
     public function removedInstructors(){
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
 
         if($this->session->userdata('user_type') == 'admin'){
             $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_Removed_instructor();
 
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Removed/instructor',$data3);
             $this->load->view('main/footer');
         }
@@ -243,14 +199,11 @@ class AdminDashboard extends CI_Controller{
 
     
     public function removedResident(){
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
-
+    
         if($this->session->userdata('user_type') == 'admin'){
             $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_Removed_resident();
 
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Removed/resident',$data3);
             $this->load->view('main/footer');
         }
@@ -260,14 +213,11 @@ class AdminDashboard extends CI_Controller{
     }
 
     public function removedMasseur(){
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
 
         if($this->session->userdata('user_type') == 'admin'){
             $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_Removed_masseur();
 
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Removed/masseur',$data3);
             $this->load->view('admin/fotter');
         }
@@ -277,14 +227,11 @@ class AdminDashboard extends CI_Controller{
     }
 
     public function removedCoach(){
-        $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-        $data['username']=$this->session->userdata('username');
-        $data['num'] = count($notifications);
-
+       
         if($this->session->userdata('user_type') == 'admin'){
             $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_Removed_coach();
 
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Removed/coach',$data3);
             $this->load->view('main/footer');
         }
@@ -298,14 +245,10 @@ class AdminDashboard extends CI_Controller{
     public function spa_pending_bookings(){
         if($this->session->userdata('user_type') == 'admin'){
 
-            $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-            $data['notifications']=$notifications;
-            $data['num'] = count($notifications);
-
             $result = $this->Bookings_model->spa_get_bookings('pending');
             $data['result'] = $result;
     
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/spa_bookings/pending_bookings',$data);
             $this->load->view('main/footer');
         }
@@ -317,14 +260,10 @@ class AdminDashboard extends CI_Controller{
     public function tennis_pending_bookings(){
         if($this->session->userdata('user_type') == 'admin'){
 
-            $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
-            $data['notifications']=$notifications;
-            $data['num'] = count($notifications);
-
             $result = $this->Bookings_model->tennis_get_bookings('pending');
             $data['result'] = $result;
     
-            $this->load->view('admin/header_main',$data);
+            $this->load->view('admin/header_main');
             $this->load->view('admin/tennis_bookings/pending_bookings',$data);
             $this->load->view('main/footer');
         }

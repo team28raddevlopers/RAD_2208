@@ -92,10 +92,13 @@
                     $this->load->view('main/footer');
                 }
                 else{
+                    $notifications =$this->User_model->get_notifications($result['user_id']);
+
                     $userdata = array(
                         'username' => $result['username'],
                         'user_id' => $result['user_id'],
-                        'user_type' => $result['user_type']
+                        'user_type' => $result['user_type'],
+                        'notifications' => count($notifications)
                     );
                     $this->session->set_userdata($userdata);
 
@@ -134,6 +137,12 @@
             if($this->session->userdata('user_type') == 'admin'){
                 $this->load->view('admin/header_main', $data);
                 $this->load->view('admin/notifications', $data);
+                $this->load->view('main/footer');
+            }
+
+            if($this->session->userdata('user_type') == 'masseur'){
+                $this->load->view('masseur/header', $data);
+                $this->load->view('masseur/notifications', $data);
                 $this->load->view('main/footer');
             }
 
