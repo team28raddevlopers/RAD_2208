@@ -20,6 +20,21 @@
             return $query->row_array();
         }
 
+        public function available_instructors($data){
+            $date = $data['date'];
+            $timefrom = $data['time_from'];
+            $timeto = $data['time_to'];
+           // $where =  "instructor_booking.date IS NULL OR instructor_booking.date <> '$date' OR (instructor_booking.date = '$date' AND (instructor_booking.time_from >= '$timeto' OR instructor_booking.time_to <= '$timefrom'));";
+
+            $where =  "instructor_id NOT IN (SELECT instructor_booking.instructor_id FROM instructor_booking WHERE instructor_booking.booking_status <> 'rejected' AND instructor_booking.date = '$date' AND (instructor_booking.time_from >= '$timefrom' AND instructor_booking.time_to <= '$timeto'));";
+            $this->db->select('instructor.instructor_id, instructor.instructor_name, instructor.last_name, instructor.user_id');
+            $this->db->from('instructor');
+            $this->db->where($where);
+            $query = $this->db->get();
+
+            return $query->result_array();
+        }
+
         public function get_resident($uid){
             $this->db->where('resident.user_id', $uid);
             $this->db->select('resident_name');
@@ -41,6 +56,7 @@
             $this->db->from('instructor_booking');
             $this->db->join('instructor','instructor_booking.instructor_id=instructor.instructor_id');
             $this->db->where('instructor_booking.user_id',$uid);
+            $this->db->order_by('instructor_booking.date, instructor_booking.time_from');
             $query = $this->db->get();
 
             return $query->result_array();
@@ -65,8 +81,14 @@
             return $query->result_array();
         }
 
-        public function accept_booking($bid){
+        public function update_accept($bid){
             $update = array('booking_status'=> 'accepted');
+            $this->db->where('instructor_booking.booking_id', $bid);
+            $this->db->update('instructor_booking', $update);
+        }
+
+        public function update_reject($bid){
+            $update = array('booking_status'=> 'rejected');
             $this->db->where('instructor_booking.booking_id', $bid);
             $this->db->update('instructor_booking', $update);
         }

@@ -12,20 +12,21 @@
                 <th>Last Name</th>
                 <th>Contact number</th>
                 <th>Appartmet Number</th>
-             
+                <th></th>
+                <th></th>
             </thead>
             <tbody id="tble">
             <?php
-                if($fetch_data->num_rows()>0){
-                    foreach($fetch_data->result() as $row){
+                if($fetch_data){
+                    foreach($fetch_data as $row){
                         ?>
                         <tr>
                                 
-                                <td><?php echo $row->user_id; ?></td>
-                                <td><?php echo $row->resident_name; ?></td>
-                                <td><?php echo $row->last_name; ?></td>
-                                <td><?php echo $row->tele_num; ?></td>
-                                <td><?php echo $row->appartment_no; ?></td>
+                                <td><?php echo $row['user_id']; ?></td>
+                                <td><?php echo $row['resident_name']; ?></td>
+                                <td><?php echo $row['last_name']; ?></td>
+                                <td><?php echo $row['tele_num']; ?></td>
+                                <td><?php echo $row['appartment_no']; ?></td>
                       
                         </tr>
                         <?php
@@ -33,7 +34,7 @@
                 }else{
                     ?>
                 <tr>
-                    <td colspan="3">No Resident removed</td>
+                    <td colspan="3">No Users to register</td>
                 </tr>
                     <?php
                 }
@@ -43,6 +44,6 @@
     </div>
     </div>
     <div class="row" >
-                <button class="btn btn-primary"onclick="printContent('remResident')">Print</button>
+                <button class="btn btn-primary"onclick="printContent('regResident')">Print</button>
     </div>
 </div>

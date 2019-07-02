@@ -1,4 +1,4 @@
-<div class="container">
+<div id="content-wrap" class="container flex-fill">
   <br><br>
   <h1 class="text-center">Your Current Instructor Bookings</h1>
   <!-- <p>view Bookings table</p> -->
@@ -16,7 +16,7 @@
             <th>CANCEL</th>
         </tr>
         <?php foreach($result as $row): ?>
-            <tr class="<?=($row['booking_status']==='accepted')?'table-success':''?>">
+            <tr class="<?=($row['booking_status']==='accepted')?'table-success':(($row['booking_status']==='rejected')? 'table-danger': '');?>">
                 <td><?php echo $row['booking_id']; ?></td>
                 <td><?php echo $row['instructor_name']." ".$row['last_name']; ?></td>
                 <td><?php echo $row['date']; ?></td>
@@ -40,8 +40,14 @@
           <div class="modal-body">
             Are you sure you want to cancel booking <p style="display:inline" id="bid"></p> ?
             <form action="<?php echo site_url('Gym/cancel_booking/')?>" id="cancel-form" method="post" accept-charset="utf-8">
+              <input type="text" class="form-control" id="message" name="message" placeholder="Enter a short message for the resident(optional)">
               <input type="hidden" id="form-action" value="<?php echo site_url('Gym/cancel_booking/')?>">
-              <input type="hidden" name="id" value="<?php echo $row['booking_id']; ?>">
+              <input type="hidden" id="id" name="id" value="<?php echo $row['booking_id']; ?>">
+
+              <!-- instructor user_id -->
+              <input type="hidden" id="uid" name="uid" value="<?php echo $row['user_id']; ?>">
+              <input type="hidden" id="title" name="title" value="Booking Cancelled:">
+              <input type="hidden" id="type" name="type" value="cancelled_booking">
               <br>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-danger btn-sm">Cancel Booking</button>
@@ -69,6 +75,7 @@
   <?php else :?>
     <h5 class="text-center">You Currently Have No Instructor Bookings</h5>
   <?php endif; ?>
+  <br><br><br>
 </div>
 
 <script language="JavaScript" type="text/javascript">
@@ -78,6 +85,8 @@
       element.addEventListener('click', function(event) {
         // document.querySelector('.modal-body #name').value = event.target.attributes['data-name'].value;
         document.querySelector('#cancel-form').action = (document.querySelector('.modal-body #form-action').value + event.target.attributes['data-id'].value);
+        document.querySelector('.modal-body #id').value = event.target.attributes['data-id'].value;
+        document.querySelector('.modal-body #uid').value = event.target.attributes['data-user'].value;
         document.querySelector('#bid').innerHTML =  event.target.attributes['data-id'].value;     
         console.log(document.querySelector('#cancel-form').action);
           

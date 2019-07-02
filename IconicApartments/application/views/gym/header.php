@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/Style.css" >
 
-    <title>Iconic Gym</title>
+    <title>Iconic Apartments - Gym</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-center sticky-top">
@@ -25,8 +25,8 @@
                         <a class="nav-link" href="<?php echo site_url('Gym/attendance')?>">Mark Attendance</a>
                     </li>
                     </li>
-                    <li class="nav-item <?=($this->uri->segment(2)==='book')?'active':''?>">
-                        <a class="nav-link" href="<?php echo site_url('Gym/book')?>">Book Instructor</a>                    
+                    <li class="nav-item <?=($this->uri->segment(2)==='booking')?'active':''?>">
+                        <a class="nav-link" href="<?php echo site_url('Gym/booking')?>">Book Instructor</a>                    
                     </li>
                     <li class="nav-item <?=($this->uri->segment(2)==='view')?'active':''?>">
                         <a class="nav-link" href="<?php echo site_url('Gym/view')?>">View Bookings</a>                   
@@ -34,6 +34,9 @@
                     </li> 
                 </ul>
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-dark <?=($this->uri->segment(2)==='notifications')?'active':''?>" href="<?php echo site_url('Main/notifications') ?>">Notifications <span class="badge badge-light"><?php echo $this->session->userdata('notifications'); ?></span></a>
+                    </li>
                     <li class="nav-item mr-3 ml-3">
                         <a class="nav-link btn btn-dark" href="<?php echo site_url('Main/index') ?>">Home</a>
                     </li>

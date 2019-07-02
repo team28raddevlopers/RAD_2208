@@ -1,13 +1,14 @@
 
   body{
     background-image: url("../img/background1.jpg");
-    background-repeat: repeat;   
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
-  .my_button{
+  /* .my_button{
 
-    my_button
-  }
+    my_button;
+  } */
 
   .my_button {
     -webkit-transition-duration: 0.4s; 
@@ -18,3 +19,35 @@
     background-color: #4CAF50; 
     color: white;
   }
+
+.list-group-item{
+  background: none;
+}
+
+.carousel-inner > .item {
+  height: 400px;
+}
+
+.header {
+  background-image: url('../img/gym.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}  
+
+.overlay {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+
+  /* .dropdown-menu {
+    min-width: 200px !important;
+    right:0;
+    width: 100px;
+} */
+

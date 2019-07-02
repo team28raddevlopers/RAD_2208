@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container collapse" id="residentTable">
     <div class="row">
     <div class="col-lg-12">
         <h3>Residents</h3>
@@ -18,21 +18,21 @@
             </thead>
             <tbody id="tble">
             <?php
-                if($fetch_data->num_rows()>0){
-                    foreach($fetch_data->result() as $row){
+                if($fetch_data){
+                    foreach($fetch_data as $row){
                         ?>
                         <tr>
                         <?php echo form_open('Register/AdminUnregisterUsers')?>
                                 
                                     
-                                    <td><input style="border:none;"  class="form-control" type="text" id="user_id" name="user_id" value="<?php echo $row->user_id; ?>"
+                                    <td><input style="border:none;"  class="form-control" type="text" id="user_id" name="user_id" value="<?php echo $row['user_id']; ?>"
                                     required></td>
                                 
-                                <!-- <td><?php echo $row->user_id; ?></td> -->
-                                <td><?php echo $row->resident_name; ?></td>
-                                <td><?php echo $row->last_name; ?></td>
-                                <td><?php echo $row->tele_num; ?></td>
-                                <td><?php echo $row->appartment_no; ?></td>
+                           
+                                <td><?php echo $row['resident_name']; ?></td>
+                                <td><?php echo $row['last_name']; ?></td>
+                                <td><?php echo $row['tele_num']; ?></td>
+                                <td><?php echo $row['appartment_no']; ?></td>
                                 <td><input  class="form-control btn-danger" type='submit' value='Unregister'></td>
                                 <td><input class="form-control btn-danger" type='submit' value='remove' name="remove"></td>
                         <?php echo form_close();?>

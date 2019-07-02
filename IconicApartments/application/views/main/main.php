@@ -2,14 +2,51 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xs-12">
-                <br><br>
-                
                 <h1 class="text-center">Welcome to Iconic Apartments</h1>
-                <br><hr><br>
+                <br>
             </div>
         </div>    
     </div>
     <div class="container">
+        <?php if($this->session->flashdata('msg')): ?>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="alert alert-info alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <?php echo $this->session->flashdata('msg'); ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif;?>
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img class="d-block w-100" src="<?php echo base_url()?>assets/img/img2.jpg" alt="1">
+                </div>
+                <div class="carousel-item">
+                <img class="d-block w-100" src="<?php echo base_url()?>assets/img/img4.png" alt="2">
+                </div>
+                <div class="carousel-item">
+                <img class="d-block w-100" src="<?php echo base_url()?>assets/img/img3.jpg" alt="3">
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+
+        </div>
+        <br>
         <div class="jumbotron banner" >
             <h2 class="text-center">Be A Part Of ICONIC Family!</h2>
             <br>
@@ -30,6 +67,6 @@
                 <h3><a class ="btn btn-dark btn-lg" href="<?php echo site_url('main/registerRecident')?>">Register as Resident</a></h3>
             </div>
         </div>
+        <br><br>
     </div>
    
-   <!-- <?php include 'fotter.php'?> -->

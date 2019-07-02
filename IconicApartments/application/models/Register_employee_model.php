@@ -8,7 +8,8 @@ class Register_employee_model extends CI_Model{
             'username' => $this->input->post('username',TRUE),
             'password' => md5($this->input->post('password',TRUE)),
             'user_type' => $this->input->post('type',TRUE),
-            'register' => $this->input->post('register',TRUE)
+            'register' => $this->input->post('register',TRUE),
+            'login' => 0
         );  
  
         $result=$this->db->insert('user',$data);

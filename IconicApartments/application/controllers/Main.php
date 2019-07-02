@@ -1,22 +1,33 @@
 <?php
     class Main extends CI_Controller{
+       
        public function index(){
-            if($this->session->userdata('user_type') == 'resident'){
 
-                $data['username']=$this->session->userdata('username');
+            $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
+            $data['username']=$this->session->userdata('username');
+            // $data['notifications']=$notifications;
+            $data['num'] = count($notifications);
+
+            if($this->session->userdata('user_type') == 'resident'){
                 $this->load->view('resident/resident_header',$data);
                 $this->load->view('resident/resident_home');
                 $this->load->view('main/footer');
             }
             elseif($this->session->userdata('user_type') == 'instructor'){
-                $this->load->view('instructor/header');
+                $this->load->view('instructor/header',$data);
                 $this->load->view('instructor/home');
+                $this->load->view('main/footer');
+
+            }
+            elseif($this->session->userdata('user_type') == 'masseur'){
+                $this->load->view('masseur/header');
+                $this->load->view('masseur/home');
                 $this->load->view('main/footer');
 
             }
             else if($this->session->userdata('user_type') == 'admin'){
                
-                $this->load->view('admin/dashboard');
+                $this->load->view('admin/dashboard',$data);
                 // $data["fetch_data"]= $this->AdminRegistrations->fetch_data_resident();
                 // $data2["fetch_data"]= $this->AdminRegistrations->fetch_data_masseur();
                 // $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_instructor();
@@ -81,10 +92,13 @@
                     $this->load->view('main/footer');
                 }
                 else{
+                    $notifications =$this->User_model->get_notifications($result['user_id']);
+
                     $userdata = array(
                         'username' => $result['username'],
                         'user_id' => $result['user_id'],
-                        'user_type' => $result['user_type']
+                        'user_type' => $result['user_type'],
+                        'notifications' => count($notifications)
                     );
                     $this->session->set_userdata($userdata);
 
@@ -98,6 +112,45 @@
             $this->session->unset_userdata($userdata);
 
             redirect('Main/index');
+        }
+
+        public function notifications(){
+            $data['username']=$this->session->userdata('username');
+
+            $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
+
+            $data['notifications']=$notifications;
+            $data['num'] = count($notifications);
+
+            if($this->session->userdata('user_type') == 'resident'){
+                $this->load->view('resident/resident_header', $data);
+                $this->load->view('resident/notifications', $data);
+                $this->load->view('main/footer');
+            }
+
+            if($this->session->userdata('user_type') == 'instructor'){
+                $this->load->view('instructor/header', $data);
+                $this->load->view('instructor/notifications', $data);
+                $this->load->view('main/footer');
+            }
+
+            if($this->session->userdata('user_type') == 'admin'){
+                $this->load->view('admin/header_main', $data);
+                $this->load->view('admin/notifications', $data);
+                $this->load->view('main/footer');
+            }
+
+            if($this->session->userdata('user_type') == 'masseur'){
+                $this->load->view('masseur/header', $data);
+                $this->load->view('masseur/notifications', $data);
+                $this->load->view('main/footer');
+            }
+
+        }
+        public function delete_notification($id){
+            $this->User_model->delete_notification($id);
+
+            redirect('Main/notifications');
         }
 
     }

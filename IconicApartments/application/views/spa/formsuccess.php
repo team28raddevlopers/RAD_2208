@@ -1,3 +1,3 @@
 <?php
-    echo "success";
+    echo "successfully booked";
 ?>
