@@ -98,6 +98,7 @@ class Gym extends CI_Controller {
 			redirect('Main/login');
 		}
 	}
+	
 
 	public function cancel_booking($bid){
 		//$bid = $this->input->post('bid');
