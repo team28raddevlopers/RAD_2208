@@ -27,6 +27,7 @@
         public function get_notifications($uid){
             $this->db->where('notification.to_id', $uid);
             $this->db->where('visibility', 1);
+            $this->db->order_by('time','DESC');
             $query = $this->db->get('notification');
 
             return $query->result_array();

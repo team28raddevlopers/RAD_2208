@@ -48,5 +48,15 @@
             $this->db->where('tennis_court_booking.booking_id', $bid);
             $this->db->update('tennis_court_booking', $update);
         }
+
+        public function spa_delete_booking($bid){
+            $this->db->where('spa_room_booking.booking_id', $bid);
+            $this->db->delete('spa_room_booking');
+        }
+
+        public function tennis_delete_booking($bid){
+            $this->db->where('tennis_court_booking.booking_id', $bid);
+            $this->db->delete('tennis_court_booking');
+        }
     }
 ?>

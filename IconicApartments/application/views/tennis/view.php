@@ -76,7 +76,7 @@
         // document.querySelector('.modal-body #name').value = event.target.attributes['data-name'].value;
         document.querySelector('#cancel-form').action = (document.querySelector('.modal-body #form-action').value + event.target.attributes['data-id'].value);
         document.querySelector('.modal-body #id').value = event.target.attributes['data-id'].value;
-        document.querySelector('.modal-body #uid').value = event.target.attributes['data-user'].value;
+        // document.querySelector('.modal-body #uid').value = event.target.attributes['data-user'].value;
         document.querySelector('#bid').innerHTML =  event.target.attributes['data-id'].value;
         console.log(document.querySelector('#cancel-form').action);
 

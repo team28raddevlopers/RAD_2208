@@ -1,6 +1,6 @@
 <div class="container">
     <br><br>
-    <h1 class="text-center">Mark your appointment</h1>
+    <h1 class="text-center">Mark Your Attendance At the Pool</h1>
     <?php echo form_open('pool/attendance'); ?>
     <br><hr><br>
     <div class="row justify-content-center">
@@ -12,7 +12,7 @@
                 <input id ="uid" name="user_id" value="<?php echo $user_id; ?>">
             </div>-->
               
-            <input  id ="uid" name="uid" value="<?php echo $user_id; ?>">
+            <!-- <input  id ="uid" name="uid" value="<?php echo $user_id; ?>"> -->
               
                 <div class="form-group">
                     <label for="date">Date:</label>

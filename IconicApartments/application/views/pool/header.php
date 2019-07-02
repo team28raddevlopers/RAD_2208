@@ -23,11 +23,11 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item <?=($this->uri->segment(2)==='attendance')?'active':''?>">
-                        <a class="nav-link" href="<?php echo site_url('Pool/attendance')?>">Pool Atttendence</a>
+                        <a class="nav-link" href="<?php echo site_url('Pool/attendance')?>">Pool Attendence</a>
                     </li>
                     </li>
                     <li class="nav-item <?=($this->uri->segment(2)==='update')?'active':''?>">
-                        <a class="nav-link" href="<?php echo site_url('Pool/view')?>">View your Atttendence </a>
+                        <a class="nav-link" href="<?php echo site_url('Pool/view')?>">View your Attendence </a>
                     </li>
                     </li>
                     

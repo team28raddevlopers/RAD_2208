@@ -28,7 +28,7 @@
                         <a class="nav-link" href="<?php echo site_url('Gym')?>">Gym</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tennis Court</a>
+                        <a class="nav-link" href="<?php echo site_url('Tennis')?>">Tennis Court</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo site_url('Spa')?>">Spa Room</a>

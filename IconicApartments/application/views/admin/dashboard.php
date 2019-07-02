@@ -1,4 +1,3 @@
-<?php include 'header_main.php' ?>
 <div class="container">
     <div class="row justify-content-center">
         <div class="jumbotron col-sm-12" id="registerform">
@@ -28,4 +27,3 @@
      </div>
 </div>
 
-<?php include 'fotter.php'?>

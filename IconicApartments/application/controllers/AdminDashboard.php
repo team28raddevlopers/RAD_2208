@@ -5,7 +5,9 @@ class AdminDashboard extends CI_Controller{
     public function index(){
         
         if($this->session->userdata('user_type') == 'admin'){
+            $this->load->view('admin/header_main');
             $this->load->view('admin/dashboard');
+            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -219,7 +221,7 @@ class AdminDashboard extends CI_Controller{
 
             $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Removed/masseur',$data3);
-            $this->load->view('admin/fotter');
+            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -257,6 +259,21 @@ class AdminDashboard extends CI_Controller{
         }
     }
 
+    public function spa_current_bookings(){
+        if($this->session->userdata('user_type') == 'admin'){
+
+            $result = $this->Bookings_model->spa_get_bookings('accepted');
+            $data['result'] = $result;
+    
+            $this->load->view('admin/header_main');
+            $this->load->view('admin/spa_bookings/current_bookings',$data);
+            $this->load->view('main/footer');
+        }
+        else{
+            redirect('Main/login');
+        }
+    }
+
     public function tennis_pending_bookings(){
         if($this->session->userdata('user_type') == 'admin'){
 
@@ -265,6 +282,21 @@ class AdminDashboard extends CI_Controller{
     
             $this->load->view('admin/header_main');
             $this->load->view('admin/tennis_bookings/pending_bookings',$data);
+            $this->load->view('main/footer');
+        }
+        else{
+            redirect('Main/login');
+        }
+    }
+
+    public function tennis_current_bookings(){
+        if($this->session->userdata('user_type') == 'admin'){
+
+            $result = $this->Bookings_model->tennis_get_bookings('accepted');
+            $data['result'] = $result;
+    
+            $this->load->view('admin/header_main');
+            $this->load->view('admin/tennis_bookings/current_bookings',$data);
             $this->load->view('main/footer');
         }
         else{
@@ -315,6 +347,29 @@ class AdminDashboard extends CI_Controller{
         if($table === 'tennis'){
             $this->Bookings_model->tennis_update_reject($bid);
             redirect('AdminDashboard/tennis_pending_bookings');
+        }
+    }
+
+    public function cancel_booking($bid, $table){
+        //$bid = $this->input->post('bid');
+        $notification = array(
+            'title' => $this->input->post('title'),
+            'from_id' => $this->session->userdata('user_id'),
+            'to_id' => $this->input->post('uid'),
+            'message' => $this->input->post('accept-message'),
+            'type' => $this->input->post('type'),
+            'booking_id' => $this->input->post('id'),
+            'visibility' => 1
+        );
+
+        $this->User_model->add_notification($notification);
+        if($table === 'spa'){
+            $this->Bookings_model->spa_delete_booking($bid);
+            redirect('AdminDashboard/spa_current_bookings');
+        }
+        if($table === 'tennis'){
+            $this->Bookings_model->tennis_delete_booking($bid);
+            redirect('AdminDashboard/tennis_current_bookings');
         }
     }
 

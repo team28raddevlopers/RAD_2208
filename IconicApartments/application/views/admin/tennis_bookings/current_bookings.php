@@ -1,6 +1,6 @@
 <div class="container">
     <br><br>
-    <h1 class="text-center">Your Current Bookings</h1>
+    <h1 class="text-center">Current Tennis Court Bookings</h1>
     <br><br>
     <?php if($result): ?>
         <table class="table table-hover text-center">
@@ -19,7 +19,7 @@
                         <td><?php echo $row['date']; ?></td>
                         <td><?php echo $row['time_from']; ?></td>
                         <td><?php echo $row['time_to']; ?></td>
-                        <td><button type="button" class="btn btn-danger btn-sm" id="cancel" data-toggle="modal" data-target="#confirmCancel" data-id="<?php echo $row['booking_id'];?>" data-user="<?php echo $row['user_id'];?>">Cancel</button></td>
+                        <td><button type="button" class="btn btn-danger btn-sm" id="cancel" data-toggle="modal" data-target="#confirmCancel" data-id="<?php echo $row['booking_id'];?>">Cancel</button></td>
                     </tr>
             <?php endforeach; ?>
         </table>
@@ -34,15 +34,15 @@
 
                     <div class="modal-body">
                         Are you sure you want to cancel booking <p style="display:inline" id="bid"></p> ?
-                        <form action="<?php echo site_url('Instructor/cancel_booking/')?>" id="cancel-form" method="post" accept-charset="utf-8">
+                        <form action="<?php echo site_url('AdminDashboard/cancel_booking/')?>" id="cancel-form" method="post" accept-charset="utf-8">
                         <input type="text" class="form-control" id="accept-message" name="accept-message" placeholder="Enter a short message for the resident(optional)">
-                        <input type="hidden" id="form-action" value="<?php echo site_url('Instructor/cancel_booking/')?>">
+                        <input type="hidden" id="form-action" value="<?php echo site_url('AdminDashboard/cancel_booking/')?>">
                         <input type="hidden" id="id" name="id" value="<?php echo $row['booking_id']; ?>">
 
                         <!-- resident user_id -->
                         <input type="hidden" id="uid" name="uid" value="<?php echo $row['user_id']; ?>">
-                        <input type="hidden" id="title" name="title" value="Instructor Booking Cancelled:">
-                        <input type="hidden" id="type" name="type" value="gym_booking">
+                        <input type="hidden" id="title" name="title" value="Tennis Court Booking Cancelled:">
+                        <input type="hidden" id="type" name="type" value="tennis_booking">
                         <br>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-danger btn-sm">Cancel Booking</button>
@@ -55,17 +55,9 @@
             </div>
         </div>
         <br><br>
-        <!-- <h3>Cancel Bookings</h3>
-        <hr>
-        <form action="cancel_booking" method="post">
-            <div class="form-group">
-                <label for="bid">Booking ID:</label>
-                <input type="text" class="form-control ml-sm-2" id="bid" placeholder="Enter booking ID" name="bid" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form> -->
+
     <?php else :?>
-        <h5 class="text-center">You Currently Have No Accepted Bookings</h5>
+        <h5 class="text-center">There Are No Current Bookings For The Tennis Court</h5>
     <?php endif; ?>
     <br><br><br>
 
@@ -77,9 +69,9 @@
     cancel.forEach(element => {
       element.addEventListener('click', function(event) {
         // document.querySelector('.modal-body #name').value = event.target.attributes['data-name'].value;
-        document.querySelector('#cancel-form').action = (document.querySelector('.modal-body #form-action').value + event.target.attributes['data-id'].value);
+        document.querySelector('#cancel-form').action = (document.querySelector('.modal-body #form-action').value + event.target.attributes['data-id'].value + '/tennis');
         document.querySelector('.modal-body #id').value = event.target.attributes['data-id'].value;
-        document.querySelector('.modal-body #uid').value = event.target.attributes['data-user'].value;
+        // document.querySelector('.modal-body #uid').value = event.target.attributes['data-user'].value;
         document.querySelector('#bid').innerHTML =  event.target.attributes['data-id'].value;     
         console.log(document.querySelector('#cancel-form').action);
           

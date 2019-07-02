@@ -51,6 +51,13 @@
             $this->db->insert('gym_attendance',$data);
         }
 
+        public function get_attendence($uid){
+            $this->db->where('gym_attendance.user_id', $uid);
+            $query = $this->db->get('gym_attendance');
+
+            return $query->result_array();
+        }
+
         public function get_bookings($uid){
             $this->db->select('*');
             $this->db->from('instructor_booking');

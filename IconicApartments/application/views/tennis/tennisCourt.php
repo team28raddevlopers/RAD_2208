@@ -20,7 +20,7 @@
                     <label for="extime">Time To:</label>
                     <input type="time" class="form-control" id="timeto" placeholder="Enter exit time" name="timeto" required>
                 </div>
-              
+                <input type="hidden" id ="status" name="status" value="pending">
                 <br>
 
                  <!-- input fields for notifications -->

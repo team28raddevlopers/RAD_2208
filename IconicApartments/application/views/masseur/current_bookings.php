@@ -18,7 +18,7 @@
                           <td><?php echo $row['date']; ?></td>
                           <td><?php echo $row['time_from']; ?></td>
                           <td><?php echo $row['time_to']; ?></td>
-                          <td><button type="button" class="btn btn-danger btn-sm" id="cancel" data-toggle="modal" data-target="#confirmCancel" data-id="<?php echo $row['booking_id'];?>">Cancel</button></td>
+                          <td><button type="button" class="btn btn-danger btn-sm" id="cancel" data-toggle="modal" data-target="#confirmCancel" data-id="<?php echo $row['booking_id'];?>" data-user="<?php echo $row['user_id'];?>">Cancel</button></td>
                       </tr>
                 <?php endforeach; ?>
             </table>

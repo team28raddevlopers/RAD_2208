@@ -25,9 +25,17 @@
                 $this->load->view('main/footer');
 
             }
+            elseif($this->session->userdata('user_type') == 'coach'){
+                $this->load->view('coach/header');
+                $this->load->view('coach/home');
+                $this->load->view('main/footer');
+
+            }
             else if($this->session->userdata('user_type') == 'admin'){
                
-                $this->load->view('admin/dashboard',$data);
+                $this->load->view('admin/header_main');
+                $this->load->view('admin/dashboard');
+                $this->load->view('main/footer');
                 // $data["fetch_data"]= $this->AdminRegistrations->fetch_data_resident();
                 // $data2["fetch_data"]= $this->AdminRegistrations->fetch_data_masseur();
                 // $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_instructor();
@@ -146,12 +154,19 @@
                 $this->load->view('main/footer');
             }
 
+            if($this->session->userdata('user_type') == 'coach'){
+                $this->load->view('coach/header', $data);
+                $this->load->view('coach/notifications', $data);
+                $this->load->view('main/footer');
+            }
+
         }
         public function delete_notification($id){
             $this->User_model->delete_notification($id);
 
             redirect('Main/notifications');
         }
+       
 
     }
 ?>

@@ -16,8 +16,6 @@ class Pool extends CI_Controller{
 		if($this->session->userdata('user_type') == 'resident'){
 				$this->form_validation->set_rules('date', 'Date', 'required');
 			
-			//$this->form_validation->set_rules('uname', 'Username', 'required');
-
 			if ($this->form_validation->run() == FALSE){
 				$data['username'] = $this->session->userdata('username');
 				$data['user_id'] = $this->session->userdata('user_id');
@@ -29,8 +27,7 @@ class Pool extends CI_Controller{
 			
 				//store data from form fields in associative array
 				$data = array(
-					'user_id' => $this->input->post('uid'),
-					// 'instructor_id' => $this->input->post('iid'),
+					'user_id' => $this->session->userdata('user_id'),
 					'date' => $this->input->post('date'),
 					'time_from' => $this->input->post('timefrom'),
 					'time_to' => $this->input->post('timeto'),
@@ -56,29 +53,11 @@ class Pool extends CI_Controller{
 			//echo $result[0]['instructor_name'];
 			$data['result'] = $result;
 
-			$this->form_validation->set_rules('uid', 'date', 'timefrom','timeto');
-
-			if($this->form_validation->run() == FALSE){
-				$this->load->view('pool/header');
-				$this->load->view('pool/editform',$data);
-				$this->load->view('main/footer');
-			}
-			else{
-				
-				$data = array(
-					'user_id' => $this->input->post('uid'),
-					
-					'date' => $this->input->post('date'),
-					'time_from' => $this->input->post('timefrom'),
-					'time_to' => $this->input->post('timeto'),
-				
-				);
-
-				$this->pool_model->book_instructor($data); 
-
-				redirect('pool/view'); 
-			}
+			$this->load->view('pool/header');
+			$this->load->view('pool/editform',$data);
+			$this->load->view('main/footer');
 		}
+		
 		else{
 			redirect('Main/login');
 		}

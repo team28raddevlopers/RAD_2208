@@ -32,8 +32,16 @@
                     <a class="nav-link" href="<?php echo site_url('AdminDashboard/spa_pending_bookings') ?>">Spa Pending</a>
                 </li>
 
+                <li class="nav-item <?=($this->uri->segment(2)==='spa_current_bookings')?'active':''?>">
+                    <a class="nav-link" href="<?php echo site_url('AdminDashboard/spa_current_bookings') ?>">Spa Current</a>
+                </li>
+
                 <li class="nav-item <?=($this->uri->segment(2)==='tennis_pending_bookings')?'active':''?>">
                     <a class="nav-link" href="<?php echo site_url('AdminDashboard/tennis_pending_bookings') ?>">Tennis Pending</a>
+                </li>
+
+                <li class="nav-item <?=($this->uri->segment(2)==='tennis_current_bookings')?'active':''?>">
+                    <a class="nav-link" href="<?php echo site_url('AdminDashboard/tennis_current_bookings') ?>">Tennis Current</a>
                 </li>
             </ul>
 

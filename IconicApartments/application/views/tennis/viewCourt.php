@@ -12,15 +12,16 @@
               <th>DATE</th>
               <th>TIME FROM</th>
               <th>TIME TO</th>
+              <th>BOOKING STATUS</th>
               <th>CANCEL</th>
           </tr>
           <?php foreach($result as $row): ?>
               <tr >
                   <td><?php echo $row['booking_id']; ?></td>
-                  <!-- <td><?php echo $row['coach_name']." ".$row['last_name']; ?></td> -->
                   <td><?php echo $row['date']; ?></td>
                   <td><?php echo $row['time_from']; ?></td>
                   <td><?php echo $row['time_to']; ?></td>
+                  <td><?php echo $row['booking_status']; ?></td>
                   <td><button type="button" class="btn btn-danger btn-sm" id="cancel" data-toggle="modal" data-target="#confirmCancel" data-id="<?php echo $row['booking_id'];?>">Cancel</button></td>
               </tr>
           <?php endforeach; ?>
@@ -69,3 +70,19 @@
   <br><br><br>
 
 </div>
+
+<script language="JavaScript" type="text/javascript">
+    var cancel = document.querySelectorAll('#cancel')
+
+    cancel.forEach(element => {
+      element.addEventListener('click', function(event) {
+        // document.querySelector('.modal-body #name').value = event.target.attributes['data-name'].value;
+        document.querySelector('#cancel-form').action = (document.querySelector('.modal-body #form-action').value + event.target.attributes['data-id'].value);
+        document.querySelector('.modal-body #id').value = event.target.attributes['data-id'].value;
+        document.querySelector('#bid').innerHTML =  event.target.attributes['data-id'].value;
+        console.log(document.querySelector('#cancel-form').action);
+
+      })
+    })
+</script>
+

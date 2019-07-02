@@ -108,8 +108,8 @@ class Gym extends CI_Controller {
 			$this->form_validation->set_rules('date', 'Date', 'required');
 
 			if ($this->form_validation->run() == FALSE){
-				$data['username'] = $this->session->userdata('username');
-				$data['user_id'] = $this->session->userdata('user_id');
+				// $data['username'] = $this->session->userdata('username');
+				// $data['user_id'] = $this->session->userdata('user_id');
 				$this->load->view('gym/header');	
 				$this->load->view('gym/attendance',$data);
 				$this->load->view('main/footer');
@@ -118,8 +118,8 @@ class Gym extends CI_Controller {
 			
 				//store data from form fields in associative array
 				$data = array(
-					'user_id' => $this->input->post('uid'),
-					// 'instructor_id' => $this->input->post('iid'),
+					// 'user_id' => $this->input->post('uid'),
+					'user_id' => $this->session->userdata('user_id'),
 					'date' => $this->input->post('date'),
 					'time_from' => $this->input->post('timefrom'),
 					'time_to' => $this->input->post('timeto'),
@@ -134,20 +134,33 @@ class Gym extends CI_Controller {
 		}
 	}
 
+	public function attendance_view(){
+		if($this->session->userdata('user_type') == 'resident'){
+			$uid = $this->session->userdata('user_id');
+			$result = $this->Gym_model->get_attendence($uid);
+			$data['result'] = $result;
+
+			$this->load->view('gym/header');
+			$this->load->view('gym/attendance_view',$data);
+			$this->load->view('main/footer');
+		}
+		
+		else{
+			redirect('Main/login');
+		}
+	}
+
 	public function view(){
 		
 		if($this->session->userdata('user_type') == 'resident'){
 			$uid = $this->session->userdata('user_id');
 			$result = $this->Gym_model->get_bookings($uid);
 			$data['result'] = $result;
+
+			$this->load->view('gym/header');
+			$this->load->view('gym/view',$data);
+			$this->load->view('main/footer');
 	
-			$this->form_validation->set_rules('bid', 'Booking ID', 'required');
-	
-			if($this->form_validation->run() == FALSE){
-				$this->load->view('gym/header');
-				$this->load->view('gym/view',$data);
-				$this->load->view('main/footer');
-			}
 		}
 		else{
 			redirect('Main/login');

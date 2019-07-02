@@ -1,6 +1,6 @@
 <div class="container">
     <br><br>
-    <h1 class="text-center">Tennis Court Pending Bookings</h1>
+    <h1 class="text-center">Pending Tennis Court Bookings</h1>
     <br><br>
     <?php if($result): ?>
         <table class="table table-hover text-center">
@@ -105,7 +105,6 @@
 
     accept.forEach(element => {
       element.addEventListener('click', function(event) {
-        // document.querySelector('.modal-body #name').value = event.target.attributes['data-name'].value;
         document.querySelector('#accept-form').action = (document.querySelector('.modal-body #form-action').value + event.target.attributes['data-id'].value + '/tennis');
         document.querySelector('.modal-body #id').value = event.target.attributes['data-id'].value;
         document.querySelector('.modal-body #uid').value = event.target.attributes['data-user'].value;
@@ -119,7 +118,6 @@
 
     reject.forEach(element => {
       element.addEventListener('click', function(event) {
-        // document.querySelector('.modal-body #name').value = event.target.attributes['data-name'].value;
         document.querySelector('#reject-form').action = (document.querySelector('.modal-body #reject-form-action').value + event.target.attributes['data-id'].value + '/tennis');
         document.querySelector('.modal-body #rid').value = event.target.attributes['data-id'].value;
         document.querySelector('.modal-body #ruid').value = event.target.attributes['data-user'].value;

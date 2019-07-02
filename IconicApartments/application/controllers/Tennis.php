@@ -113,7 +113,8 @@ class Tennis extends CI_Controller {
 					'user_id' => $this->input->post('uid'),
 					'date' => $this->input->post('date'),
 					'time_from' => $this->input->post('timefrom'),
-					'time_to' => $this->input->post('timeto')
+					'time_to' => $this->input->post('timeto'),
+					'booking_status' => $this->input->post('status')
 				);
 
 				$notification = array(
@@ -141,7 +142,7 @@ class Tennis extends CI_Controller {
 
 		if($this->session->userdata('user_type') == 'resident'){
 			$uid = $this->session->userdata('user_id');
-$this->load->model('Tennis_model');
+			$this->load->model('Tennis_model');
 			$result = $this->Tennis_model->get_bookings($uid);
 			$data['result'] = $result;
 
