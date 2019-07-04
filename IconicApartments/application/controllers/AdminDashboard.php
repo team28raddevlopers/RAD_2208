@@ -321,7 +321,16 @@ class AdminDashboard extends CI_Controller{
     }
 
     public function removedMasseur(){
+        
+        if($this->session->userdata('user_type') == 'admin'){
+            $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_Removed_masseur();
 
+            $this->load->view('admin/header_main');
+            $this->load->view('admin/Reports/Removed/masseur',$data3);
+        }
+        else{
+            redirect('Main/login');
+        }
         
     }
 
