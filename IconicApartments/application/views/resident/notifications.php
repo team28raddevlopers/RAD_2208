@@ -8,13 +8,19 @@
                             <p class="text-center"><?php echo $notification['title']." ".$notification['booking_id']; ?></p>
                             <p class="text-center"><?php echo $notification['message']; ?></p>
                             <p class="small text-right"><?php echo $notification['time']; ?></p>
-                            <!-- <div class="row justify-content-center">
+                            <div class="row justify-content-center">
                                 <?php if($notification['type'] === 'gym_booking'): ?>
-                                    <a href="<?php echo site_url('Gym/view')?>" class="btn btn-light btn-sm text-center">View</a>
+                                    <a href="<?php echo site_url('Main/view_notification/Gym/view/').$notification['notification_id']?>" class="btn btn-dark btn-sm text-center">View</a>
                                 <?php elseif($notification['type'] === 'masseur_booking'): ?>
-                                    <a href="<?php echo site_url('Spa/view')?>" class="btn btn-light btn-sm text-center">View</a>
+                                    <a href="<?php echo site_url('Main/view_notification/Spa/view/').$notification['notification_id']?>" class="btn btn-dark btn-sm text-center">View</a>
+                                <?php elseif($notification['type'] === 'spa_booking'): ?>
+                                    <a href="<?php echo site_url('Main/view_notification/Spa/viewRoom/').$notification['notification_id']?>" class="btn btn-dark btn-sm text-center">View</a>
+                                <?php elseif($notification['type'] === 'coach_booking'): ?>
+                                    <a href="<?php echo site_url('Main/view_notification/Tennis/view/').$notification['notification_id']?>" class="btn btn-dark btn-sm text-center">View</a>
+                                <?php elseif($notification['type'] === 'tennis_booking'): ?>
+                                    <a href="<?php echo site_url('Main/view_notification/Tennis/viewCourt/').$notification['notification_id']?>" class="btn btn-dark btn-sm text-center">View</a>
                                 <?php endif;?>
-                            </div> -->
+                            </div>
                         </li>
                     <hr>
                 <?php endforeach;?>

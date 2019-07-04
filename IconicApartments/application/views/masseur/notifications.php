@@ -8,11 +8,11 @@
                         <p class="text-center"><?php echo $notification['title']." ".$notification['booking_id']; ?></p>
                         <p class="text-center"><?php echo $notification['message']; ?></p>
                         <p class="small text-right"><?php echo $notification['time']; ?></p>
-                        <!-- <div class="row justify-content-center">
+                        <div class="row justify-content-center">
                             <?php if($notification['type'] === 'new_booking'): ?>
-                                <a href="<?php echo site_url('Masseur/pending_bookings')?>" class="btn btn-light btn-sm text-center">View</a>
+                                <a href="<?php echo site_url('Main/view_notification/Masseur/pending_bookings/').$notification['notification_id']?>" class="btn btn-light btn-sm text-center">View</a>
                             <?php endif;?>
-                        </div> -->
+                        </div>
                     </li>
                     <hr>
                 <?php endforeach;?>

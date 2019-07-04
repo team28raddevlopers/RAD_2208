@@ -4,6 +4,7 @@
             if($this->session->userdata('user_type') == 'masseur'){
                 $this->load->view('masseur/header');
                 $this->load->view('masseur/home');
+                $this->load->view('main/footer');
             }
             else{
                 redirect('Main/login');

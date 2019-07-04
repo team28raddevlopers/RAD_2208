@@ -44,7 +44,7 @@
 
                                 <!-- resident user_id -->
                                 <input type="hidden" id="uid" name="uid" value="<?php echo $row['user_id']; ?>"> 
-                                <input type="hidden" id="title" name="title" value="Coach Booking Accepted:">
+                                <input type="hidden" id="title" name="title" value="Coach Booking Accepted: Booking ID : ">
                                 <input type="hidden" id="type" name="type" value="coach_booking">
 
                                 <br>
@@ -75,7 +75,7 @@
                                 <input type="hidden" id="reject-form-action" value="<?php echo site_url('Coach/reject_booking/')?>">
                                 <input type="hidden" id="rid" name="rid" value="<?php echo $row['booking_id']; ?>">
                                 <input type="hidden" id="ruid" name="ruid" value="<?php echo $row['user_id']; ?>">
-                                <input type="hidden" id="title" name="title" value="Coach Booking Rejected:">
+                                <input type="hidden" id="title" name="title" value="Coach Booking Rejected: Booking ID : ">
                                 <input type="hidden" id="type" name="type" value="coach_booking">
 
                                 <br>

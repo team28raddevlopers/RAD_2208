@@ -8,15 +8,46 @@ class Profile extends CI_Controller{
         // $username=$data['username'];
         $id = $this->session->userdata('user_id');
 
-        $result = $this->Profile_update->fetch_data_Register_resident_update($id);
-        $data['user'] = $result;
 
-        $this->load->view('resident/resident_header');
-        $this->load->view('resident/user_profile',$data);
-        $this->load->view('main/footer');
+        if($this->session->userdata('user_type') === 'resident'){
+            $result = $this->Profile_update->fetch_data_Register_resident_update($id);
+            $data['user'] = $result;
+
+            $this->load->view('resident/resident_header');
+            $this->load->view('resident/user_profile',$data);
+            $this->load->view('main/footer');
+        }
+
+        else if($this->session->userdata('user_type') === 'instructor'){
+            $result = $this->Profile_update->fetch_data_Register_instructor_update($id);
+            $data['user'] = $result;
+
+            $this->load->view('instructor/header');
+            $this->load->view('instructor/profile',$data);
+            $this->load->view('main/footer');
+        }
+
+        else if($this->session->userdata('user_type') === 'masseur'){
+            $result = $this->Profile_update->fetch_data_Register_masseur_update($id);
+            $data['user'] = $result;
+
+            $this->load->view('masseur/header');
+            $this->load->view('masseur/profile',$data);
+            $this->load->view('main/footer');
+        }
+
+        else if($this->session->userdata('user_type') === 'coach'){
+            $result = $this->Profile_update->fetch_data_Register_coach_update($id);
+            $data['user'] = $result;
+
+            $this->load->view('coach/header');
+            $this->load->view('coach/profile',$data);
+            $this->load->view('main/footer');
+        }
+       
     }
 
-    public function update(){
+    public function update($table, $name){
         
         $this->form_validation->set_rules('fname', 'First Name', 'required');
         $this->form_validation->set_rules('lname', 'Last Name', 'required');
@@ -34,10 +65,9 @@ class Profile extends CI_Controller{
             $id = $this->session->userdata('user_id');
 
             $data = array(
-                'resident_name' => $this->input->post('fname'),
+                $name => $this->input->post('fname'),
                 'last_name' => $this->input->post('lname'),
                 'tele_num' => $this->input->post('tpnum'),
-                'appartment_no' => $this->input->post('apptno'),
              );   
             
             $data2 = array(
@@ -45,7 +75,7 @@ class Profile extends CI_Controller{
                  'email' => $this->input->post('email')
             );
 
-             $this->Profile_update->updateDetails($id, $data, $data2);
+             $this->Profile_update->updateDetails($table, $id, $data, $data2);
 
              redirect('Profile');
         }

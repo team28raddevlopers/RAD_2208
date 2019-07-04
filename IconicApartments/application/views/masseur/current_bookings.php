@@ -40,7 +40,7 @@
 
                             <!-- resident user_id -->
                             <input type="hidden" id="uid" name="uid" value="<?php echo $row['user_id']; ?>">
-                            <input type="hidden" id="title" name="title" value="Masseur Booking Cancelled:">
+                            <input type="hidden" id="title" name="title" value="Masseur Booking Cancelled: Booking ID : ">
                             <input type="hidden" id="type" name="type" value="masseur_booking">
                             <br>
                             <div class="modal-footer">

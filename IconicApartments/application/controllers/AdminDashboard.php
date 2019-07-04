@@ -42,6 +42,8 @@ class AdminDashboard extends CI_Controller{
     //     }
     // }
 
+    //register requests
+
     public function registerRequestsResidents(){
         if($this->session->userdata('user_type') == 'admin'){
            
@@ -118,6 +120,8 @@ class AdminDashboard extends CI_Controller{
     //     }
     // }
 
+
+    //registered users
     public function viewRegisteredResidents(){
         if($this->session->userdata('user_type') == 'admin'){
             $data["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_resident();
@@ -167,6 +171,8 @@ class AdminDashboard extends CI_Controller{
         }
     }
 
+
+    //reports
     public function Reports($p){
 
         if($this->session->userdata('user_type') == 'admin'){
@@ -189,6 +195,7 @@ class AdminDashboard extends CI_Controller{
         
     }
 
+    //reports
     public function registeredResidents(){
 
         if($this->session->userdata('user_type') == 'admin'){
@@ -201,6 +208,7 @@ class AdminDashboard extends CI_Controller{
         }
     }
 
+    //reports
     public function registeredCoaches(){
 
         if($this->session->userdata('user_type') == 'admin'){
@@ -214,6 +222,7 @@ class AdminDashboard extends CI_Controller{
         }
     }
 
+    //reports
     public function registeredInstructors(){
 
         if($this->session->userdata('user_type') == 'admin'){
@@ -226,6 +235,8 @@ class AdminDashboard extends CI_Controller{
             redirect('Main/login');
         }
     }
+
+    //reports
 
     public function registeredMasseur(){
 
@@ -240,6 +251,7 @@ class AdminDashboard extends CI_Controller{
         }
     }
 
+    //reports
     public function registereRequestsResidents(){
         
         if($this->session->userdata('user_type') == 'admin'){
@@ -253,6 +265,7 @@ class AdminDashboard extends CI_Controller{
         }
     }
 
+    //reports
     public function registereRequestsCoaches(){
 
         if($this->session->userdata('user_type') == 'admin'){
@@ -265,7 +278,8 @@ class AdminDashboard extends CI_Controller{
             redirect('Main/login');
         }
     }
-               
+        
+    //reports
 
     public function registereRequestsMasseur(){
 
@@ -280,6 +294,7 @@ class AdminDashboard extends CI_Controller{
         }
     }
 
+    //reports
     public function registereRequestsInstructors(){
 
         if($this->session->userdata('user_type') == 'admin'){
@@ -293,6 +308,7 @@ class AdminDashboard extends CI_Controller{
         }
     }
 
+    //reports
     public function removedInstructors(){
 
         if($this->session->userdata('user_type') == 'admin'){
@@ -306,7 +322,7 @@ class AdminDashboard extends CI_Controller{
         }
     }
 
-    
+    //reports
     public function removedResident(){
     
         if($this->session->userdata('user_type') == 'admin'){
@@ -325,6 +341,7 @@ class AdminDashboard extends CI_Controller{
         
     }
 
+    //reports
     public function removedCoach(){
        
         if($this->session->userdata('user_type') == 'admin'){
@@ -443,7 +460,6 @@ class AdminDashboard extends CI_Controller{
     }
 
     public function cancel_booking($bid, $table){
-        //$bid = $this->input->post('bid');
         $notification = array(
             'title' => $this->input->post('title'),
             'from_id' => $this->session->userdata('user_id'),
@@ -475,7 +491,7 @@ class AdminDashboard extends CI_Controller{
         }
     }
 
-
+//search
     public function fetchSearchRecords(){
         
         if($this->session->userdata('user_type') == 'admin'){

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
 
-    <title>Iconic Appartments</title>
+    <title>Iconic Apartments</title>
   </head>
   <body class="d-flex flex-column">
     <nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-center sticky-top">
@@ -99,31 +99,7 @@
                     <li class="nav-item">
                         <a class="nav-link btn btn-dark" href="<?php echo site_url('Main/logout') ?>">Logout</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <div class="dropdown">
-                            <a class="nav-link btn btn-dark dropdown-toggle" data-toggle="dropdown">Notifications</a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <?php foreach ($notifications as $notification):?>
-                                    <?php if($notification['type'] = 'gym_booking'):?>
-                                    <a class="dropdown-item" href="<?php echo site_url('Gym/view')?>">
-                                        <span><button type="button" class="close" data-dismiss="alert">&times;</button></span>
-                                        <p class="text-center"><?php echo $notification['title']." ".$notification['booking_id']; ?></p>
-                                        <p class="text-center"><?php echo $notification['message']; ?></p>
-                                        <p class="small"><?php echo $notification['time']; ?></p>
-                                        <div class="row justify-content-center">
-                                            <a href="<?php echo site_url('Main/delete_notification/').$notification['notification_id']?>" class="btn btn-danger btn-sm text-center">Delete</a>
-                                        </div>
-                                    </a>
-                                    <?php endif;?>
-                                <?php endforeach;?>
 
-                            <a class="dropdown-item" href="<?php echo site_url('Gym/view')?>">Link 1</a>
-                            <a class="dropdown-item" href="#">Link 2</a>
-                            <a class="dropdown-item-text" href="#">Text Link</a>
-                            <span class="dropdown-item-text">Just Text</span>
-                            </div>
-                        </div>
-                    </li> -->
                 </ul>
             </div>
         </nav>

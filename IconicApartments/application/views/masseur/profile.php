@@ -1,20 +1,6 @@
 <br><br>
 <div class="container">
-        <!-- <div class="" id="registerform">
-            <h2 class="text-center">Register</h2>
 
-            <?php if($this->session->flashdata()): ?>
-                <div class="row justify-content-center">
-                    <div class="col-md-12">
-                        <div class="alert alert-danger alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            <?php echo $this->session->flashdata('updatefail'); ?>
-                        </div>
-                    </div>
-                </div>
-            <?php endif;?>
-
-        </div> -->
         <h1 class="text-center">Profile</h1>
         <?php echo validation_errors(); ?>
        <div class="row justify-content-center">
@@ -38,7 +24,7 @@
               <ul class="list-group-flush">
                   <li class="list-group-item">
                       <h5>First Name</h5>
-                      <p><?php echo $user['resident_name'];?></p>
+                      <p><?php echo $user['masseur_name'];?></p>
                   </li>
                   <li class="list-group-item">
                       <h5>Last Name</h5>
@@ -62,37 +48,7 @@
               </ul>
             </div>
 
-           <!-- <div class="col-md-6">
-            <form action="<?php echo site_url('Profile/update')?>" id="edit-form" method="post" accept-charset="utf-8">
-                <input type="hidden" id="form-main-action" value="<?=base_url().'admin/update_customer/'?>">
 
-                <div class="form-group">
-                  <label>First Name</label>
-                  <input type="text" id="fname" class="form-control" name="fname" placeholder="First Name" value="<?php echo $user['resident_name'];?>" required>
-                </div>
-                <div class="form-group">
-                  <label>Last Name</label>
-                  <input type="text" id="lname" class="form-control" name="lname" placeholder="Last Name" value="<?php echo $user['last_name'];?>" required>
-                </div>
-                <div class="form-group">
-                  <label>Username</label>
-                  <input type="text" id="username" class="form-control" name="username" placeholder="Username" value="<?php echo $user['username'];?>" required>
-                </div>
-                <div class="form-group">
-                  <label>Email</label>
-                  <input type="text" id="email" class="form-control" name="email" placeholder="Email" value="<?php echo $user['email'];?>" required>
-                </div>
-                <div class="form-group">
-                  <label>Appartment Number</label>
-                  <input type="text" id="apptno" class="form-control" name="apptno" placeholder="Appartment Number" value="<?php echo $user['appartment_no'];?>" required>
-                </div>
-                <div class="form-group">
-                  <label>Contact Number</label>
-                  <input type="text" id="tpnum" class="form-control" name="tpnum" placeholder="Contact Number" value="<?php echo $user['tele_num'];?>" required>
-                </div>
-                <button type="submit" class="btn btn-primary btn-sm">Save</button>
-              </form>
-           </div> -->
         </div>
     </div>
 
@@ -103,13 +59,13 @@
       <div class="modal-content">
 
         <div class="modal-body">
-          <!-- <form action="<?php echo site_url('Profile/update/resident/resident_name')?>" id="edit-form" method="post" accept-charset="utf-8"> -->
-          <?php echo form_open('Profile/update/resident/resident_name');?>
+          <!-- <form action="<?php echo site_url('Profile/update/masseur/masseur_name')?>" id="edit-form" method="post" accept-charset="utf-8"> -->
+          <?php echo form_open('Profile/update/masseur/masseur_name');?>
           <input type="hidden" id="form-main-action" value="<?=base_url().'admin/update_customer/'?>">
 
           <div class="form-group">
             <label>First Name</label>
-            <input type="text" id="fname" class="form-control" name="fname" placeholder="First Name" value="<?php echo $user['resident_name'];?>" required>
+            <input type="text" id="fname" class="form-control" name="fname" placeholder="First Name" value="<?php echo $user['masseur_name'];?>" required>
           </div>
           <div class="form-group">
             <label>Last Name</label>

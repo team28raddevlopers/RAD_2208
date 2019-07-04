@@ -104,7 +104,7 @@ class Register extends CI_Controller{
         }
 
 
-        public function AdminRegisterUsers(){
+        public function AdminRegisterUsers($page){
 
 
             
@@ -133,18 +133,18 @@ class Register extends CI_Controller{
                     $this->email->message('Your request has been accepted you can login through this url http://localhost/IconicApartments/index.php/main/login');
                     $this->email->set_newline("\r\n");
                     $result = $this->email->send();
-                redirect('AdminDashboard/RegisterRequests');
+                redirect('AdminDashboard/'.$page);
             }else{
                 echo "Not register";
             }
 
         }
 
-        public function AdminUnregisterUsers(){
+        public function AdminUnregisterUsers($page){
 
             $response=$this->AdminRegistrations->AdminUnregisterUser();
             if($response){
-                redirect('AdminDashboard/Registered');
+                redirect('AdminDashboard/'.$page);
             }
         }
        

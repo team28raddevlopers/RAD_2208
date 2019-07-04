@@ -38,7 +38,7 @@
               <ul class="list-group-flush">
                   <li class="list-group-item">
                       <h5>First Name</h5>
-                      <p><?php echo $user['resident_name'];?></p>
+                      <p><?php echo $user['instructor_name'];?></p>
                   </li>
                   <li class="list-group-item">
                       <h5>Last Name</h5>
@@ -103,13 +103,13 @@
       <div class="modal-content">
 
         <div class="modal-body">
-          <!-- <form action="<?php echo site_url('Profile/update/resident/resident_name')?>" id="edit-form" method="post" accept-charset="utf-8"> -->
-          <?php echo form_open('Profile/update/resident/resident_name');?>
+          <!-- <form action="<?php echo site_url('Profile/update/instructor/instructor_name')?>" id="edit-form" method="post" accept-charset="utf-8"> -->
+          <?php echo form_open('Profile/update/instructor/instructor_name');?>
           <input type="hidden" id="form-main-action" value="<?=base_url().'admin/update_customer/'?>">
 
           <div class="form-group">
             <label>First Name</label>
-            <input type="text" id="fname" class="form-control" name="fname" placeholder="First Name" value="<?php echo $user['resident_name'];?>" required>
+            <input type="text" id="fname" class="form-control" name="fname" placeholder="First Name" value="<?php echo $user['instructor_name'];?>" required>
           </div>
           <div class="form-group">
             <label>Last Name</label>

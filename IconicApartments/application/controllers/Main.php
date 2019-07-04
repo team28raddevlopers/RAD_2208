@@ -40,19 +40,7 @@
                 $data['tennis'] = count($this->User_model->get_count('tennis_court_booking'));
                 $this->load->view('admin/header_main',$data);
                 $this->load->view('admin/dashboard');
-                // $this->load->view('main/footer');
-                // $data["fetch_data"]= $this->AdminRegistrations->fetch_data_resident();
-                // $data2["fetch_data"]= $this->AdminRegistrations->fetch_data_masseur();
-                // $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_instructor();
-                // $data4["fetch_data"]= $this->AdminRegistrations->fetch_data_coach();
-                // $this->load->view('admin/header_main');
-                // $this->load->view('admin/fotter');
-                // $this->load->view('admin/resident_users',$data);
-                // $this->load->view('admin/masseur',$data2);
-                // $this->load->view('admin/instructor',$data3);
-                // $this->load->view('admin/coach',$data4);
 
-               
             }
             else{
                 $this->load->view('main/header_main');
@@ -170,9 +158,22 @@
         public function delete_notification($id){
             $this->User_model->delete_notification($id);
 
+            $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
+            $num = count($notifications);
+
+            $this->session->set_userdata('notifications', $num);
+
             redirect('Main/notifications');
         }
-       
+       public function view_notification($page, $func, $id){
+            $this->User_model->delete_notification($id);
+
+            $notifications =$this->User_model->get_notifications($this->session->userdata('user_id'));
+            $num = count($notifications);
+
+            $this->session->set_userdata('notifications', $num);
+            redirect($page.'/'.$func);
+       }
 
     }
 ?>

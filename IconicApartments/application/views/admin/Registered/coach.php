@@ -22,7 +22,7 @@
                     foreach($fetch_data as $row){
                         ?>
                         <tr>
-                        <?php echo form_open('Register/AdminUnregisterUsers')?>
+                        <?php echo form_open('Register/AdminUnregisterUsers/viewRegisteredCoaches')?>
                                 
                             <td><input style="border:none;" class="form-control" type="text" id="user_id" name="user_id" value="<?php echo $row['user_id']; ?>"required></td>
                             <td><?php echo $row['coach_name']; ?></td>
