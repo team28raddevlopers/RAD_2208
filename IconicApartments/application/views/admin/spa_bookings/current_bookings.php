@@ -1,67 +1,80 @@
 <div class="container">
-    <br><br>
-    <h1 class="text-center">Current Spa Room Bookings</h1>
-    <br><br>
-    <?php if($result): ?>
-        <table class="table table-hover text-center">
-            <tr>
-                <th>ID</th>
-                <th>RESIDENT</th>
-                <th>DATE</th>
-                <th>TIME FROM</th>
-                <th>TIME TO</th>
-                <th>CANCEL</th>
-            </tr>
-            <?php foreach($result as $row): ?>
+    <div class="row" id="currentBookingSpa">
+        <div class="col-lg-12">
+            <br><br>
+            <h1 class="text-center">Current Spa Room Bookings</h1>
+            <br><br>
+            <?php if($result): ?>
+                <table class="table table-hover text-center">
                     <tr>
-                        <td><?php echo $row['booking_id']; ?></td>
-                        <td><?php echo $row['resident_name']." ".$row['last_name']; ?></td>
-                        <td><?php echo $row['date']; ?></td>
-                        <td><?php echo $row['time_from']; ?></td>
-                        <td><?php echo $row['time_to']; ?></td>
-                        <td><button type="button" class="btn btn-danger btn-sm" id="cancel" data-toggle="modal" data-target="#confirmCancel" data-id="<?php echo $row['booking_id'];?>">Cancel</button></td>
+                        <th>ID</th>
+                        <th>RESIDENT</th>
+                        <th>DATE</th>
+                        <th>TIME FROM</th>
+                        <th>TIME TO</th>
+                        <th>CANCEL</th>
                     </tr>
-            <?php endforeach; ?>
-        </table>
-        <div class="modal" id="confirmCancel">
-            <div class="modal-dialog">
-                <div class="modal-content">
+                    <?php foreach($result as $row): ?>
+                            <tr>
+                                <td><?php echo $row['booking_id']; ?></td>
+                                <td><?php echo $row['resident_name']." ".$row['last_name']; ?></td>
+                                <td><?php echo $row['date']; ?></td>
+                                <td><?php echo $row['time_from']; ?></td>
+                                <td><?php echo $row['time_to']; ?></td>
+                                <td><button type="button" class="btn btn-danger btn-sm" id="cancel" data-toggle="modal" data-target="#confirmCancel" data-id="<?php echo $row['booking_id'];?>">Cancel</button></td>
+                            </tr>
+                    <?php endforeach; ?>
+                </table>
+                <div class="modal" id="confirmCancel">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
 
-                    <div class="modal-header">
-                    <h5 class="modal-title">Cancel Booking</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
+                            <div class="modal-header">
+                            <h5 class="modal-title">Cancel Booking</h5>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
 
-                    <div class="modal-body">
-                        Are you sure you want to cancel booking <p style="display:inline" id="bid"></p> ?
-                        <form action="<?php echo site_url('AdminDashboard/cancel_booking/')?>" id="cancel-form" method="post" accept-charset="utf-8">
-                        <input type="text" class="form-control" id="accept-message" name="accept-message" placeholder="Enter a short message for the resident(optional)">
-                        <input type="hidden" id="form-action" value="<?php echo site_url('AdminDashboard/cancel_booking/')?>">
-                        <input type="hidden" id="id" name="id" value="<?php echo $row['booking_id']; ?>">
+                            <div class="modal-body">
+                                Are you sure you want to cancel booking <p style="display:inline" id="bid"></p> ?
+                                <form action="<?php echo site_url('AdminDashboard/cancel_booking/')?>" id="cancel-form" method="post" accept-charset="utf-8">
+                                <input type="text" class="form-control" id="accept-message" name="accept-message" placeholder="Enter a short message for the resident(optional)">
+                                <input type="hidden" id="form-action" value="<?php echo site_url('AdminDashboard/cancel_booking/')?>">
+                                <input type="hidden" id="id" name="id" value="<?php echo $row['booking_id']; ?>">
 
-                        <!-- resident user_id -->
-                        <input type="hidden" id="uid" name="uid" value="<?php echo $row['user_id']; ?>">
-                        <input type="hidden" id="title" name="title" value="Spa Room Booking Cancelled:">
-                        <input type="hidden" id="type" name="type" value="spa_booking">
-                        <br>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-danger btn-sm">Cancel Booking</button>
-                            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                                <!-- resident user_id -->
+                                <input type="hidden" id="uid" name="uid" value="<?php echo $row['user_id']; ?>">
+                                <input type="hidden" id="title" name="title" value="Spa Room Booking Cancelled:">
+                                <input type="hidden" id="type" name="type" value="spa_booking">
+                                <br>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-danger btn-sm">Cancel Booking</button>
+                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                                </div>
+                                </form>
+                            </div>
+
                         </div>
-                        </form>
                     </div>
-
                 </div>
+                <br><br>
+
+            <?php else :?>
+                <h5 class="text-center">There Are No Current Bookings For The Spa Room</h5>
+            <?php endif; ?>
+            <br><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row justify-content-center" >
+                    
+                    <button class="btn btn-primary btn-lg" onclick="printContent('currentBookingSpa')">Print Report</button>
             </div>
         </div>
-        <br><br>
-
-    <?php else :?>
-        <h5 class="text-center">There Are No Current Bookings For The Spa Room</h5>
-    <?php endif; ?>
-    <br><br><br>
+    </div>
 
 </div>
+
 
 <script language="JavaScript" type="text/javascript">
     var cancel = document.querySelectorAll('#cancel')

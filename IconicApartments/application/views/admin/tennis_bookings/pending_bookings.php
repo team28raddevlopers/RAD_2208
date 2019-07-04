@@ -1,4 +1,6 @@
 <div class="container">
+    <div class="row" id="pendingTennisBooking">
+        <div class="col-lg-12">
     <br><br>
     <h1 class="text-center">Pending Tennis Court Bookings</h1>
     <br><br>
@@ -97,6 +99,18 @@
     <?php endif; ?>
 
     <br><br><br>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="col-lg-12">
+                <div class="row justify-content-center" >
+                        
+                        <button class="btn btn-primary btn-lg" onclick="printContent('pendingTennisBooking')">Print Report</button>
+                </div>
+            </div>
+        </div>
+    
 
 </div>
 
