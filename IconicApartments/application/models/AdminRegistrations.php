@@ -57,13 +57,8 @@ class AdminRegistrations extends CI_Model{
     }
 
 
-<<<<<<< HEAD
 
     public function fetch_data_Register_resident_update($id){
-=======
-    // to fetch data to the resident update view.
-    public function fetch_data_Register_resident_update($username){
->>>>>>> 4e9d0eaccc72070e16478a00d40c31cab6321eed
 
         // $query = $this->db->query("SELECT resident.user_id,resident.resident_name,resident.last_name,resident.tele_num,resident.appartment_no FROM resident,user where resident.user_id=user.user_id AND user.username='$username'");
         // return $query;
@@ -251,7 +246,7 @@ class AdminRegistrations extends CI_Model{
         
 
 
-        $this->db->select('resident.user_id,resident.resident_name,resident.last_name,resident.tele_num,resident.appartment_no,user.email,user.register,user.login',);
+        $this->db->select('resident.user_id,resident.resident_name,resident.last_name,resident.tele_num,resident.appartment_no,user.email,user.register,user.login');
         $this->db->from('resident');
         $this->db->join('user','resident.user_id=user.user_id');
         $this->db->like('resident.resident_name', $tag);
