@@ -32,14 +32,15 @@
 
             }
             else if($this->session->userdata('user_type') == 'admin'){
-                $data['residents'] = count($this->User_model->get_count('resident'));
-                $data['instructors'] = count($this->User_model->get_count('instructor'));
-                $data['coaches'] = count($this->User_model->get_count('coach'));
-                $data['masseurs'] = count($this->User_model->get_count('masseur'));
-                $data['spa'] = count($this->User_model->get_count('spa_room_booking'));
-                $data['tennis'] = count($this->User_model->get_count('tennis_court_booking'));
-                $this->load->view('admin/header_main',$data);
-                $this->load->view('admin/dashboard');
+                // $data['residents'] = count($this->User_model->get_count('resident'));
+                // $data['instructors'] = count($this->User_model->get_count('instructor'));
+                // $data['coaches'] = count($this->User_model->get_count('coach'));
+                // $data['masseurs'] = count($this->User_model->get_count('masseur'));
+                // $data['spa'] = count($this->User_model->get_count('spa_room_booking'));
+                // $data['tennis'] = count($this->User_model->get_count('tennis_court_booking'));
+                // $this->load->view('admin/header_main',$data);
+                // $this->load->view('admin/dashboard');
+                redirect('AdminDashboard/index');
 
             }
             else{
@@ -70,9 +71,9 @@
             $this->form_validation->set_rules('password', 'Password', 'required');
 
             if ($this->form_validation->run() == FALSE){
-                $this->load->view('main/register_header');
+                // $this->load->view('main/register_header');
                 $this->load->view('main/login');
-                $this->load->view('main/footer');
+                // $this->load->view('main/footer');
             }
             else{
                 $password = md5($this->input->post('password'));

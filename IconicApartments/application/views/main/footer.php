@@ -46,7 +46,7 @@
 <!-- Copyright-->
 <div class="container-fluid">
     <p class="text-center m-0 py-1">
-        © 2019 Copyright <a href="<?php echo base_url('Homepage')?>" class="text-white">Iconic Apartments</a>
+        © 2019 Copyright <a href="<?php echo site_url('Main')?>" class="text-white">Iconic Apartments</a>
     </p>
 </div>
 <!-- Copyright -->

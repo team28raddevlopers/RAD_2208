@@ -125,8 +125,8 @@ class Gym extends CI_Controller {
 					'time_to' => $this->input->post('timeto'),
 				);
 
-				$this->Gym_model->mark_attendance(); //send data to Gym_model
-				redirect('Gym/index'); //redirect to Gym home page
+				$this->Gym_model->mark_attendance($data); //send data to Gym_model
+				redirect('Gym/attendance'); //redirect to Gym home page
 			}
 		}
 		else{

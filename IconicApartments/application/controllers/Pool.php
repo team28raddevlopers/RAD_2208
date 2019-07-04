@@ -35,7 +35,7 @@ class Pool extends CI_Controller{
 				$this->load->model('pool_model');
 				$this->pool_model->mark_attendance($data); //send data to pool_model
 			
-				redirect('Pool/index'); //redirect to Gym home page
+				redirect('Pool/attendance'); //redirect to Gym home page
 				
 			}
 		}

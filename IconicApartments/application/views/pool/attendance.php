@@ -5,14 +5,9 @@
     <br><hr><br>
     <div class="row justify-content-center">
         <!-- <div class="col-sm-3"></div> -->
-        <div class="jumbotron col-sm-6">
+        <div class="col-6">
             <form action="attendance" method="post">
-            <!--<div class="form-group">
-                <label for="uid">Userid:</label>
-                <input id ="uid" name="user_id" value="<?php echo $user_id; ?>">
-            </div>-->
-              
-            <!-- <input  id ="uid" name="uid" value="<?php echo $user_id; ?>"> -->
+            
               
                 <div class="form-group">
                     <label for="date">Date:</label>

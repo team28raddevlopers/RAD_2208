@@ -203,7 +203,7 @@ class Spa extends CI_Controller {
 		);
 		$this->User_model->add_notification($notification);
 
-		redirect('Spa/viewCourt');
+		redirect('Spa/viewRoom');
 
 }
 		
