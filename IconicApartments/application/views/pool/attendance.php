@@ -1,6 +1,6 @@
 <div class="container">
     <br><br>
-    <h1 class="text-center">Mark Your Attendance At the Pool</h1>
+    <h1 class="display-4 text-center">Mark Your Attendance At the Pool</h1>
     <?php echo form_open('pool/attendance'); ?>
     <br><hr><br>
     <div class="row justify-content-center">
@@ -11,21 +11,21 @@
               
                 <div class="form-group">
                     <label for="date">Date:</label>
-                    <input type="date" class="form-control" id="date" placeholder="Enter date" name="date" required>
+                    <input type="date" class="form-control form-control-lg" id="date" placeholder="Enter date" name="date" required>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-6">
                         <label for="entime">Entrance Time:</label>
-                        <input type="time" class="form-control" id="timefrom" placeholder="Enter entrance time" name="timefrom" required>
+                        <input type="time" class="form-control form-control-lg" id="timefrom" placeholder="Enter entrance time" name="timefrom" required>
                     </div>
                     <div class="form-group col-6">
                         <label for="extime">Exit Time:</label>
-                        <input type="time" class="form-control" id="timeto" placeholder="Enter exit time" name="timeto" required>
+                        <input type="time" class="form-control form-control-lg" id="timeto" placeholder="Enter exit time" name="timeto" required>
                     </div>
                 </div>
                 <br>
                 <div class="row justify-content-center">
-                    <button type="submit" class="btn btn-dark ">SUBMIT</button>
+                    <button type="submit" class="btn btn-dark btn-lg">SUBMIT</button>
                 </div>
             </form>
         </div>

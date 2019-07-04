@@ -1,7 +1,7 @@
 
 <div class="container">
     <br><br>
-    <h1 class="text-center">Book the Spa Room To Conduct Your Spa Session</h1>
+    <h1 class="display-4 text-center">Book The Spa To Conduct Your Spa Session</h1>
     <br><hr><br>
     <div class="row justify-content-center">
         <!-- <div class="jumbotron col-sm-6"> -->

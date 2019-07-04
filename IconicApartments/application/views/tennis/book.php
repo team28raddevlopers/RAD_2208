@@ -1,6 +1,7 @@
+
 <div class="container">
     <br><br>
-    <h1 class="text-center">Book A Coach To Practice Tennis</h1>
+    <h1 class="display-4 text-center">Book A Coach To Practice Tennis</h1>
     <br><hr><br>
 
 
@@ -95,8 +96,8 @@
     </div>
     <br><br><br>
 
-</div>
 
+</div>
     <script language="JavaScript" type="text/javascript">
     var book = document.querySelectorAll('#bookbtn')
 

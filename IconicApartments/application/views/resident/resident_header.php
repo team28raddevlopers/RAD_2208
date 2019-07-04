@@ -63,7 +63,7 @@
                     </li>  -->
                     <li class="nav-item dropdown">
                         <a class="nav-link  <?=($this->uri->segment(1)==='Spa')?'active':''?>" href="#" id="navbardrop" data-toggle="dropdown">
-                            Spa Room
+                            Spa
                         </a>
                         <div class="dropdown-menu" style="background: rgba(179,179,179,0.7)">
                             <ul class="list-group list-group-flush">

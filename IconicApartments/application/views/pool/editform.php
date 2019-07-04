@@ -1,6 +1,6 @@
 <div class="container">
     <br><br>
-	<h1 class="text-center">View Your Attendence</h1>
+	<h1 class="display-4 text-center">View Pool Your Attendence</h1>
 	
 	<!-- <?php echo form_open('pool/cancel'); ?> -->
     <br><hr><br>

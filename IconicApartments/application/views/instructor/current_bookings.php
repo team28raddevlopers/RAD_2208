@@ -1,6 +1,6 @@
 <div class="container">
     <br><br>
-    <h1 class="text-center">Your Current Bookings</h1>
+    <h1 class="display-4 text-center">Your Current Bookings</h1>
     <br><br>
     <?php if($result): ?>
         <table class="table table-hover text-center">

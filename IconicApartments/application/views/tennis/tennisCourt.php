@@ -1,7 +1,7 @@
 
 <div class="container">
     <br><br>
-    <h1 class="text-center">Book the Tennis Court To Play Tennis</h1>
+    <h1 class="display-4 text-center">Book the Tennis Court To Play Tennis</h1>
     <br><hr><br>
     <div class="row justify-content-center">
         <!-- <div class="jumbotron col-sm-6"> -->

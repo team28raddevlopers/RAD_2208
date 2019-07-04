@@ -1,6 +1,6 @@
 <div class="container">
       <br><br>
-      <h1 class="text-center">Your Current Tennis Court Bookings</h1>
+      <h1 class="display-4 text-center">Your Current Tennis Court Bookings</h1>
       <!-- <p>view Bookings table</p> -->
       <br><br>
       <?php if($result): ?>

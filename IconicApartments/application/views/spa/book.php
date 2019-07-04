@@ -1,6 +1,6 @@
 <div class="container">
     <br><br>
-    <h1 class="text-center">Book A Masseur To Conduct Your Spa Session</h1>
+    <h1 class="display-4 text-center">Book A Masseur To Conduct Your Spa Session</h1>
     <br><hr><br>
     <!-- <div class="row">
         <div class="col-sm-6">
