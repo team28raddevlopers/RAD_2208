@@ -1,8 +1,8 @@
-<div class="container collapse" id="masseurTable">
+<div class="container" id="masseurTable">
     <div class="row">
     <div class="col-lg-12">
-        <h3>Masseur</h3>
-
+        <h1 class="text-center">Registered Masseurs</h1>
+        <br><hr><br>
     </div>
 
     <div class="table-responsive">
@@ -23,18 +23,14 @@
                         ?>
                         <tr>
                         <?php echo form_open('Register/AdminUnregisterUsers')?>
-                                
                                     
-                                    <td><input style="border:none;"  class="form-control" type="text" id="user_id" name="user_id" value="<?php echo $row['user_id']; ?>"
-                                    required></td>
-                                
-                                
+                                <td><input style="border:none;"  class="form-control" type="text" id="user_id" name="user_id" value="<?php echo $row['user_id']; ?>"required></td>
                                 <td><?php echo $row['masseur_name']; ?></td>
                                 <td><?php echo $row['last_name']; ?></td>
                                 <td><?php echo $row['tele_num']; ?></td>
                                 <td><?php echo $row['email']; ?></td>
-                                <td><input   class="form-control btn-danger" type='submit' value='Unregister'></td>
-                                <td><input class="form-control btn-danger" type='submit' value='remove' name="remove"></td>
+                                <td><input   class="btn-danger btn-sm" type='submit' value='Unregister'></td>
+                                <td><input class="btn-danger btn-sm" type='submit' value='remove' name="remove"></td>
                         <?php echo form_close();?>
                         </tr>
                         <?php
@@ -42,7 +38,7 @@
                 }else{
                     ?>
                 <tr>
-                    <td colspan="3">No Messeurs to register</td>
+                    <td colspan="3">No Registered Masseurs</td>
                 </tr>
                     <?php
                 }

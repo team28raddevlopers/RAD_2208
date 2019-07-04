@@ -5,52 +5,162 @@ class AdminDashboard extends CI_Controller{
     public function index(){
         
         if($this->session->userdata('user_type') == 'admin'){
+
+            $data['residents'] = count($this->User_model->get_count('resident'));
+            $data['instructors'] = count($this->User_model->get_count('instructor'));
+            $data['coaches'] = count($this->User_model->get_count('coach'));
+            $data['masseurs'] = count($this->User_model->get_count('masseur'));
+            $data['spa'] = count($this->User_model->get_count('spa_room_booking'));
+            $data['tennis'] = count($this->User_model->get_count('tennis_court_booking'));
+
             $this->load->view('admin/header_main');
-            $this->load->view('admin/dashboard');
-            $this->load->view('main/footer');
+            $this->load->view('admin/dashboard',$data);
         }
         else{
             redirect('Main/login');
         }
     }
 
-    public function RegisterRequests(){
+    // public function RegisterRequests(){
 
+    //     if($this->session->userdata('user_type') == 'admin'){
+    //         $this->load->view('admin/header_main');
+    //         $this->load->view('admin/Buttons');
+    //         $this->load->view('main/footer');
+
+    //         $data["fetch_data"]= $this->AdminRegistrations->fetch_data_resident();
+    //         $data2["fetch_data"]= $this->AdminRegistrations->fetch_data_masseur();
+    //         $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_instructor();
+    //         $data4["fetch_data"]= $this->AdminRegistrations->fetch_data_coach();
+    //         $this->load->view('admin/RegisterRequests/resident_users',$data);
+    //         $this->load->view('admin/RegisterRequests/masseur',$data2);
+    //         $this->load->view('admin/RegisterRequests/instructor',$data3);
+    //         $this->load->view('admin/RegisterRequests/coach',$data4);
+    //     }
+    //     else{
+    //         redirect('Main/login');
+    //     }
+    // }
+
+    public function registerRequestsResidents(){
         if($this->session->userdata('user_type') == 'admin'){
-            $this->load->view('admin/header_main');
-            $this->load->view('admin/Buttons');
-            $this->load->view('main/footer');
-
+           
             $data["fetch_data"]= $this->AdminRegistrations->fetch_data_resident();
-            $data2["fetch_data"]= $this->AdminRegistrations->fetch_data_masseur();
-            $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_instructor();
-            $data4["fetch_data"]= $this->AdminRegistrations->fetch_data_coach();
+            $this->load->view('admin/header_main');
             $this->load->view('admin/RegisterRequests/resident_users',$data);
-            $this->load->view('admin/RegisterRequests/masseur',$data2);
-            $this->load->view('admin/RegisterRequests/instructor',$data3);
-            $this->load->view('admin/RegisterRequests/coach',$data4);
         }
         else{
             redirect('Main/login');
         }
     }
 
-    public function Registered(){
-       
+
+    public function registerRequestsCoaches(){
         if($this->session->userdata('user_type') == 'admin'){
+           
+            $data["fetch_data"]= $this->AdminRegistrations->fetch_data_coach();
+
             $this->load->view('admin/header_main');
-            $this->load->view('admin/Buttons');
-            $this->load->view('main/footer');
+            $this->load->view('admin/RegisterRequests/coach',$data);
+        }
+        else{
+            redirect('Main/login');
+        }
+    }
 
+    public function registerRequestsInstructors(){
+        if($this->session->userdata('user_type') == 'admin'){
+            
+            $data["fetch_data"]= $this->AdminRegistrations->fetch_data_instructor();
+
+            $this->load->view('admin/header_main');
+            $this->load->view('admin/RegisterRequests/instructor',$data);
+        }
+        else{
+            redirect('Main/login');
+        }
+    }
+
+    
+    public function registerRequestsMasseurs(){
+        if($this->session->userdata('user_type') == 'admin'){
+           
+            $data["fetch_data"]= $this->AdminRegistrations->fetch_data_masseur();
+
+            $this->load->view('admin/header_main');
+            $this->load->view('admin/RegisterRequests/masseur',$data);
+            
+        }
+        else{
+            redirect('Main/login');
+        }
+    }
+
+    // public function Registered(){
+       
+    //     if($this->session->userdata('user_type') == 'admin'){
+    //         $this->load->view('admin/header_main');
+    //         $this->load->view('admin/Buttons');
+    //         $this->load->view('main/footer');
+
+    //         $data["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_resident();
+    //         $data2["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_masseur();
+    //         $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_instructor();
+    //         $data4["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_coach();
+    //         $this->load->view('admin/Registered/resident_users',$data);
+    //         $this->load->view('admin/Registered/masseur',$data2);
+    //         $this->load->view('admin/Registered/instructor',$data3);
+    //         $this->load->view('admin/Registered/coach',$data4);
+
+    //     }
+    //     else{
+    //         redirect('Main/login');
+    //     }
+    // }
+
+    public function viewRegisteredResidents(){
+        if($this->session->userdata('user_type') == 'admin'){
             $data["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_resident();
-            $data2["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_masseur();
-            $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_instructor();
-            $data4["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_coach();
-            $this->load->view('admin/Registered/resident_users',$data);
-            $this->load->view('admin/Registered/masseur',$data2);
-            $this->load->view('admin/Registered/instructor',$data3);
-            $this->load->view('admin/Registered/coach',$data4);
 
+            $this->load->view('admin/header_main');
+            $this->load->view('admin/Registered/resident_users',$data);
+        }
+        else{
+            redirect('Main/login');
+        }
+    }
+        
+
+    public function viewRegisteredCoaches(){
+        if($this->session->userdata('user_type') == 'admin'){
+            $data["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_coach();
+
+            $this->load->view('admin/header_main');
+            $this->load->view('admin/Registered/coach',$data);
+        }
+        else{
+            redirect('Main/login');
+        }
+    }
+
+    public function viewRegisteredInstructors(){
+        if($this->session->userdata('user_type') == 'admin'){
+            $data["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_instructor();
+
+            $this->load->view('admin/header_main');
+            $this->load->view('admin/Registered/instructor',$data);
+        }
+        else{
+            redirect('Main/login');
+        }
+    }
+
+    public function viewRegisteredMasseur(){
+        if($this->session->userdata('user_type') == 'admin'){
+            $data["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_masseur();
+
+            $this->load->view('admin/header_main');
+            $this->load->view('admin/Registered/masseur',$data);
         }
         else{
             redirect('Main/login');
@@ -72,8 +182,6 @@ class AdminDashboard extends CI_Controller{
             else if($p == 'req'){
                 $this->load->view('admin/Reports/Requests/main');
             }
-            $this->load->view('main/footer');    
-
         }
         else{
             redirect('Main/login');
@@ -87,7 +195,6 @@ class AdminDashboard extends CI_Controller{
             $data["fetch_data"]= $this->AdminRegistrations->fetch_data_Register_resident();
             $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Register/resident',$data);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -101,7 +208,6 @@ class AdminDashboard extends CI_Controller{
 
             $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Register/coach',$data4);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -115,7 +221,6 @@ class AdminDashboard extends CI_Controller{
 
             $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Register/instructor',$data3);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -129,7 +234,6 @@ class AdminDashboard extends CI_Controller{
 
             $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Register/masseur',$data2);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -143,7 +247,6 @@ class AdminDashboard extends CI_Controller{
 
             $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Requests/resident',$data);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -157,7 +260,6 @@ class AdminDashboard extends CI_Controller{
 
             $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Requests/coach',$data4);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -172,7 +274,6 @@ class AdminDashboard extends CI_Controller{
 
             $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Requests/masseur',$data2);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -186,7 +287,6 @@ class AdminDashboard extends CI_Controller{
 
             $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Requests/instructor',$data3);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -200,7 +300,6 @@ class AdminDashboard extends CI_Controller{
 
             $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Removed/instructor',$data3);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -215,7 +314,6 @@ class AdminDashboard extends CI_Controller{
 
             $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Removed/resident',$data3);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -234,7 +332,6 @@ class AdminDashboard extends CI_Controller{
 
             $this->load->view('admin/header_main');
             $this->load->view('admin/Reports/Removed/coach',$data3);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -251,7 +348,6 @@ class AdminDashboard extends CI_Controller{
     
             $this->load->view('admin/header_main');
             $this->load->view('admin/spa_bookings/pending_bookings',$data);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -266,7 +362,6 @@ class AdminDashboard extends CI_Controller{
     
             $this->load->view('admin/header_main');
             $this->load->view('admin/spa_bookings/current_bookings',$data);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -281,7 +376,6 @@ class AdminDashboard extends CI_Controller{
     
             $this->load->view('admin/header_main');
             $this->load->view('admin/tennis_bookings/pending_bookings',$data);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -296,7 +390,6 @@ class AdminDashboard extends CI_Controller{
     
             $this->load->view('admin/header_main');
             $this->load->view('admin/tennis_bookings/current_bookings',$data);
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -376,7 +469,6 @@ class AdminDashboard extends CI_Controller{
         if($this->session->userdata('user_type') == 'admin'){
             $this->load->view('admin/header_main');
             $this->load->view('admin/Search/search');
-            $this->load->view('main/footer');
         }
         else{
             redirect('Main/login');
@@ -394,7 +486,6 @@ class AdminDashboard extends CI_Controller{
 
             $this->load->view('admin/header_main');
             $this->load->view('admin/Search/searchResults',$data);
-            $this->load->view('main/footer');
             
         }
         else{

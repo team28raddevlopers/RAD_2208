@@ -1,8 +1,8 @@
-<div class="container collapse" id="coachTable">
+<div class="container" id="coachTable">
     <div class="row">
     <div class="col-lg-12">
-        <h3>Coach</h3>
-
+        <h3 class="text-center">Coach Requests</h3>
+        <br><hr><br>
     </div>
 
     <div class="table-responsive">
@@ -24,17 +24,15 @@
                         <tr>
                         <?php echo form_open('Register/AdminRegisterUsers')?>
                                 
-                                    
-                                    <td><input  style="border:none;" class="form-control" type="text" id="user_id" name="user_id" value="<?php echo $row['user_id']; ?>"
+                                <td><input  style="border:none;" class="form-control" type="text" id="user_id" name="user_id" value="<?php echo $row['user_id']; ?>"
                                     required></td>
-                                
                                 <!-- <td><?php echo $row['user_id']; ?></td> -->
                                 <td><?php echo $row['coach_name']; ?></td>
                                 <td><?php echo $row['last_name']; ?></td>
                                 <td><?php echo $row['tele_num']; ?></td>
                                 <td><?php echo $row['email']; ?></td>
-                                <td><input  class="form-control btn-success" type='submit' value='Register'></td>
-                                <td><input class="form-control btn-danger" type='submit' value='remove' name="remove"></td>
+                                <td><input  class="btn-success btn-sm" type='submit' value='Register'></td>
+                                <td><input class="btn-danger btn-sm" type='submit' value='remove' name="remove"></td>
                         <?php echo form_close();?>
                         </tr>
                         <?php
@@ -42,7 +40,7 @@
                 }else{
                     ?>
                 <tr>
-                    <td colspan="3">No coach to register</td>
+                    <td colspan="3">No coaches to register</td>
                 </tr>
                     <?php
                 }

@@ -91,7 +91,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-dark <?=($this->uri->segment(2)==='notifications')?'active':''?>" href="<?php echo site_url('Main/notifications') ?>">Notifications  <i class="fa fa-bell fa-fw"></i> <span class="badge badge-light"><?php echo $this->session->userdata('notifications'); ?></span></a>
+                        <a class="nav-link btn btn-dark <?=($this->uri->segment(2)==='notifications')?'active':''?>" href="<?php echo site_url('Main/notifications') ?>"><i class="fa fa-bell fa-fw"></i>Notifications   <span class="badge badge-light"><?php echo $this->session->userdata('notifications'); ?></span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-dark <?=($this->uri->segment(1)==='Profile')?'active':''?>" href="<?php echo site_url('Profile') ?>">Profile</a>
@@ -127,7 +127,6 @@
                 </ul>
             </div>
         </nav>
-        <br><br>
     </body>
 
 

@@ -1,10 +1,9 @@
-<?php include 'register_header.php' ?>
         <br><br>
 <div class="container" id="back">
 
 
         <div class="row justify-content-center">
-            <div class="jumbotron col-sm-4" id="registerform">
+            <div class="jumbotron col-sm-6" id="registerform">
                 <h2 class="text-center">Register</h2>
                
                 
@@ -45,11 +44,11 @@
                     
                     <div class="form-group">
                         <label for="type">Are you ?</label>
-                        <select name="type" id="type">
+                        <select name="type" class="form-control" id="type">
                             <option value="instructor">Gym instructor</option>
                             <option value="masseur">Messeur</option>
                             <option value="coach">Coach</option>
-                            <option value="admin">Admin</option>
+                            <!-- <option value="admin">Admin</option> -->
                         </select>
                     </div>
                     
@@ -57,7 +56,7 @@
                     
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="text" class="form-control" id="email" placeholder="If you have" name="email" required>
+                        <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" required>
                     </div>
 
                     
@@ -87,8 +86,8 @@
                     <input type="hidden" id="ntype" name="ntype" value="employee_request">
   
                     <div class="from-group">
-                        <button type="submit" class="formbutton">Register</button>
-                        <button type="reset" class="formbutton">Reset</button>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                        <button type="reset" class="btn btn-primary">Reset</button>
                     </div>
                     
                 <?php echo form_close();?>
@@ -98,4 +97,3 @@
     </div>
     </div>
 
-<?php include 'footer.php' ?>

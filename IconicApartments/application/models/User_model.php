@@ -42,5 +42,10 @@
         public function add_notification($data){
             $this->db->insert('notification', $data);
         }
+
+        public function get_count($table){
+            $query = $this->db->get($table);
+            return $query->result_array();
+        }
     }
 ?>

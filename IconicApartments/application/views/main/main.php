@@ -1,4 +1,3 @@
-<!-- <?php include 'header_main.php'?> -->
     <!-- <div class="container"> -->
         <!-- <br><br> -->
         <!-- <div class="row justify-content-center">
@@ -122,6 +121,7 @@
         </div>
         </div>
 
+
         <br><hr><br>
         <div class="row justify-content-center">
             <div class="col-md-5">
@@ -131,7 +131,7 @@
                         <h4 class="card-title text-center">Be A Part Of ICONIC Family!</h4>
                         <p class="card-text lead text-center">Are you a skilled Gym Instructor, Tennis Coach or Masseur</p>
                         <p class="text-center">Register now as an Iconic Aprtments Employee</p>
-                        <br>
+                        <hr><br>
                         <div class="row justify-content-center">
                             <h3><a class ="btn btn-dark btn-lg" href="<?php echo site_url('main/registerEmployee')?>">Register as Employee</a></h3>
                         </div>
@@ -145,7 +145,7 @@
                         <h4 class="card-title text-center">Register As A Resident!</h4>
                         <p class="card-text lead text-center">Are you a resident at Iconic Aprtments?</p>
                         <p class="text-center">Register now as an Iconic Aprtments Resident</p>
-                        <hr><br>
+                        <br><hr><br>
                         <div class="row justify-content-center">
                             <h3><a class ="btn btn-dark btn-lg" href="<?php echo site_url('main/registerRecident')?>">Register as Resident</a></h3>
                         </div>
@@ -153,5 +153,15 @@
                 </div>
             </div>
         </div>
+
+        <br><hr><br>
+
     </div>
+    <br><br><br>
+    <div style="height:220px; background-color:rgb(148, 77, 255);">
+        <br><br><br><br>
+        <h3 class="text-center">ICONIC APPARTMENTS For quality Living!</h3>
+    </div>
+
+    
    

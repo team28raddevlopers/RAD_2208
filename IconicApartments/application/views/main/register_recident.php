@@ -1,4 +1,3 @@
-<?php include 'register_header.php' ?>
         <br><br>
 
         <div class="row justify-content-center">
@@ -40,8 +39,8 @@
 
                     
                     <div class="form-group">
-                        <label for="email">Email (Optional):</label>
-                        <input type="text" class="form-control" id="email" placeholder="If you have" name="email" required>
+                        <label for="email">Email:</label>
+                        <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" required>
                     </div>
 
                     <div class="form-group">
@@ -76,4 +75,3 @@
         </div>
         
     </div>
-<?php include 'footer.php' ?>

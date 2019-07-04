@@ -20,10 +20,10 @@ class Profile extends CI_Controller{
         
         $this->form_validation->set_rules('fname', 'First Name', 'required');
         $this->form_validation->set_rules('lname', 'Last Name', 'required');
-        $this->form_validation->set_rules('apptno', 'Appartment Number', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[user.email]');
-        $this->form_validation->set_rules('username', 'Username', 'required|is_unique[user.username]');
-        $this->form_validation->set_rules('tpnum', 'Contact No','required|min_length[10]|max_length[10]');
+        // $this->form_validation->set_rules('apptno', 'Appartment Number', 'required');
+        // $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[user.email]');
+        // $this->form_validation->set_rules('username', 'Username', 'required|is_unique[user.username]');
+        // $this->form_validation->set_rules('tpnum', 'Contact No','required|min_length[10]|max_length[10]');
 
         if ($this->form_validation->run() == FALSE){
             $this->session->set_flashdata('updatefail', 'Not Updated');    

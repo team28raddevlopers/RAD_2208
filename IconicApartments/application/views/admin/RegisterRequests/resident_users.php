@@ -1,8 +1,8 @@
-<div class="container collapse" id="residentTable">
+<div class="container" id="residentTable">
     <div class="row">
     <div class="col-lg-12">
-        <h3>Residents</h3>
-
+        <h1 class="text-center">Resident Requests</h1>
+        <br><hr><br>
     </div>
 
     <div class="table-responsive">
@@ -12,7 +12,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Contact number</th>
-                <th>Appartmet Number</th>
+                <th>Appartment Number</th>
                 <th></th>
                 <th></th>
             </thead>
@@ -23,17 +23,14 @@
                         ?>
                         <tr>
                         <?php echo form_open('Register/AdminRegisterUsers')?>
-                                
                                     
-                                    <td><input style="border:none;" class="form-control" type="text" id="user_id" name="user_id" value="<?php echo $row['user_id']; ?>"
-                                    required></td>
-
+                                <td><input style="border:none;" class="form-control" type="text" id="user_id" name="user_id" value="<?php echo $row['user_id']; ?>" required></td>
                                 <td><?php echo $row['resident_name']; ?></td>
                                 <td><?php echo $row['last_name']; ?></td>
                                 <td><?php echo $row['tele_num']; ?></td>
                                 <td><?php echo $row['appartment_no']; ?></td>
-                                <td><input class="form-control btn-success" type='submit' value='Register'></td>
-                                <td><input class="form-control btn-danger" type='submit' value='remove' name="remove"></td>
+                                <td><input class="btn-success btn-sm" type='submit' value='Register'></td>
+                                <td><input class="btn-danger btn-sm" type='submit' value='remove' name="remove"></td>
                         <?php echo form_close();?>
                         </tr>
                         <?php

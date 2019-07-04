@@ -2,7 +2,8 @@
 <div class="container">
     <div class="row">
     <div class="col-lg-12">
-        <h3>Result</h3>
+        <h1 class="text-center">Resident Search Results</h1>
+        <br><hr><br>
     </div>
     <div class="table-responsive">
         <table class="table">
@@ -34,7 +35,7 @@
                 }else{
                     ?>
                 <tr>
-                    <td colspan="3">No results Founded</td>
+                    <td colspan="3">No results Found</td>
                 </tr>
                     <?php
                 }

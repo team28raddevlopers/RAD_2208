@@ -32,10 +32,15 @@
 
             }
             else if($this->session->userdata('user_type') == 'admin'){
-               
-                $this->load->view('admin/header_main');
+                $data['residents'] = count($this->User_model->get_count('resident'));
+                $data['instructors'] = count($this->User_model->get_count('instructor'));
+                $data['coaches'] = count($this->User_model->get_count('coach'));
+                $data['masseurs'] = count($this->User_model->get_count('masseur'));
+                $data['spa'] = count($this->User_model->get_count('spa_room_booking'));
+                $data['tennis'] = count($this->User_model->get_count('tennis_court_booking'));
+                $this->load->view('admin/header_main',$data);
                 $this->load->view('admin/dashboard');
-                $this->load->view('main/footer');
+                // $this->load->view('main/footer');
                 // $data["fetch_data"]= $this->AdminRegistrations->fetch_data_resident();
                 // $data2["fetch_data"]= $this->AdminRegistrations->fetch_data_masseur();
                 // $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_instructor();
@@ -60,13 +65,15 @@
        }
 
         public function registerRecident(){
-
+            $this->load->view('main/register_header');
             $this->load->view('main/register_recident');
-
+            $this->load->view('main/footer');            
         }
 
         public function registerEmployee(){
+            $this->load->view('main/register_header');
             $this->load->view('main/register_employee');
+            $this->load->view('main/footer');            
         }
 
         public function login(){
@@ -145,7 +152,6 @@
             if($this->session->userdata('user_type') == 'admin'){
                 $this->load->view('admin/header_main', $data);
                 $this->load->view('admin/notifications', $data);
-                $this->load->view('main/footer');
             }
 
             if($this->session->userdata('user_type') == 'masseur'){

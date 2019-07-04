@@ -1,8 +1,8 @@
-<div class="container collapse" id="coachTable">
+<div class="container" id="coachTable">
     <div class="row" id="coach">
     <div class="col-lg-12">
-        <h3>Coach</h3>
-
+        <h1 class="text-center">Registered Coaches</h1>
+        <br><hr><br>
     </div>
 
     <div class="table-responsive">
@@ -24,17 +24,13 @@
                         <tr>
                         <?php echo form_open('Register/AdminUnregisterUsers')?>
                                 
-                                    
-                                    <td><input style="border:none;" class="form-control" type="text" id="user_id" name="user_id" value="<?php echo $row['user_id']; ?>"
-                                    required></td>
-                                
-                         
-                                <td><?php echo $row['coach_name']; ?></td>
-                                <td><?php echo $row['last_name']; ?></td>
-                                <td><?php echo $row['tele_num']; ?></td>
-                                <td><?php echo $row['email']; ?></td>
-                                <td><input class="form-control btn-danger" type='submit' value='Unregister' name="unregister"></td>
-                                <td><input class="form-control btn-danger" type='submit' value='remove' name="remove"></td>
+                            <td><input style="border:none;" class="form-control" type="text" id="user_id" name="user_id" value="<?php echo $row['user_id']; ?>"required></td>
+                            <td><?php echo $row['coach_name']; ?></td>
+                            <td><?php echo $row['last_name']; ?></td>
+                            <td><?php echo $row['tele_num']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                            <td><input class="btn-danger btn-sm" type='submit' value='Unregister' name="unregister"></td>
+                            <td><input class="btn-danger btn-sm" type='submit' value='remove' name="remove"></td>
                                 
                         <?php echo form_close();?>
                         </tr>
@@ -43,7 +39,7 @@
                 }else{
                     ?>
                 <tr>
-                    <td colspan="3">No Messeurs to register</td>
+                    <td colspan="3">No Registered Coaches</td>
                 </tr>
                     <?php
                 }
