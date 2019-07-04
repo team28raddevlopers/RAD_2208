@@ -28,11 +28,11 @@ class FirstLogin_model extends CI_Model{
         return $query;
     }
 
-    public function UpdateLogin(){
+    public function UpdateLogin($user_id){
 
-        $id=$this->input->post('user_id',TRUE);
+        $id=$user_id;
         $data = array(
-            'login' => 2
+            'login' => 1
          );
 
         $this->db->where('user_id', $id);
@@ -40,9 +40,9 @@ class FirstLogin_model extends CI_Model{
     }
 
 
-    public function UpdateLogout(){
+    public function UpdateLogout($user_id){
 
-        $id=$this->input->post('user_id',TRUE);
+        $id=$user_id;
         $data = array(
             'login' => 0
          );
