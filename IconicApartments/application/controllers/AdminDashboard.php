@@ -152,9 +152,6 @@ class AdminDashboard extends CI_Controller{
             redirect('Main/login');
         }
     }
-
-               
-                
                
 
     public function registereRequestsMasseur(){
@@ -216,16 +213,7 @@ class AdminDashboard extends CI_Controller{
 
     public function removedMasseur(){
 
-        if($this->session->userdata('user_type') == 'admin'){
-            $data3["fetch_data"]= $this->AdminRegistrations->fetch_data_Removed_masseur();
-
-            $this->load->view('admin/header_main');
-            $this->load->view('admin/Reports/Removed/masseur',$data3);
-            $this->load->view('main/footer');
-        }
-        else{
-            redirect('Main/login');
-        }
+        
     }
 
     public function removedCoach(){
@@ -371,6 +359,37 @@ class AdminDashboard extends CI_Controller{
             $this->Bookings_model->tennis_delete_booking($bid);
             redirect('AdminDashboard/tennis_current_bookings');
         }
+    }
+
+    public function search(){
+        if($this->session->userdata('user_type') == 'admin'){
+            $this->load->view('admin/header_main');
+            $this->load->view('admin/Search/search');
+            $this->load->view('main/footer');
+        }
+        else{
+            redirect('Main/login');
+        }
+    }
+
+
+    public function fetchSearchRecords(){
+        
+        if($this->session->userdata('user_type') == 'admin'){
+
+            
+            $data["fetch_data"]= $this->AdminRegistrations->fetch_data_search();
+            // print_r($data['fetch_data']);
+
+            $this->load->view('admin/header_main');
+            $this->load->view('admin/Search/searchResults',$data);
+            $this->load->view('main/footer');
+            
+        }
+        else{
+            redirect('Main/login');
+        }
+
     }
 
 }
