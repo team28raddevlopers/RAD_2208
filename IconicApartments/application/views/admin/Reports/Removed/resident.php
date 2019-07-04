@@ -34,7 +34,7 @@
                 }else{
                     ?>
                 <tr>
-                    <td colspan="3">No Users to register</td>
+                    <td colspan="3">No residents removed</td>
                 </tr>
                     <?php
                 }
