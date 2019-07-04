@@ -1,7 +1,7 @@
 <div class="container" id="coachTable">
     <div class="row">
     <div class="col-lg-12">
-        <h3 class="text-center">Coach Requests</h3>
+        <h1 class="text-center">Coach Requests</h1>
         <br><hr><br>
     </div>
 

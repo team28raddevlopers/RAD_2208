@@ -32,7 +32,7 @@
                 }else{
                     ?>
                 <tr>
-                    <td colspan="3">No Messeurs to register</td>
+                    <td colspan="3">No Messeurs Removed</td>
                 </tr>
                     <?php
                 }

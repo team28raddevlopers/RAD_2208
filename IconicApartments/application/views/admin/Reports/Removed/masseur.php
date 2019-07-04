@@ -37,7 +37,7 @@
                 }else{
                     ?>
                 <tr>
-                    <td colspan="3">No Messeurs register</td>
+                    <td colspan="3">No Messeurs Removed</td>
                 </tr>
                     <?php
                 }

@@ -506,7 +506,7 @@ class AdminDashboard extends CI_Controller{
         if($this->session->userdata('user_type') == 'admin'){
 
             
-            $data["fetch_data"]= $this->AdminRegistrations->fetch_data_search();
+            $data["fetch_data"]= $this->Search_model->fetch_data_search();
             // print_r($data['fetch_data']);
 
             $this->load->view('admin/header_main');

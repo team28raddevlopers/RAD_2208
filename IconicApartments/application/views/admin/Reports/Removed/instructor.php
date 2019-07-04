@@ -31,7 +31,7 @@
                 }else{
                     ?>
                 <tr>
-                    <td colspan="3">No Instrutors to register</td>
+                    <td colspan="3">No Instrutors Removed</td>
                 </tr>
                     <?php
                 }

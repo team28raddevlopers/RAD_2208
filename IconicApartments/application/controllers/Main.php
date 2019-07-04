@@ -97,6 +97,7 @@
                 }
                 else{
                     $notifications =$this->User_model->get_notifications($result['user_id']);
+                    $lognStatus=$this->FirstLogin_model->UpdateLogin($result['user_id']);
 
                     $userdata = array(
                         'username' => $result['username'],
@@ -113,8 +114,9 @@
 
         public function logout(){
             $userdata = array('user_id', 'user_type');
+            $user_id=$this->session->userdata('user_id');
+            $lognStatus=$this->FirstLogin_model->UpdateLogout($user_id);
             $this->session->unset_userdata($userdata);
-
             redirect('Main/index');
         }
 
