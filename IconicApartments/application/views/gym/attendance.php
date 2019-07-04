@@ -1,6 +1,6 @@
 <div class="row" style="width:100%">
 <div class="image-wrapper col-md-3" style="overflow:hidden; height:100%">
-    <img src="<?php echo base_url()?>assets/img/gym1.jpg" alt="">
+    <img src="<?php echo base_url()?>assets/img/img3.jpg" alt="">
 </div>
 <div class="col-md-9">
 <div class="container">

@@ -80,8 +80,8 @@
                     <input type="hidden" id ="uid" name="uid" value="0">
 
                     <!-- input fields for notifications -->
-                            <!-- admin userid is 58 -->
-                    <input type="hidden" id="toid" name="toid" value="58"> 
+                            <!-- admin userid is 15 -->
+                    <input type="hidden" id="toid" name="toid" value="15"> 
                     <input type="hidden" id="ntitle" name="ntitle" value="New Employee Register Request:">
                     <input type="hidden" id="ntype" name="ntype" value="employee_request">
   
