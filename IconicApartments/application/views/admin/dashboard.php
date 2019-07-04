@@ -1,6 +1,7 @@
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="jumbotron col-sm-12" id="registerform">
+<!-- <div class="container"> -->
+    <div class="col-lg-10">
+        <!-- <div class="jumbotron col-sm-12" id="registerform"> -->
+            <br><br>
                 <div class="row">
                     <div class="col-lg-4 ">
                     <a class="nav-link btn-dark" href="<?php echo site_url('AdminDashboard/RegisterRequests') ?>" >

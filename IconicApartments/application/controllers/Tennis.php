@@ -5,7 +5,7 @@ class Tennis extends CI_Controller {
 
 	public function index(){
 		if($this->session->userdata('user_type') == 'resident'){
-			$this->load->view('tennis/header');
+			$this->load->view('resident/resident_header');
 			$this->load->view('tennis/tennis_home');
 			$this->load->view('main/footer');
 		}
@@ -29,7 +29,7 @@ class Tennis extends CI_Controller {
 			$this->form_validation->set_rules('date', 'Date', 'required');
 
 			if($this->form_validation->run() == FALSE){
-				$this->load->view('tennis/header');
+				$this->load->view('resident/resident_header');
 				$this->load->view('tennis/book',$data);
 				$this->load->view('main/footer');
 			}
@@ -45,7 +45,7 @@ class Tennis extends CI_Controller {
 				$data['info'] = $data;
 				$data['available'] = true;
 
-				$this->load->view('tennis/header');
+				$this->load->view('resident/resident_header');
 				$this->load->view('tennis/book',$data);
 				$this->load->view('main/footer');
 
@@ -102,7 +102,7 @@ class Tennis extends CI_Controller {
 				// $data['date'] = $this->session->userdata('date');
 				// $data['user_id'] = $this->session->userdata('user_id');
 				//$data['username'] = 'new user';
-				$this->load->view('tennis/header');
+				$this->load->view('resident/resident_header');
 				$this->load->view('tennis/tennisCourt');
 				$this->load->view('main/footer');
 
@@ -146,7 +146,7 @@ class Tennis extends CI_Controller {
 			$result = $this->Tennis_model->get_bookings($uid);
 			$data['result'] = $result;
 
-			$this->load->view('tennis/header');
+			$this->load->view('resident/resident_header');
 			$this->load->view('tennis/view',$data);
 			$this->load->view('main/footer');
 		}
@@ -164,7 +164,7 @@ class Tennis extends CI_Controller {
 			//$result = false;
 			$data['result'] = $result;
 
-			$this->load->view('tennis/header');
+			$this->load->view('resident/resident_header');
 			$this->load->view('tennis/viewCourt',$data);
 			$this->load->view('main/footer');
 

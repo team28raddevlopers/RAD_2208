@@ -4,7 +4,8 @@
     <h1 class="text-center">Book the Tennis Court To Play Tennis</h1>
     <br><hr><br>
     <div class="row justify-content-center">
-        <div class="jumbotron col-sm-6">
+        <!-- <div class="jumbotron col-sm-6"> -->
+        <div class="col-6">
             <!-- <h2 class="text-center">Book</h2> -->
             <form action="tennisCourt" method="post">
                 <input type="hidden" id ="uid" name="uid" value="<?php echo $this->session->userdata('user_id'); ?>">

@@ -3,7 +3,7 @@
 class Pool extends CI_Controller{
  public function index(){
 		if($this->session->userdata('user_type') == 'resident'){
-			$this->load->view('pool/header');
+			$this->load->view('resident/resident_header');
 			$this->load->view('pool/pool_home');
 			$this->load->view('main/footer');
 		}
@@ -19,7 +19,7 @@ class Pool extends CI_Controller{
 			if ($this->form_validation->run() == FALSE){
 				$data['username'] = $this->session->userdata('username');
 				$data['user_id'] = $this->session->userdata('user_id');
-				$this->load->view('pool/header');	
+				$this->load->view('resident/resident_header');
 				$this->load->view('pool/attendance',$data);
 				$this->load->view('main/footer');
 			}
@@ -53,7 +53,7 @@ class Pool extends CI_Controller{
 			//echo $result[0]['instructor_name'];
 			$data['result'] = $result;
 
-			$this->load->view('pool/header');
+			$this->load->view('resident/resident_header');
 			$this->load->view('pool/editform',$data);
 			$this->load->view('main/footer');
 		}

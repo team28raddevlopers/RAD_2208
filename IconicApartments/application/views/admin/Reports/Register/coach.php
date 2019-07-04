@@ -40,9 +40,10 @@
             </tbody>
         </table>
     </div>
+    <br><br>
     </div>
-        <div class="row" >
+        <div class="row justify-content-center" >
             
-                <button class="btn btn-primary" onclick="printContent('regCoach')">Print</button>
+                <button class="btn btn-primary btn-lg" onclick="printContent('regCoach')">Print</button>
         </div>
     </div>

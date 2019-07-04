@@ -20,7 +20,7 @@
     </div> -->
 
     <div class="row justify-content-center">
-        <div class="jumbotron col-md-6">
+        <div class="jumbotron col-md-6" style="background: rgba(102,102,102,0.4)">
             <h2 class="text-center">Login</h2>
             <form action="login" method="post">
                 <div class="form-group">

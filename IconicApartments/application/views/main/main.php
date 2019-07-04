@@ -1,13 +1,14 @@
 <!-- <?php include 'header_main.php'?> -->
-    <div class="container">
-        <div class="row justify-content-center">
+    <!-- <div class="container"> -->
+        <!-- <br><br> -->
+        <!-- <div class="row justify-content-center">
             <div class="col-xs-12">
-                <h1 class="text-center">Welcome to Iconic Apartments</h1>
-                <br>
+                <h1 class="text-center" style="font-size:64px;">Welcome to Iconic Apartments</h1>
+                <br><br><br>
             </div>
-        </div>    
-    </div>
-    <div class="container">
+        </div>     -->
+    <!-- </div> -->
+    <!-- <div class="container"> -->
         <?php if($this->session->flashdata('msg')): ?>
             <div class="row justify-content-center">
                 <div class="col-md-6">
@@ -18,7 +19,7 @@
                 </div>
             </div>
         <?php endif;?>
-        <div id="demo" class="carousel slide" data-ride="carousel">
+        <div id="demo" class="carousel slide" data-ride="carousel" style="overflow:hidden; height:1000px;">
 
             <ul class="carousel-indicators">
                 <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -47,7 +48,7 @@
 
         </div>
         <br>
-        <div class="jumbotron banner" >
+        <!-- <div class="jumbotron banner" >
             <h2 class="text-center">Be A Part Of ICONIC Family!</h2>
             <br>
             <p class="lead text-center">Are you a skilled Gym Instructor, Tennis Coach or Masseur?</p>
@@ -66,7 +67,91 @@
             <div class="row justify-content-center">
                 <h3><a class ="btn btn-dark btn-lg" href="<?php echo site_url('main/registerRecident')?>">Register as Resident</a></h3>
             </div>
-        </div>
+        </div> -->
         <br><br>
+    <div class="container">
+        <div id="wrapper" class="animate">
+        <div class="container-fluid">
+                <h3 class="display-4 text-center"><strong>FACILITIES</strong></h3>
+                <br><br>
+            <div class="row">
+                <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                    <img class="card-img-top" src="<?php echo base_url()?>assets/img/gym.jpg" alt="Card image cap">
+                    <hr>
+                    <h5 class="card-title text-center">GYM</h5>
+                    <p class="card-text">Iconic Aprtments Gym is fully equiped with state of the art equipment and well trained gym instructors to maintain fitness for all Iconic Apartments residents.</p>
+                    </div>
+                </div>
+                </div>
+                <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                    <img class="card-img-top" src="<?php echo base_url()?>assets/img/spa.jpg" alt="Card image cap">
+                    <hr>
+                    <h5 class="card-title text-center">SPA</h5>
+                    <p class="card-text">Iconic Apartments Spa offers residents a truly relaxing experience delivered by professional Masseurs with utmost care using certified products.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                    <img class="card-img-top" src="<?php echo base_url()?>assets/img/tennis.jpg" alt="Card image cap">
+                    <hr>
+                    <h5 class="card-title text-center">TENNIS COURT</h5>
+                    <p class="card-text">Iconic Apartments Tennis Court is well maintained for the residents to play tennis to spend free time or practice with experienced coaches.</p>
+                    </div>
+                </div>
+                </div>
+                <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                    <img class="card-img-top" src="<?php echo base_url()?>assets/img/pool.jpg" alt="Card image cap">
+                    <hr>
+                    <h5 class="card-title text-center">POOL</h5>
+                    <p class="card-text">Iconic Apertments Swimming Pool is well maintained for the residents to spend relaxing weekends and afternoons with friends and family.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <br><hr><br>
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                    <!-- <img class="card-img-top" src="https://dummyimage.com/350x250/c7c7c7/000.png" alt="Card image cap"> -->
+                    <div class="card-block p-3">
+                        <h4 class="card-title text-center">Be A Part Of ICONIC Family!</h4>
+                        <p class="card-text lead text-center">Are you a skilled Gym Instructor, Tennis Coach or Masseur</p>
+                        <p class="text-center">Register now as an Iconic Aprtments Employee</p>
+                        <br>
+                        <div class="row justify-content-center">
+                            <h3><a class ="btn btn-dark btn-lg" href="<?php echo site_url('main/registerEmployee')?>">Register as Employee</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card">
+                    <!-- <img class="card-img-top" src="https://dummyimage.com/350x250/c7c7c7/000.png" alt="Card image cap"> -->
+                    <div class="card-block p-3">
+                        <h4 class="card-title text-center">Register As A Resident!</h4>
+                        <p class="card-text lead text-center">Are you a resident at Iconic Aprtments?</p>
+                        <p class="text-center">Register now as an Iconic Aprtments Resident</p>
+                        <hr><br>
+                        <div class="row justify-content-center">
+                            <h3><a class ="btn btn-dark btn-lg" href="<?php echo site_url('main/registerRecident')?>">Register as Resident</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
    

@@ -10,7 +10,7 @@ class Gym extends CI_Controller {
 		// $data['num'] = count($notifications);
 
 		if($this->session->userdata('user_type') == 'resident'){
-			$this->load->view('gym/header');
+			$this->load->view('resident/resident_header');
 			$this->load->view('gym/gym_home');
 			$this->load->view('main/footer');
 		}
@@ -37,7 +37,7 @@ class Gym extends CI_Controller {
 			$this->form_validation->set_rules('date', 'Date', 'required');
 
 			if($this->form_validation->run() == FALSE){
-				$this->load->view('gym/header');
+				$this->load->view('resident/resident_header');
 				$this->load->view('gym/book',$data);
 				$this->load->view('main/footer');
 			}
@@ -53,7 +53,7 @@ class Gym extends CI_Controller {
 				$data['info'] = $data;
 				$data['available'] = true;
 
-				$this->load->view('gym/header');
+				$this->load->view('resident/resident_header');
 				$this->load->view('gym/book',$data);
 				$this->load->view('main/footer');
 
@@ -110,8 +110,8 @@ class Gym extends CI_Controller {
 			if ($this->form_validation->run() == FALSE){
 				// $data['username'] = $this->session->userdata('username');
 				// $data['user_id'] = $this->session->userdata('user_id');
-				$this->load->view('gym/header');	
-				$this->load->view('gym/attendance',$data);
+				$this->load->view('resident/resident_header');
+				$this->load->view('gym/attendance');
 				$this->load->view('main/footer');
 			}
 			else{
@@ -140,7 +140,7 @@ class Gym extends CI_Controller {
 			$result = $this->Gym_model->get_attendence($uid);
 			$data['result'] = $result;
 
-			$this->load->view('gym/header');
+			$this->load->view('resident/resident_header');
 			$this->load->view('gym/attendance_view',$data);
 			$this->load->view('main/footer');
 		}
@@ -157,7 +157,7 @@ class Gym extends CI_Controller {
 			$result = $this->Gym_model->get_bookings($uid);
 			$data['result'] = $result;
 
-			$this->load->view('gym/header');
+			$this->load->view('resident/resident_header');
 			$this->load->view('gym/view',$data);
 			$this->load->view('main/footer');
 	

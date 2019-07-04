@@ -43,7 +43,8 @@
         </table>
     </div>
     </div>
-    <div class="row" >
-                <button class="btn btn-primary"onclick="printContent('regResident')">Print</button>
+    <br><br>
+    <div class="row justify-content-center" >
+                <button class="btn btn-primary btn-lg"onclick="printContent('regResident')">Print</button>
     </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="min-height:500px">
     <br><br>
     <h1 class="text-center">Book An Instructor To Help With Your Gym Session</h1>
     <br><hr><br>

@@ -6,7 +6,7 @@ class Spa extends CI_Controller {
 	public function index(){
 		
 		if($this->session->userdata('user_type') == 'resident'){
-			$this->load->view('spa/header');
+			$this->load->view('resident/resident_header');
 			$this->load->view('spa/spa_home');
 			$this->load->view('main/footer');
 		}
@@ -30,7 +30,7 @@ class Spa extends CI_Controller {
 			$this->form_validation->set_rules('date', 'Date', 'required');
 
 			if($this->form_validation->run() == FALSE){
-				$this->load->view('spa/header');
+				$this->load->view('resident/resident_header');
 				$this->load->view('spa/book',$data);
 				$this->load->view('main/footer');
 			}
@@ -46,7 +46,7 @@ class Spa extends CI_Controller {
 				$data['info'] = $data;
 				$data['available'] = true;
 
-				$this->load->view('spa/header');
+				$this->load->view('resident/resident_header');
 				$this->load->view('spa/book',$data);
 				$this->load->view('main/footer');
 
@@ -102,7 +102,7 @@ class Spa extends CI_Controller {
 				// $data['date'] = $this->session->userdata('date');
 				// $data['user_id'] = $this->session->userdata('user_id');
 				//$data['username'] = 'new user';
-				$this->load->view('spa/header');	
+				$this->load->view('resident/resident_header');	
 				$this->load->view('spa/spaRoom');
 				$this->load->view('main/footer');
 
@@ -145,7 +145,7 @@ class Spa extends CI_Controller {
 			$result = $this->Spa_model->get_bookings($uid);
 			$data['result'] = $result;
 	
-			$this->load->view('spa/header');
+			$this->load->view('resident/resident_header');
 			$this->load->view('spa/view',$data);
 			$this->load->view('main/footer');
 		}
@@ -163,7 +163,7 @@ class Spa extends CI_Controller {
 			//$result = false;
 			$data['result'] = $result;
 	
-			$this->load->view('spa/header');
+			$this->load->view('resident/resident_header');
 			$this->load->view('spa/viewRoom',$data);
 			$this->load->view('main/footer');
 		}

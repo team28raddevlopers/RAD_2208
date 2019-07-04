@@ -57,12 +57,23 @@ class AdminDashboard extends CI_Controller{
         }
     }
 
-    public function Reports(){
+    public function Reports($p){
 
         if($this->session->userdata('user_type') == 'admin'){
             $this->load->view('admin/header_main');
-            $this->load->view('admin/reports/reports');
+            // $this->load->view('admin/reports/reports');
+
+            if($p == 'reg'){
+                $this->load->view('admin/Reports/Register/main');
+            }
+            else if($p == 'rem'){
+                $this->load->view('admin/Reports/Removed/main');
+            }
+            else if($p == 'req'){
+                $this->load->view('admin/Reports/Requests/main');
+            }
             $this->load->view('main/footer');    
+
         }
         else{
             redirect('Main/login');

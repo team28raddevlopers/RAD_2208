@@ -15,8 +15,9 @@
                 </div>
             <?php endif;?>
 
+           
 
-            <table class="table table-striped">
+            <!-- <table class="table table-striped">
                 <?php
                 if($fetch_data->num_rows()>0){
                     foreach($fetch_data->result() as $row){
@@ -55,14 +56,14 @@
                                     <button type="submit" class="btn btn-primary mb-2">Update</button>
                                 </th>
                             </tr>                                             
-                        <?php echo form_close();?>
+                        <?php echo form_close();?> 
                    
                     <?php    }
                     }else{
 
                     }
                     ?>
-            </table>
+            </table> -->
         </div>
     </div>
 
