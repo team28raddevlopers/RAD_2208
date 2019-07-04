@@ -45,6 +45,12 @@
                 <li class="nav-item <?=($this->uri->segment(2)==='tennis_current_bookings')?'active':''?>">
                     <a class="nav-link" href="<?php echo site_url('AdminDashboard/tennis_current_bookings') ?>">Tennis Current</a>
                 </li>
+
+                <li class="nav-item <?=($this->uri->segment(2)==='Search')?'active':''?>">
+                    <a class="nav-link" href="<?php echo site_url('AdminDashboard/search') ?>">Search Records</a>
+                </li>
+
+                
             </ul>
 
             <ul class="navbar-nav ml-auto">

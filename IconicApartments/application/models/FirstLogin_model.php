@@ -31,8 +31,6 @@ class FirstLogin_model extends CI_Model{
     public function UpdateLogin(){
 
         $id=$this->input->post('user_id',TRUE);
-
-
         $data = array(
             'login' => 2
          );
@@ -41,6 +39,18 @@ class FirstLogin_model extends CI_Model{
         return $this->db->update('user', $data); 
     }
 
+
+    public function UpdateLogout(){
+
+        $id=$this->input->post('user_id',TRUE);
+        $data = array(
+            'login' => 0
+         );
+
+        $this->db->where('user_id', $id);
+        return $this->db->update('user', $data); 
+    }
+    
 
 
 }
