@@ -52,13 +52,12 @@
                 <li class="nav-item <?=($this->uri->segment(2)==='Search')?'active':''?>">
                     <a class="nav-link" href="<?php echo site_url('AdminDashboard/search') ?>">Search Records</a>
                 </li> -->
-                <form class="form-inline" action="fetchSearchRecords" method="post">
+                <form class="form-inline" action="../AdminDashboard/fetchSearchRecords" method="post">
                 
                   <input class="form-control mr-sm-2" name="tag" type="text" placeholder="Search Residents">
                   <button class="btn btn-success btn" type="submit" name="search">Search</button>
                   
-                </form>
-                
+                </form>                
             </ul>
 
             <ul class="navbar-nav ml-auto">
