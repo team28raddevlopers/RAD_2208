@@ -188,6 +188,24 @@ class Spa extends CI_Controller {
 		$this->User_model->add_notification($notification);
 		redirect('Spa/view');
 	}
+
+	public function cancel_spabooking($bid){
+		$this->Spa_model->delete_spabooking($bid);
+
+		$notification = array(
+			'title' => $this->input->post('title'),
+			'from_id' => $this->session->userdata('user_id'),
+			'to_id' => $this->input->post('uid'),
+			'message' => $this->input->post('message'),
+			'type' => $this->input->post('type'),
+			'booking_id' => $this->input->post('id'),
+			'visibility' => 1
+		);
+		$this->User_model->add_notification($notification);
+
+		redirect('Spa/viewCourt');
+
+}
 		
 }
 ?>

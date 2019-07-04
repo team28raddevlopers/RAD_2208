@@ -101,7 +101,7 @@
                 <a href="#bookings" class="list-group-item list-group-item-light" data-toggle="collapse" style="color:black" ><h5><i class="fas fa-book-reader"></i></i>  BOOKINGS</h5></a>
                 <div class="collapse" id="bookings">
                   <a href="<?php echo site_url('AdminDashboard/spa_current_bookings') ?>" class="list-group-item">Spa Current Bookings</a>
-                  <a href="<?php echo site_url('AdminDashboard/tennis_pending_bookings') ?>" class="list-group-item">Spa Pending Bookings</a>
+                  <a href="<?php echo site_url('AdminDashboard/spa_pending_bookings') ?>" class="list-group-item">Spa Pending Bookings</a>
                   <a href="<?php echo site_url('AdminDashboard/tennis_current_bookings') ?>" class="list-group-item">Tennis Court Current Bookings</a>
                   <a href="<?php echo site_url('AdminDashboard/tennis_pending_bookings') ?>" class="list-group-item">Tennis Court Pending Bookings</a>
                 </div>

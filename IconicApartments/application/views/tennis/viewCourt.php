@@ -28,10 +28,7 @@
         </table>
         </div>
 
-          <!-- <li class="nav-item mr-3 ml-3">
-                        <a class="nav-link btn btn-dark" href="<?php echo site_url('tennis/TennisCourt') ?>">Back</a>
-                    </li>
-         -->
+
          <div class="modal" id="confirmCancel">
            <div class="modal-dialog">
              <div class="modal-content">
@@ -50,7 +47,7 @@
 
                    <!-- coach user_id -->
                    <input type="hidden" id="uid" name="uid" value="<?php echo $row['user_id']; ?>">
-                   <input type="hidden" id="title" name="title" value="Booking Cancelled:">
+                   <input type="hidden" id="title" name="title" value="Tennis Court Booking Cancelled: Booking ID : ">
                    <input type="hidden" id="type" name="type" value="cancelled_booking">
                    <br>
                    <div class="modal-footer">

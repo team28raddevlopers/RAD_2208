@@ -27,7 +27,7 @@
                  <!-- input fields for notifications -->
                         <!-- admin userid is 58 -->
                 <input type="hidden" id="toid" name="toid" value="58"> 
-                <input type="hidden" id="title" name="title" value="New Spa Room Booking:">
+                <input type="hidden" id="title" name="title" value="New Spa Room Booking">
                 <input type="hidden" id="type" name="type" value="spa_booking">
 
                 <div class="row justify-content-center">

@@ -28,49 +28,39 @@
           <?php endforeach; ?>
         </table>
         </div>
-        <div>
-          <form method="" action="<?php echo site_url('spa/SpaRoom') ?>">
-              <button id="buttons" type="submit" class="nav-link btn btn-dark">Back</button>
-          </form>
-        </div>
-          <!-- <li class="nav-item mr-3 ml-3">
-                        <a class="nav-link btn btn-dark" href="<?php echo site_url('spa/SpaRoom') ?>">Back</a>
-                    </li>
-         -->
-            <!-- <div class="modal" id="confirmCancel">
-      <div class="modal-dialog">
-        <div class="modal-content">
 
-          <div class="modal-header">
-            <h5 class="modal-title">Cancel Booking</h5>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
+        <div class="modal" id="confirmCancel">
+           <div class="modal-dialog">
+             <div class="modal-content">
 
-          <div class="modal-body">
-            Are you sure you want to cancel booking <?php echo $row['booking_id']?> ?
-          </div>
+               <div class="modal-header">
+                 <h5 class="modal-title">Cancel Booking</h5>
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
 
-          <div class="modal-footer">
-            <a href="<?php echo site_url('Spa/cancel_booking/'.$row['booking_id'])?>" class="btn btn-danger btn-sm">Cancel Booking</a>
-            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-          </div>
+               <div class="modal-body">
+                 Are you sure you want to cancel booking <p style="display:inline" id="bid"></p> ?
+                 <form action="<?php echo site_url('Spa/cancel_spabooking/')?>" id="cancel-form" method="post" accept-charset="utf-8">
+                   <input type="text" class="form-control" id="message" name="message" placeholder="Enter a short message for the resident(optional)">
+                   <input type="hidden" id="form-action" value="<?php echo site_url('Spa/cancel_spabooking/')?>">
+                   <input type="hidden" id="id" name="id" value="<?php echo $row['booking_id']; ?>">
 
-        </div>
-      </div>
-    </div> -->
-    <!-- <hr>
-    <br><br>
-    <h3>Cancel Bookings</h3>
-    <hr>
-    <div class="jumbotron">
-      <form action="cancel_booking" method="post" class="form-inline">
-          <div class="form-group">
-              <label for="bid">Booking ID:</label>
-              <input type="text" class="form-control ml-sm-2 mr-sm-2" id="bid" placeholder="Enter booking ID" name="bid" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div> -->
+                   <!-- coach user_id -->
+                   <input type="hidden" id="uid" name="uid" value="<?php echo $row['user_id']; ?>">
+                   <input type="hidden" id="title" name="title" value="Spa Room Booking Cancelled: Booking ID : ">
+                   <input type="hidden" id="type" name="type" value="cancelled_booking">
+                   <br>
+                   <div class="modal-footer">
+                     <button type="submit" class="btn btn-danger btn-sm">Cancel Booking</button>
+                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                   </div>
+                 </form>
+               </div>
+
+             </div>
+           </div>
+         </div>
+
   <?php else :?>
     <h5 class="text-center">You Currently Have No Spa Room Bookings</h5>
   <?php endif; ?>
@@ -78,4 +68,19 @@
   <br><br><br>
 
 </div>
+
+<script language="JavaScript" type="text/javascript">
+    var cancel = document.querySelectorAll('#cancel')
+
+    cancel.forEach(element => {
+      element.addEventListener('click', function(event) {
+        // document.querySelector('.modal-body #name').value = event.target.attributes['data-name'].value;
+        document.querySelector('#cancel-form').action = (document.querySelector('.modal-body #form-action').value + event.target.attributes['data-id'].value);
+        document.querySelector('.modal-body #id').value = event.target.attributes['data-id'].value;
+        document.querySelector('#bid').innerHTML =  event.target.attributes['data-id'].value;
+        console.log(document.querySelector('#cancel-form').action);
+
+      })
+    })
+</script>
 

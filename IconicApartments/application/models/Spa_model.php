@@ -117,5 +117,9 @@
             $this->db->where('masseur_booking.booking_id', $bid);
             $this->db->delete('masseur_booking');
         }
+        public function delete_spabooking($bid){
+            $this->db->where('spa_room_booking.booking_id', $bid);
+            $this->db->delete('spa_room_booking');
+        }
     }
 ?>
