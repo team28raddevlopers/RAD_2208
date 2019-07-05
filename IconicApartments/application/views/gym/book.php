@@ -78,7 +78,7 @@
                     <input type="hidden" id ="status" name="status" value="pending">
 
                     <input type="hidden" id ="iuid" name="iuid" value="<?php echo $row['user_id']; ?>">
-                    <input type="text" class="form-control" id="message" name="message" placeholder="Enter a short message for the resident(optional)">
+                    <input type="text" class="form-control" id="message" name="message" placeholder="Enter a short message for the instructor(optional)">
                     <input type="hidden" id="title" name="title" value="New Booking">
                     <input type="hidden" id="type" name="type" value="new_booking">
               <br>

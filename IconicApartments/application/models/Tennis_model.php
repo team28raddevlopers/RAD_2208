@@ -28,6 +28,8 @@
             $where =  "coach_id NOT IN (SELECT coach_booking.coach_id FROM coach_booking WHERE coach_booking.booking_status <> 'rejected' AND coach_booking.date = '$date' AND (coach_booking.time_from >= '$timefrom' AND coach_booking.time_to <= '$timeto'));";
             $this->db->select('coach.coach_id, coach.coach_name, coach.last_name, coach.user_id');
             $this->db->from('coach');
+            $this->db->join('user', 'user.user_id = coach.user_id');
+            $this->db->where('user.register', 1);
             $this->db->where($where);
             $query = $this->db->get();
 

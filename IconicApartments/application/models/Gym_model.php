@@ -29,6 +29,8 @@
             $where =  "instructor_id NOT IN (SELECT instructor_booking.instructor_id FROM instructor_booking WHERE instructor_booking.booking_status <> 'rejected' AND instructor_booking.date = '$date' AND (instructor_booking.time_from >= '$timefrom' AND instructor_booking.time_to <= '$timeto'));";
             $this->db->select('instructor.instructor_id, instructor.instructor_name, instructor.last_name, instructor.user_id');
             $this->db->from('instructor');
+            $this->db->join('user', 'user.user_id = instructor.user_id');
+            $this->db->where('user.register', 1);
             $this->db->where($where);
             $query = $this->db->get();
 
@@ -53,6 +55,7 @@
 
         public function get_attendence($uid){
             $this->db->where('gym_attendance.user_id', $uid);
+            $this->db->order_by('gym_attendance.date, gym_attendance.time_from');
             $query = $this->db->get('gym_attendance');
 
             return $query->result_array();
