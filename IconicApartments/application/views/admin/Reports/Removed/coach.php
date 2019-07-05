@@ -44,6 +44,6 @@
     <br><br>
         <div class="row justify-content-center" >
             
-                <button class="btn btn-primary btn-lg" onclick="printContent('regCoach')">Print</button>
+                <button class="btn btn-primary btn-lg" onclick="printContent('remCoach')">Print</button>
         </div>
     </div>

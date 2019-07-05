@@ -45,6 +45,6 @@
     </div>
     <br><br>
     <div class="row justify-content-center" >
-                <button class="btn btn-primary btn-lg"onclick="printContent('regResident')">Print</button>
+                <button class="btn btn-primary btn-lg"onclick="printContent('remResident')">Print</button>
     </div>
 </div>

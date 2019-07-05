@@ -43,6 +43,6 @@
     <br><br>
     <div class="row justify-content-center" >
             
-            <button class="btn btn-primary btn-lg" onclick="printContent('regInstructor')">Print</button>
+            <button class="btn btn-primary btn-lg" onclick="printContent('remInstructor')">Print</button>
     </div>
 </div>
