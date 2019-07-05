@@ -126,7 +126,7 @@ class Gym extends CI_Controller {
 				);
 
 				$this->Gym_model->mark_attendance($data); //send data to Gym_model
-				redirect('Gym/attendance'); //redirect to Gym home page
+				redirect('Gym/attendance_view'); //redirect to Gym home page
 			}
 		}
 		else{

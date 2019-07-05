@@ -23,7 +23,7 @@
                   <td><?php echo $row['time_from']; ?></td>
                   <td><?php echo $row['time_to']; ?></td>
                   <td><?php echo $row['booking_status']; ?></td>
-                  <td><button type="button" class="btn btn-danger btn-sm" id="cancel" data-toggle="modal" data-target="#confirmCancel" data-id="<?php echo $row['booking_id'];?>">Cancel</button></td>
+                  <td><button type="button" class="btn btn-danger btn-sm" id="cancel" data-toggle="modal" data-target="#confirmCancel" data-id="<?php echo $row['booking_id'];?>" data-user="<?php echo $row['user_id'];?>">Cancel</button></td>
               </tr>
           <?php endforeach; ?>
         </table>
@@ -41,7 +41,7 @@
               <div class="modal-body">
                 Are you sure you want to cancel booking <p style="display:inline" id="bid"></p> ?
                 <form action="<?php echo site_url('Spa/cancel_booking/')?>" id="cancel-form" method="post" accept-charset="utf-8">
-                  <input type="text" class="form-control" id="message" name="message" placeholder="Enter a short message for the resident(optional)">
+                  <input type="text" class="form-control" id="message" name="message" placeholder="Enter a short message for the masseur(optional)">
                   <input type="hidden" id="form-action" value="<?php echo site_url('Spa/cancel_booking/')?>">
                   <input type="hidden" id="id" name="id" value="<?php echo $row['booking_id']; ?>">
 

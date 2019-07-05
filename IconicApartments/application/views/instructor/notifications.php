@@ -10,7 +10,7 @@
                         <p class="small text-right"><?php echo $notification['time']; ?></p>
                         <div class="row justify-content-center">
                             <?php if($notification['type'] === 'new_booking'): ?>
-                                <a href="<?php echo site_url('Main/view_notification/Instructor/pending_bookings/').$notification['notification_id']?>" class="btn btn-light btn-sm text-center">View</a>
+                                <a href="<?php echo site_url('Main/view_notification/Instructor/pending_bookings/').$notification['notification_id']?>" class="btn btn-dark btn-sm text-center">View</a>
                             <?php endif;?>
                         </div>
                     </li>

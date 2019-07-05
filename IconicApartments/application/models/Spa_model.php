@@ -28,6 +28,8 @@
             $where =  "masseur_id NOT IN (SELECT masseur_booking.masseur_id FROM masseur_booking WHERE masseur_booking.booking_status <> 'rejected' AND masseur_booking.date = '$date' AND (masseur_booking.time_from >= '$timefrom' AND masseur_booking.time_to <= '$timeto'));";
             $this->db->select('masseur.masseur_id, masseur.masseur_name, masseur.last_name, masseur.user_id');
             $this->db->from('masseur');
+            $this->db->join('user', 'user.user_id = masseur.user_id');
+            $this->db->where('user.register', 1);
             $this->db->where($where);
             $query = $this->db->get();
 
