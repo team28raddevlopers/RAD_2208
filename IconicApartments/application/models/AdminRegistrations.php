@@ -185,7 +185,7 @@ class AdminRegistrations extends CI_Model{
             $login=0;
         }elseif($register='register'){
             $id2=1;
-            $login=1;
+            $login=0;
         }
 
         $data = array(
