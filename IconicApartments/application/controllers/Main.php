@@ -91,9 +91,9 @@
                     else{
                         $this->session->set_flashdata('login_error', 'Your Regstration Request Is Not Accepted Yet');
                     }
-                    $this->load->view('main/header_main');
+                    // $this->load->view('main/header_main');
                     $this->load->view('main/login');
-                    $this->load->view('main/footer');
+                    // $this->load->view('main/footer');
                 }
                 else{
                     $notifications =$this->User_model->get_notifications($result['user_id']);

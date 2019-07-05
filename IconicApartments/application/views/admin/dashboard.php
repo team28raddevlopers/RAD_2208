@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="row justify-content center">
     <div class="col-lg-10 col-lg-10">
         <div style="padding-top:10px">
             <h2 class="text-center">DASHBOARD</h2>

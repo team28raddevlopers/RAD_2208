@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/Style.css" >
-    <title>Iconic Appartments</title>
+    <title>Iconic Apartments</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-center sticky-top">
@@ -19,15 +19,11 @@
               
 
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link btn btn-dark" href="<?php echo site_url('main') ?>">Home</a>
-                </li>
-
+                
                 <li class="nav-item">
                     <a class="nav-link btn btn-dark" href="<?php echo site_url('main/login') ?>">Login</a>
                 </li>
 
             </ul>
         </nav>
-        <br><br>
     

@@ -1,13 +1,4 @@
     <!-- <div class="container"> -->
-        <!-- <br><br> -->
-        <!-- <div class="row justify-content-center">
-            <div class="col-xs-12">
-                <h1 class="text-center" style="font-size:64px;">Welcome to Iconic Apartments</h1>
-                <br><br><br>
-            </div>
-        </div>     -->
-    <!-- </div> -->
-    <!-- <div class="container"> -->
         <?php if($this->session->flashdata('msg')): ?>
             <div class="row justify-content-center">
                 <div class="col-md-6">
@@ -47,26 +38,7 @@
 
         </div>
         <br>
-        <!-- <div class="jumbotron banner" >
-            <h2 class="text-center">Be A Part Of ICONIC Family!</h2>
-            <br>
-            <p class="lead text-center">Are you a skilled Gym Instructor, Tennis Coach or Masseur?</p>
-            <p class="text-center">Register now as an Iconic Aprtments Employee</p>
-            <hr><br>
-            <div class="row justify-content-center">
-                <h3><a class ="btn btn-dark btn-lg" href="<?php echo site_url('main/registerEmployee')?>">Register as Employee</a></h3>
-            </div>
-        </div>
-        <div class="jumbotron">
-            <h2 class="text-center">Register As A Resident!</h2>
-            <br>
-            <p class="lead text-center">Are you a resident at Iconic Aprtments?</p>
-            <p class="text-center">Register now as an Iconic Aprtments Resident</p>
-            <hr><br>
-            <div class="row justify-content-center">
-                <h3><a class ="btn btn-dark btn-lg" href="<?php echo site_url('main/registerRecident')?>">Register as Resident</a></h3>
-            </div>
-        </div> -->
+
         <br><br>
     <div class="container">
         <div id="wrapper" class="animate">
@@ -145,7 +117,7 @@
                         <h4 class="card-title text-center">Register As A Resident!</h4>
                         <p class="card-text lead text-center">Are you a resident at Iconic Aprtments?</p>
                         <p class="text-center">Register now as an Iconic Aprtments Resident</p>
-                        <br><hr><br>
+                        <br><hr>
                         <div class="row justify-content-center">
                             <h3><a class ="btn btn-dark btn-lg" href="<?php echo site_url('main/registerRecident')?>">Register as Resident</a></h3>
                         </div>
